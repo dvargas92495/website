@@ -2,7 +2,7 @@ name: Infrastructure
 on:
   push:
     paths:
-    - 'terraform/**'
+      - "terraform/**"
 
 jobs:
   build:
@@ -14,6 +14,10 @@ jobs:
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - run: terraform init
+        env:
+          TF_WORKSPACE: production
         working-directory: ./terraform
       - run: terraform apply -auto-approve
+        env:
+          TF_WORKSPACE: production
         working-directory: ./terraform
