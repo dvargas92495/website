@@ -19,7 +19,7 @@ provider "aws" {
 
 resource "aws_route53_zone" "zone" {
     name          = local.domain
-    comment       = "HostedZone created by Route53 Registrar"
+    comment       = "Hosted Zone for my personal website"
     force_destroy = false
 }
 
