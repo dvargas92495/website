@@ -1,15 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `David Vargas Personal Site`,
+    title: `David Vargas`,
     author: {
       name: `David Vargas`,
-      summary: `Optimist for humanity looking to live as long and impactfully as possible`,
+      summary: `The site is under construction, check back later!`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://davidvargas.me/`,
-    social: {
-      twitter: `dvargas92495`,
-    },
   },
   plugins: [
     {

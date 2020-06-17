@@ -8,6 +8,7 @@
     "url": "https://github.com/dvargas92495/website/issues"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "gatsby": "^2.21.37",
     "gatsby-image": "^2.4.4",
     "gatsby-plugin-feed": "^2.5.1",
@@ -28,8 +29,10 @@
     "gatsby-transformer-sharp": "^2.5.2",
     "prismjs": "^1.20.0",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.10.0",
     "react-typography": "^0.16.19",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
