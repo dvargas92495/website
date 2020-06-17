@@ -30,9 +30,8 @@ type Data = {
 };
 
 const Index = ({ data, location }: Partial<PageProps<Data>>) => {
-  const siteTitle = data?.site?.siteMetadata?.title;
-  const posts = data?.allMarkdownRemark?.edges || [];
-
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
