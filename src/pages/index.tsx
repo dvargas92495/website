@@ -11,6 +11,9 @@ const WIDTH = 1527;
 const HEIGHT = 692;
 
 const Index = () => {
+  const [documentWidth, setDocumentWidth] = useState(
+    document ? document.body.offsetWidth : 0
+  );
   const data = useStaticQuery(graphql`
     query IndexQuery {
       landingImage: file(absolutePath: { regex: "/landing-image.png/" }) {
@@ -18,12 +21,20 @@ const Index = () => {
       }
     }
   `);
+  const setWidth = useCallback(
+    () => setDocumentWidth(document ? document.body.offsetWidth : 0),
+    [setDocumentWidth]
+  );
+  useEffect(() => {
+    window.addEventListener("resize", setWidth);
+    return () => window && window.removeEventListener("resize", setWidth);
+  }, [setWidth]);
   return (
     <Layout>
       <SEO title="All posts" />
       <div
         style={{
-          height: (document.body.offsetWidth * HEIGHT) / WIDTH,
+          height: (documentWidth * HEIGHT) / WIDTH,
           position: "relative",
         }}
       >
