@@ -1,9 +1,11 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import { rhythm } from "../utils/typography";
-import { IoLogoTwitter } from "react-icons/io";
+import AppBar from "@material-ui/core/AppBar";
+import Twitter from "@material-ui/icons/Twitter";
+import Typography from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import { colors } from "../utils/typography";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,12 +27,17 @@ const Layout = ({ children }) => {
         justifyContent: "space-between",
       }}
     >
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">{title}</Navbar.Brand>
-        <Nav>
-          <Nav.Link href="/blog">Blog</Nav.Link>
-        </Nav>
-      </Navbar>
+      <AppBar
+        position="sticky"
+        style={{ backgroundColor: colors.primary }}
+      >
+        <Toolbar style={{ justifyContent: "space-between" }}>
+          <Typography variant="h6">
+            <Link to="/">{title}</Link>
+          </Typography>
+          <Link to="/blog">Blog</Link>
+        </Toolbar>
+      </AppBar>
       <main
         style={{
           flexGrow: 1,
@@ -55,7 +62,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </span>
         <a href="https://twitter.com/dvargas92495">
-          <IoLogoTwitter />
+          <Twitter />
         </a>
       </footer>
     </div>
