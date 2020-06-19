@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Image from "material-ui-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -23,7 +23,7 @@ const Index = () => {
       <SEO title="All posts" />
       <div
         style={{
-          height: (window.screen.width * HEIGHT) / WIDTH,
+          height: (document.body.offsetWidth * HEIGHT) / WIDTH,
           position: "relative",
         }}
       >
