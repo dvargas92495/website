@@ -6,6 +6,7 @@ import Twitter from "@material-ui/icons/Twitter";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import { colors } from "../utils/typography";
+import Bio from "./bio";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,13 +25,9 @@ const Layout = ({ children }) => {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
       }}
     >
-      <AppBar
-        position="sticky"
-        style={{ backgroundColor: colors.primary }}
-      >
+      <AppBar position="sticky" style={{ backgroundColor: colors.primary }}>
         <Toolbar style={{ justifyContent: "space-between" }}>
           <Typography variant="h6">
             <Link to="/">{title}</Link>
@@ -38,17 +35,7 @@ const Layout = ({ children }) => {
           <Link to="/blog">Blog</Link>
         </Toolbar>
       </AppBar>
-      <main
-        style={{
-          flexGrow: 1,
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        {children}
-      </main>
+      <main>{children}</main>
       <footer
         style={{
           display: "flex",
