@@ -12,7 +12,7 @@ const HEIGHT = 692;
 
 const Index = () => {
   const [documentWidth, setDocumentWidth] = useState(
-    document ? document.body.offsetWidth : 0
+    typeof document !== "undefined" ? document.body.offsetWidth : 0
   );
   const data = useStaticQuery(graphql`
     query IndexQuery {
@@ -22,7 +22,10 @@ const Index = () => {
     }
   `);
   const setWidth = useCallback(
-    () => setDocumentWidth(document ? document.body.offsetWidth : 0),
+    () =>
+      setDocumentWidth(
+        typeof document !== "undefined" ? document.body.offsetWidth : 0
+      ),
     [setDocumentWidth]
   );
   useEffect(() => {

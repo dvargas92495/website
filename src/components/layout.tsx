@@ -1,12 +1,10 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
-import { rhythm } from "../utils/typography";
 import AppBar from "@material-ui/core/AppBar";
 import Twitter from "@material-ui/icons/Twitter";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import { colors } from "../utils/typography";
-import Bio from "./bio";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
