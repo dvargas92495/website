@@ -72,18 +72,18 @@ const Index = () => {
       </Container>
       <Container
         maxWidth="xs"
-        style={{ textAlign: "justify", paddingTop: 32, paddingBottom: 32 }}
+        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
       >
         <Typography style={{ color: colors.primary }}>
           Through this site, I am looking to become more of a citizen of the
-          world. I love being an absolute moron, learning from others and now I
+          world. I love being an absolute moron, learning from others, and now I
           want to share more of what I learn. This site will act as a portal
-          into what my thoughts, ongoings, projects, and lessons I've learned.
+          into my thoughts, ongoings, projects, and lessons I've learned.
         </Typography>
       </Container>
       <Container
         maxWidth="xs"
-        style={{ textAlign: "justify", paddingTop: 32, paddingBottom: 32 }}
+        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
       >
         <Typography style={{ color: colors.primary }}>
           I will soon become a Digital Nomad. That is, I will no longer have a
@@ -94,7 +94,7 @@ const Index = () => {
       </Container>
       <Container
         maxWidth="xs"
-        style={{ textAlign: "justify", paddingTop: 32, paddingBottom: 32 }}
+        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
       >
         <Typography style={{ color: colors.primary }}>
           I am still actively developing this site. In the meantime, feel free
