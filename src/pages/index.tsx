@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { colors } from "../utils/typography";
+import Box from "@material-ui/core/Box";
 
 const WIDTH = 1527;
 const HEIGHT = 692;
@@ -36,21 +37,16 @@ const Index = () => {
   return (
     <Layout>
       <SEO title="All posts" />
-      <div
-        style={{
-          height,
-          position: "relative",
-        }}
-      >
+      <Box>
         <Image
           src={data.landingImage.publicURL}
-          style={{ height: "100%", padding: 0 }}
+          aspectRatio={WIDTH / HEIGHT}
         />
         <div
           style={{
             position: "absolute",
             top: "12%",
-            left: "20%",
+            left: "16%",
             fontStyle: "italic",
             textAlign: "center",
           }}
@@ -62,7 +58,7 @@ const Index = () => {
             VARGAS
           </Typography>
         </div>
-      </div>
+      </Box>
       <Container
         maxWidth="xs"
         style={{ textAlign: "center", paddingTop: 32, paddingBottom: 32 }}

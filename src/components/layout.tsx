@@ -47,13 +47,18 @@ const Layout = ({ children }) => {
       <AppBar position="sticky" style={{ backgroundColor: colors.primary }}>
         <Toolbar style={{ justifyContent: "space-between" }}>
           <Typography variant="h6">
-            <Link to="/">{title}</Link>
+            <Link to="/" style={{ marginLeft: 8, color: colors.secondary }}>
+              {title}
+            </Link>
           </Typography>
           <Toolbar>
-            <Link style={{ marginLeft: 8 }} to="/projects">
+            <Link
+              style={{ marginLeft: 8, color: colors.secondary }}
+              to="/projects"
+            >
               Projects
             </Link>
-            <Link style={{ marginLeft: 8 }} to="/blog">
+            <Link style={{ marginLeft: 8, color: colors.secondary }} to="/blog">
               Blog
             </Link>
           </Toolbar>
@@ -82,9 +87,17 @@ const Layout = ({ children }) => {
         <span>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a
+            href="https://www.gatsbyjs.org"
+            style={{ color: colors.secondary }}
+          >
+            Gatsby
+          </a>
         </span>
-        <a href="https://twitter.com/dvargas92495">
+        <a
+          href="https://twitter.com/dvargas92495"
+          style={{ color: colors.secondary }}
+        >
           <Twitter />
         </a>
       </footer>
