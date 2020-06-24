@@ -23,7 +23,7 @@ const Index = () => {
   return (
     <Layout>
       <SEO title="All posts" />
-      <Box>
+      <Box style={{ position: "relative" }}>
         <NoSsr>
           <Image
             src={data.landingImage.publicURL}
@@ -33,8 +33,8 @@ const Index = () => {
         <div
           style={{
             position: "absolute",
-            top: "12%",
-            left: "16%",
+            top: 32,
+            left: 32,
             fontStyle: "italic",
             textAlign: "center",
           }}

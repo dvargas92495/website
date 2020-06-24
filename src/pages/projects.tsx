@@ -1,6 +1,7 @@
 import React from "react";
 import { rhythm } from "../utils/typography";
 import Layout from "../components/layout";
+import Typography from "@material-ui/core/Typography";
 
 const Projects = () => (
   <Layout>
@@ -13,7 +14,7 @@ const Projects = () => (
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <h1>Projects</h1>
+      <Typography variant="h3">Projects</Typography>
       <p>
         I like to group the projects I'm involved with into two categories:
         those I invest my time on and those I invest money in. If you have an
