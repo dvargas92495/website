@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image from "material-ui-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -7,12 +7,12 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { colors } from "../utils/typography";
 import Box from "@material-ui/core/Box";
+import NoSsr from "@material-ui/core/NoSsr";
 
 const WIDTH = 1527;
 const HEIGHT = 692;
 
 const Index = () => {
-  const imageRef = useRef<typeof Image>(null);
   const data = useStaticQuery(graphql`
     query IndexQuery {
       landingImage: file(absolutePath: { regex: "/landing-image.png/" }) {
@@ -20,23 +20,16 @@ const Index = () => {
       }
     }
   `);
-  useEffect(() => {
-    // @ts-ignore
-    if (!imageRef.current.state.imageLoaded) {
-      // @ts-ignore
-      imageRef.current.handleLoadImage();
-    }
-  }, [imageRef]);
   return (
     <Layout>
       <SEO title="All posts" />
       <Box>
-        <Image
-          src={data.landingImage.publicURL}
-          aspectRatio={WIDTH / HEIGHT}
-          // @ts-ignore
-          ref={imageRef}
-        />
+        <NoSsr>
+          <Image
+            src={data.landingImage.publicURL}
+            aspectRatio={WIDTH / HEIGHT}
+          />
+        </NoSsr>
         <div
           style={{
             position: "absolute",
