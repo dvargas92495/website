@@ -32,12 +32,13 @@ const Index = () => {
     window.addEventListener("resize", setWidth);
     return () => window && window.removeEventListener("resize", setWidth);
   }, [setWidth]);
+  const height = (documentWidth * HEIGHT) / WIDTH;
   return (
     <Layout>
       <SEO title="All posts" />
       <div
         style={{
-          height: (documentWidth * HEIGHT) / WIDTH,
+          height,
           position: "relative",
         }}
       >
