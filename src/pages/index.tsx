@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "material-ui-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -12,9 +12,7 @@ const WIDTH = 1527;
 const HEIGHT = 692;
 
 const Index = () => {
-  const [documentWidth, setDocumentWidth] = useState(
-    typeof document !== "undefined" ? document.body.offsetWidth : 0
-  );
+  const imageRef = useRef<typeof Image>(null);
   const data = useStaticQuery(graphql`
     query IndexQuery {
       landingImage: file(absolutePath: { regex: "/landing-image.png/" }) {
@@ -22,18 +20,13 @@ const Index = () => {
       }
     }
   `);
-  const setWidth = useCallback(
-    () =>
-      setDocumentWidth(
-        typeof document !== "undefined" ? document.body.offsetWidth : 0
-      ),
-    [setDocumentWidth]
-  );
   useEffect(() => {
-    window.addEventListener("resize", setWidth);
-    return () => window && window.removeEventListener("resize", setWidth);
-  }, [setWidth]);
-  const height = (documentWidth * HEIGHT) / WIDTH;
+    // @ts-ignore
+    if (!imageRef.current.state.imageLoaded) {
+      // @ts-ignore
+      imageRef.current.handleLoadImage();
+    }
+  }, [imageRef]);
   return (
     <Layout>
       <SEO title="All posts" />
@@ -41,6 +34,8 @@ const Index = () => {
         <Image
           src={data.landingImage.publicURL}
           aspectRatio={WIDTH / HEIGHT}
+          // @ts-ignore
+          ref={imageRef}
         />
         <div
           style={{

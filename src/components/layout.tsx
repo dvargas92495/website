@@ -6,8 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import { colors } from "../utils/typography";
 import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
