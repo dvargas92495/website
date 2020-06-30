@@ -10,7 +10,7 @@ import Box from "@material-ui/core/Box";
 import NoSsr from "@material-ui/core/NoSsr";
 
 const WIDTH = 1527;
-const HEIGHT = 692;
+const HEIGHT = 562;
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -30,22 +30,6 @@ const Index = () => {
             aspectRatio={WIDTH / HEIGHT}
           />
         </NoSsr>
-        <div
-          style={{
-            position: "absolute",
-            top: 32,
-            left: 32,
-            fontStyle: "italic",
-            textAlign: "center",
-          }}
-        >
-          <Typography variant="h2" style={{ color: colors.primary }}>
-            HEY, I'M
-          </Typography>
-          <Typography variant="h1" style={{ color: colors.primary }}>
-            VARGAS
-          </Typography>
-        </div>
       </Box>
       <Container
         maxWidth="xs"
