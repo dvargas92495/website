@@ -24,29 +24,40 @@ const Project = ({
   imgSrc: string;
   ltr: boolean;
 }) => {
+  const imageGrid = (
+    <Grid item xs={4}>
+      <NoSsr>
+        <Image src={imgSrc} aspectRatio={1} />
+      </NoSsr>
+    </Grid>
+  );
+  const contentGrid = (
+    <Grid item xs={8} style={{ color: colors.primary }}>
+      <Container style={{ textAlign: "center" }}>
+        <Typography variant="h4">{title}</Typography>
+      </Container>
+      <Container style={{ textAlign: "center" }}>
+        <Link href={link}>{link}</Link>
+      </Container>
+      <Container style={{ marginTop: 8 }}>
+        <Typography variant="body1">{description}</Typography>
+      </Container>
+    </Grid>
+  );
   return (
-    //<Slide direction={ltr ? "left" : "right"} mountOnEnter unmountOnExit>
-    <Paper>
-      <Grid container>
-        <Grid item xs={4}>
-          <NoSsr>
-            <Image src={imgSrc} aspectRatio={1} />
-          </NoSsr>
+    <Slide
+      direction={ltr ? "left" : "right"}
+      in={true}
+      mountOnEnter
+      unmountOnExit
+    >
+      <Paper elevation={3} style={{ marginTop: 16 }}>
+        <Grid container>
+          {ltr ? imageGrid : contentGrid}
+          {ltr ? contentGrid : imageGrid}
         </Grid>
-        <Grid item xs={8} style={{ color: colors.primary }}>
-          <Container>
-            <Typography variant="h4">{title}</Typography>
-          </Container>
-          <Container>
-            <Link href={link}>{link}</Link>
-          </Container>
-          <Container>
-            <Typography variant="body1">{description}</Typography>
-          </Container>
-        </Grid>
-      </Grid>
-    </Paper>
-    //</Slide>
+      </Paper>
+    </Slide>
   );
 };
 

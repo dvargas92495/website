@@ -23,7 +23,7 @@ const Index = () => {
   `);
   return (
     <Layout>
-      <SEO title="All posts" />
+      <SEO title="Start Here" />
       <Box style={{ position: "relative" }}>
         <NoSsr>
           <Image
