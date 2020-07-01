@@ -7,6 +7,17 @@ module.exports = {
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://davidvargas.me/`,
+    projects: {
+      current: [
+        {
+          title: "Mark43",
+          link: "https://mark43.com",
+          description:
+            "My last internship while in college and my first full time job while out.",
+          imgSrc: "mark43.jpg",
+        },
+      ],
+    },
   },
   plugins: [
     {
@@ -21,6 +32,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
       },
     },
     {

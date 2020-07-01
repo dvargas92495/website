@@ -49,7 +49,14 @@ const Layout = ({ children }) => {
       <AppBar position="sticky" style={{ backgroundColor: colors.primary }}>
         <Toolbar style={{ justifyContent: "space-between" }}>
           <Typography variant="h6">
-            <Link to="/" style={{ marginLeft: 8, color: colors.secondary }}>
+            <Link
+              to="/"
+              style={{
+                marginLeft: 8,
+                color: colors.secondary,
+                boxShadow: "none",
+              }}
+            >
               {title}
             </Link>
           </Typography>
@@ -66,7 +73,7 @@ const Layout = ({ children }) => {
           </Toolbar>
         </Toolbar>
       </AppBar>
-      <main style={{ flexGrow: 1 }}>
+      <main style={{ flexGrow: 1, backgroundColor: colors.tertiary }}>
         {children}
         <Container maxWidth="xs">
           <script data-uid="cd67433313"></script>
