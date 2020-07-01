@@ -6,9 +6,9 @@ description: "My first official blog post! And why I started a site."
 
 I hated writing.
 
-I also used to hate reading, debate, and just about anything I spent time on during school that didn't have numbers. It didn't make sense to me. How do I know what I'm doing was right? Why are the metrics by which my teacher is judging me seem so arbitrary? How could I write a sentence, a long sentence, a sentence so long and tedious that by now I have probably lost the reader and all sense of rational discussion but at the very least I'm going to hit this quantifiable word count metric.
+I also used to hate reading, debate, and just about anything I spent time on during school that didn't have numbers. It didn't make sense to me. How do I know what I'm doing was right? Why are the metrics by which my teacher is judging me by seem so arbitrary? How could I write a sentence, a long sentence, a sentence so long and tedious that by now I have probably lost the reader and all sense of rational discussion but at the very least I'm going to hit this quantifiable word count metric?
 
-This is how my mind used to, and to some degree still does, work. It was only until after a couple years after leaving school that the true value in writing start showing itself to me. It is _because of this ambiguity_ that writing is to valuable. How do I get the Picasso-like painting of an idea that's in my head into the head of my reader? Especially if the reader is myself, a year from now? Not only am I starting to appreciate writing; I want to actively pursue it.
+This is how my mind used to, and to some degree still does, work. It was only until after a couple years after leaving school that the true value in writing started revealing itself to me. It is _because of this ambiguity_ that writing is so valuable. How do I get the Picasso-like painting of an idea that's in MY head into the head of someone else? Especially if that someone else is myself, a year from now? Not only am I starting to appreciate writing; I want to actively pursue it.
 
 Tomorrow I start the [Write of Passage](https://writeofpassage.school/) course given by David Perell. I am unbelievably excited. There are many themes that I'm trying to pursue right now that I believe the course will help jump start me into.
 
