@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import AppBar from "@material-ui/core/AppBar";
+import Email from "@material-ui/icons/Email";
+import GitHub from "@material-ui/icons/GitHub";
+import Instagram from "@material-ui/icons/Instagram";
+import LinkedIn from "@material-ui/icons/LinkedIn";
 import Twitter from "@material-ui/icons/Twitter";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -92,12 +96,58 @@ const Layout = ({ children }) => {
             Gatsby
           </a>
         </span>
-        <a
-          href="https://twitter.com/dvargas92495"
-          style={{ color: colors.secondary }}
-        >
-          <Twitter />
-        </a>
+        <span>
+          <a
+            href="https://twitter.com/dvargas92495"
+            style={{
+              color: colors.secondary,
+              margin: "0 8px",
+              boxShadow: "none",
+            }}
+          >
+            <Twitter />
+          </a>
+          <a
+            href="https://github.com/dvargas92495"
+            style={{
+              color: colors.secondary,
+              margin: "0 8px",
+              boxShadow: "none",
+            }}
+          >
+            <GitHub />
+          </a>
+          <a
+            href="mailto:dvargas92495@gmail.com"
+            style={{
+              color: colors.secondary,
+              margin: "0 8px",
+              boxShadow: "none",
+            }}
+          >
+            <Email />
+          </a>
+          <a
+            href="https://instagram.com/dvargas92495"
+            style={{
+              color: colors.secondary,
+              margin: "0 8px",
+              boxShadow: "none",
+            }}
+          >
+            <Instagram />
+          </a>
+          <a
+            href="www.linkedin.com/in/dvargas92495"
+            style={{
+              color: colors.secondary,
+              margin: "0 8px",
+              boxShadow: "none",
+            }}
+          >
+            <LinkedIn />
+          </a>
+        </span>
       </footer>
     </div>
   );
