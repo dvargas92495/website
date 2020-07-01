@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { colors } from "../utils/typography";
 import Box from "@material-ui/core/Box";
 import NoSsr from "@material-ui/core/NoSsr";
+import Link from "@material-ui/core/Link";
 
 const WIDTH = 1527;
 const HEIGHT = 562;
@@ -44,10 +45,11 @@ const Index = () => {
         style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
       >
         <Typography style={{ color: colors.primary }}>
-          Through this site, I am looking to become more of a citizen of the
-          world. I love being an absolute moron, learning from others, and now I
-          want to share more of what I learn. This site will act as a portal
-          into my thoughts, ongoings, projects, and lessons I've learned.
+          This site is a portal into my thoughts, ongoings, projects, and
+          lessons I've learned. I consider myself an engineer, an optimist, and
+          a moron. It's what allows me to always be looking to learn, know that
+          there are solutions to the problems we face, and think through how to
+          finally go about solving them.
         </Typography>
       </Container>
       <Container
@@ -56,9 +58,14 @@ const Index = () => {
       >
         <Typography style={{ color: colors.primary }}>
           I will soon become a Digital Nomad. That is, I will no longer have a
-          permanent address. Instead, every month I will choose a new city to
-          live. If I stop by a city near you, feel free to reach out! I am eager
-          to meet new people and make new friends :).
+          permanent address. Instead, every month I, along with a few friends,
+          will choose a new city to live. If I stop by a city near you, feel
+          free to reach out! I am eager to meet new people and make new friends
+          :). You could also see what we're up to at{" "}
+          <Link href="https://chamilea.com" style={{ color: colors.secondary }}>
+            https://chamilea.com
+          </Link>
+          .
         </Typography>
       </Container>
       <Container
@@ -66,8 +73,10 @@ const Index = () => {
         style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
       >
         <Typography style={{ color: colors.primary }}>
-          I am still actively developing this site. In the meantime, feel free
-          to follow me on Twitter below.
+          Started in June 2020, I am actively adding to this site and it will
+          continue to evolve over time. Not sure what the newsletter will be
+          yet, but if you are interested in being updated anyway, add your email
+          below!
         </Typography>
       </Container>
     </Layout>

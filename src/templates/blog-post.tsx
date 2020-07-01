@@ -1,14 +1,15 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm, scale } from "../utils/typography";
+import Container from "@material-ui/core/Container";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
-  const post = data.markdownRemark
-  const { previous, next } = pageContext
+  const post = data.markdownRemark;
+  const { previous, next } = pageContext;
 
   return (
     <Layout>
@@ -16,36 +17,35 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header>
-          <h1
+      <Container maxWidth={"md"}>
+        <article>
+          <header>
+            <h1
+              style={{
+                marginTop: rhythm(1),
+                marginBottom: 0,
+              }}
+            >
+              {post.frontmatter.title}
+            </h1>
+            <p
+              style={{
+                ...scale(-1 / 5),
+                display: `block`,
+                marginBottom: rhythm(1),
+              }}
+            >
+              {post.frontmatter.date}
+            </p>
+          </header>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr
             style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
               marginBottom: rhythm(1),
             }}
-          >
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
+          />
+        </article>
+      </Container>
 
       <nav>
         <ul
@@ -74,10 +74,10 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -92,4 +92,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
