@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import NoSsr from "@material-ui/core/NoSsr";
 import { colors } from "../utils/typography";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 
 const Project = ({
   title,
@@ -37,7 +37,9 @@ const Project = ({
         <Typography variant="h4">{title}</Typography>
       </Container>
       <Container style={{ textAlign: "center" }}>
-        <Link href={link}>{link}</Link>
+        <Link href={link} target="_blank" rel="noopener">
+          {link}
+        </Link>
       </Container>
       <Container style={{ marginTop: 8 }}>
         <Typography variant="body1">{description}</Typography>
@@ -73,7 +75,7 @@ const Projects = ({ data }) => (
         consider places of employment both past and present as projects as well.
       </p>
     </Container>
-    <Container maxWidth={"md"}>
+    <Container maxWidth={"md"} style={{ marginBottom: 16 }}>
       <Typography variant="h3" style={{ margin: "16px 0" }}>
         Current Projects
       </Typography>

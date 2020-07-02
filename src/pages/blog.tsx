@@ -10,16 +10,10 @@ import Typography from "@material-ui/core/Typography";
 
 const Blogs = ({ data }: Partial<PageProps<Data>>) => (
   <Layout>
-    <div
-      style={{
-        flexGrow: 1,
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <Typography variant="h3">My Personal Blog</Typography>
+    <Container maxWidth={"md"}>
+      <Typography variant="h2" style={{ margin: "16px 0" }}>
+        My Personal Blog
+      </Typography>
       <Typography variant="body1">
         On this page, you'll find various articles that reflect my random
         thoughts and observations of the world.
@@ -30,7 +24,7 @@ const Blogs = ({ data }: Partial<PageProps<Data>>) => (
           return (
             <Grid item xs={4} key={node.fields.slug}>
               <Card>
-                <Container style={{ color: colors.quintary }}>
+                <Container style={{ color: colors.primary }}>
                   <header>
                     <Typography
                       variant="h5"
@@ -39,7 +33,7 @@ const Blogs = ({ data }: Partial<PageProps<Data>>) => (
                       }}
                     >
                       <Link
-                        style={{ boxShadow: `none`, color: colors.secondary }}
+                        style={{ boxShadow: `none`, color: colors.primary }}
                         to={node.fields.slug}
                       >
                         {title}
@@ -60,7 +54,7 @@ const Blogs = ({ data }: Partial<PageProps<Data>>) => (
           );
         })}
       </Grid>
-    </div>
+    </Container>
   </Layout>
 );
 

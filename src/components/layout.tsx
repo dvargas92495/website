@@ -11,6 +11,21 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { colors } from "../utils/typography";
 import Container from "@material-ui/core/Container";
 
+const FooterIcon = ({ children, href }) => (
+  <a
+    href={href}
+    style={{
+      color: colors.secondary,
+      margin: "0 8px",
+      boxShadow: "none",
+    }}
+    target="_blank"
+    rel="noopener"
+  >
+    {children}
+  </a>
+);
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
@@ -70,6 +85,12 @@ const Layout = ({ children }) => {
             <Link style={{ marginLeft: 8, color: colors.secondary }} to="/blog">
               Blog
             </Link>
+            <Link
+              style={{ marginLeft: 8, color: colors.secondary }}
+              to="/interests"
+            >
+              Interests
+            </Link>
           </Toolbar>
         </Toolbar>
       </AppBar>
@@ -104,56 +125,21 @@ const Layout = ({ children }) => {
           </a>
         </span>
         <span>
-          <a
-            href="https://twitter.com/dvargas92495"
-            style={{
-              color: colors.secondary,
-              margin: "0 8px",
-              boxShadow: "none",
-            }}
-          >
+          <FooterIcon href="https://twitter.com/dvargas92495">
             <Twitter />
-          </a>
-          <a
-            href="https://github.com/dvargas92495"
-            style={{
-              color: colors.secondary,
-              margin: "0 8px",
-              boxShadow: "none",
-            }}
-          >
+          </FooterIcon>
+          <FooterIcon href="https://github.com/dvargas92495">
             <GitHub />
-          </a>
-          <a
-            href="mailto:dvargas92495@gmail.com"
-            style={{
-              color: colors.secondary,
-              margin: "0 8px",
-              boxShadow: "none",
-            }}
-          >
+          </FooterIcon>
+          <FooterIcon href="mailto:dvargas92495@gmail.com">
             <Email />
-          </a>
-          <a
-            href="https://instagram.com/dvargas92495"
-            style={{
-              color: colors.secondary,
-              margin: "0 8px",
-              boxShadow: "none",
-            }}
-          >
+          </FooterIcon>
+          <FooterIcon href="https://instagram.com/dvargas92495">
             <Instagram />
-          </a>
-          <a
-            href="www.linkedin.com/in/dvargas92495"
-            style={{
-              color: colors.secondary,
-              margin: "0 8px",
-              boxShadow: "none",
-            }}
-          >
+          </FooterIcon>
+          <FooterIcon href="https://linkedin.com/in/dvargas92495">
             <LinkedIn />
-          </a>
+          </FooterIcon>
         </span>
       </footer>
     </div>
