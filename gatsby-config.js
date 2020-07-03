@@ -66,6 +66,19 @@ module.exports = {
             "Always opt to be as honest and transparent as humanly possible. What seems painful in the short term, will pale in comparison to the pain we experience long term.",
         },
       ],
+      books: [{
+        title: "Drive",
+        author: "Daniel Pink",
+        description: "Pink explores human motivation, and argues we need to evolve past the current carrot-stick model of motivation into intrinsic motivators. Book was an astounding mindshift for me in how I thought about human behavior."
+      },{
+        title: "The Infinite Game",
+        author: "Simon Sinek",
+        description: "Our institutions today operate more often than not with a finite mindset: increasing the bottom line or winning the next election. Sinek argues, quite compellingly, that the best organizations are ones who operate with an infinite mindset."
+      },{
+        title: "Enlightenment Now",
+        author: "Steven Pinker",
+        description: "Before this book, I had a blind optimism about the world. Pinker shows with data spanning hundreds of years that this optimism isn't blind; humanity has been and will continue to progress and prosper."
+      }]
     },
   },
   plugins: [

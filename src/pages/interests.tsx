@@ -13,6 +13,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import AppBar from "@material-ui/core/AppBar";
 import CoreBeliefs from "../components/CoreBeliefs";
+import Books from "../components/Books";
 
 const Interest = ({
   title,
@@ -68,7 +69,7 @@ const Interest = ({
 
 const tabContent = [
   <CoreBeliefs />,
-  "Coming soon...",
+  <Books />,
   "Coming soon...",
   "Coming soon...",
 ];

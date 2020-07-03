@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/layout";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Slide from "@material-ui/core/Slide";
@@ -66,7 +65,9 @@ const CoreBeliefs = () => {
           I'd like to consider myself a rational person that's open minded to
           new perspectives. Despite this, I do think it's valuable to have a
           couple of fundamental principles that anchor you. This allows you to
-          build out the rest of your value set. These are mine.
+          build out the rest of your value set. These are mine. I consider them
+          beliefs, because they are axioms that cannot be proven or disproven.
+          They are my religion.
         </p>
       </Container>
       <Grid container style={{ marginBottom: 16 }} spacing={2}>
