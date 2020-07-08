@@ -8,3 +8,7 @@ body,
 #gatsby-focus-wrapper {
   height: 100%;
 }
+
+ul {
+  margin-left: 1.75em;
+}
