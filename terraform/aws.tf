@@ -68,7 +68,7 @@ resource "aws_route53_record" "A" {
   zone_id = aws_route53_zone.zone.zone_id
   name    = local.domain
   type    = "A"
-  records = ["compassionate-visvesvaraya-9e2bd6.netlify.app."]
+  records = ["compassionate-visvesvaraya-9e2bd6.netlify.app"]
   ttl     = 300
 }
 
@@ -76,7 +76,7 @@ resource "aws_route53_record" "AAAA" {
   zone_id = aws_route53_zone.zone.zone_id
   name    = local.domain
   type    = "AAAA"
-  records = ["compassionate-visvesvaraya-9e2bd6.netlify.app."]
+  records = ["compassionate-visvesvaraya-9e2bd6.netlify.app"]
   ttl     = 300
 }
 
