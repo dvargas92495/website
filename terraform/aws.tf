@@ -68,22 +68,14 @@ resource "aws_route53_record" "A" {
   zone_id = aws_route53_zone.zone.zone_id
   name    = local.domain
   type    = "A"
-
-  alias {
-    name                   = "compassionate-visvesvaraya-9e2bd6.netlify.app."
-    evaluate_target_health = false
-  }
+  records = ["compassionate-visvesvaraya-9e2bd6.netlify.app."]
 }
 
 resource "aws_route53_record" "AAAA" {
   zone_id = aws_route53_zone.zone.zone_id
   name    = local.domain
   type    = "AAAA"
-
-  alias {
-    name                   = "compassionate-visvesvaraya-9e2bd6.netlify.app."
-    evaluate_target_health = false
-  }
+  records = ["compassionate-visvesvaraya-9e2bd6.netlify.app."]
 }
 
 resource "aws_iam_user" "davidvargas" {
