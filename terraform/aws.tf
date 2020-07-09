@@ -69,6 +69,7 @@ resource "aws_route53_record" "A" {
   name    = local.domain
   type    = "A"
   records = ["compassionate-visvesvaraya-9e2bd6.netlify.app."]
+  ttl     = 300
 }
 
 resource "aws_route53_record" "AAAA" {
@@ -76,6 +77,7 @@ resource "aws_route53_record" "AAAA" {
   name    = local.domain
   type    = "AAAA"
   records = ["compassionate-visvesvaraya-9e2bd6.netlify.app."]
+  ttl     = 300
 }
 
 resource "aws_iam_user" "davidvargas" {
