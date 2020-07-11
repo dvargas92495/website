@@ -96,7 +96,7 @@ const Layout = ({ children }) => {
       </AppBar>
       <main style={{ flexGrow: 1, backgroundColor: colors.tertiary }}>
         {children}
-        <Container maxWidth="xs">
+        <Container maxWidth="xs" style={{ marginTop: 32 }}>
           <script data-uid="cd67433313"></script>
         </Container>
       </main>

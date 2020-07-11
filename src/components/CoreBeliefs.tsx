@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Slide from "@material-ui/core/Slide";
+import Fade from "@material-ui/core/Fade";
 import Grid from "@material-ui/core/Grid";
 import { colors } from "../utils/typography";
 import { graphql, useStaticQuery } from "gatsby";
@@ -19,8 +19,7 @@ const CoreBelief = ({
   <>
     <Grid item xs={2} />
     <Grid item xs={8} style={{ color: colors.primary }}>
-      <Slide
-        direction={"up"}
+      <Fade
         in={true}
         mountOnEnter
         unmountOnExit
@@ -34,7 +33,7 @@ const CoreBelief = ({
             <Typography variant="body1">{description}</Typography>
           </Container>
         </Card>
-      </Slide>
+      </Fade>
     </Grid>
     <Grid item xs={2} />
   </>

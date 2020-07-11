@@ -65,6 +65,14 @@ module.exports = {
           description:
             "Always opt to be as honest and transparent as humanly possible. What seems painful in the short term, will pale in comparison to the pain we experience long term.",
         },
+        {
+          title: "Good Problem Solvers are Optimists",
+          description: "No matter how dire a problem seems, being pessimistic neither inspires action nor brings us closer to a solution. To be an optimist is to say how do we solve this problem, not can we.",
+        },
+        {
+          title: "We're All Morons",
+          description: "The answer to imposter syndrome is realizing we're all underqualified. The key is to always be willing to learn and iterate towards being less imperfect."
+        }
       ],
       books: [{
         title: "Drive",

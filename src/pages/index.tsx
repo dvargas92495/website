@@ -32,113 +32,83 @@ const Index = () => {
           />
         </NoSsr>
       </Box>
-      <Container
-        maxWidth="md"
-        style={{ textAlign: "center", paddingTop: 32, paddingBottom: 32 }}
-      >
-        <Typography variant="h4" style={{ color: colors.primary }}>
-          Nomad, Engineer, Optimist, Moron
+      <Container maxWidth="md" style={{ textAlign: "center" }}>
+        <Typography
+          variant="h4"
+          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+        >
+          Nomad, Engineer, Writer
         </Typography>
-      </Container>
-      <Container
-        maxWidth="sm"
-        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
-      >
-        <Typography style={{ color: colors.primary }} variant="subtitle1">
-          I travel from city to city, solve problems with software, inspire
-          those around me to make the world a better place, and learn how I
-          could better do all the above.
+        <Typography
+          style={{ color: colors.primary, paddingTop: 24, paddingBottom: 24 }}
+          variant="subtitle1"
+        >
+          Aspiring to become a public citizen of the world.
         </Typography>
-      </Container>
-      <Container
-        maxWidth="md"
-        style={{ textAlign: "center", paddingTop: 32, paddingBottom: 32 }}
-      >
-        <Typography variant="h5" style={{ color: colors.primary }}>
+        <Typography
+          variant="h5"
+          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+        >
           Traveling to Different Cities as a Digital Nomad
         </Typography>
-      </Container>
-      <Container
-        maxWidth="sm"
-        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
-      >
         <Typography style={{ color: colors.primary }}>
-          I do not have a permanent address. Instead, every month I, along with
-          a few friends, choose a new city to live for the month. The world is
-          moving fully online. I no longer need to live in the city I work
-          because what I work on <i>is not defined by a city.</i> This allows me
-          to become a <i>citizen of the world.</i>{" "}
+          I do not have a permanent address
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          I choose a new city to live every month with a group of friends
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
           <Link href="https://chamilea.com" style={{ color: colors.secondary }}>
-            You can follow our journey here.
-          </Link>{" "}
+            You can follow our journey here
+          </Link>
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
           If I come to a city near you, feel free to reach out!
         </Typography>
-      </Container>
-      <Container
-        maxWidth="md"
-        style={{ textAlign: "center", paddingTop: 32, paddingBottom: 32 }}
-      >
-        <Typography variant="h5" style={{ color: colors.primary }}>
-          Engineer specializing in serverless React Apps
+        <Typography variant="h5" style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}>
+          Engineer Specializing in Technologically Poor Industries
         </Typography>
-      </Container>
-      <Container
-        maxWidth="sm"
-        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
-      >
         <Typography style={{ color: colors.primary }}>
-          Check out the Projects tab above or on my GitHub link below to see
-          what I'm currently working on. The technology landscape is changing
-          rapidly, and transitioning to a world that allows app developers to
-          focus more and more on their core value proposition. Serverless
-          applications, especially when paired with React, are allowing
-          companies and individuals to stand up a site in seconds with little to
-          no cost. As these common backend problems continue to be solved, I'd
-          like to focus my efforts on helping industries that have fallen behind
-          technologically to finally catch up to the 21st century.
+          React on the front end
         </Typography>
-      </Container>
-      <Container
-        maxWidth="md"
-        style={{ textAlign: "center", paddingTop: 32, paddingBottom: 32 }}
-      >
-        <Typography variant="h5" style={{ color: colors.primary }}>
-          Encourage others to be optimistic that all problems are solvable
-        </Typography>
-      </Container>
-      <Container
-        maxWidth="sm"
-        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
-      >
         <Typography style={{ color: colors.primary }}>
-          One could focus on being disheartened about all the problems we
-          somehow still have to deal with. Poverty. Climate Change. Existential
-          Risk of Artificial Intelligence. Or we could be amazed at all the
-          progress we've already made as a species to inspire us to solve those
-          that still lie ahead. I aim to achieve this through my writing and my
-          daily interactions with others. Follow me on Twitter below!
+          Serverless on the back end
         </Typography>
-      </Container>
-      <Container
-        maxWidth="md"
-        style={{ textAlign: "center", paddingTop: 32, paddingBottom: 32 }}
-      >
-        <Typography variant="h5" style={{ color: colors.primary }}>
-          Accepting my lack of knowledge to always learn more
-        </Typography>
-      </Container>
-      <Container
-        maxWidth="sm"
-        style={{ textAlign: "justify", paddingTop: 24, paddingBottom: 24 }}
-      >
         <Typography style={{ color: colors.primary }}>
-          It took until I graduated college to fully appreciate the value of
-          learning. The value of always growing and looking for ways to self
-          improve. I not only acknowledge that I'm a flawed human being, I
-          RELISH in the opportunities this provides me to learn and improve. In
-          doing so, my understanding of the world and myself also improves and
-          leads me to living a happier life. Sign up for my newsletter below for
-          updates on not only this site, but to also share in what I'm learning.
+          Github actions to automate all ends
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          Hoping to bring inefficiency to an end
+        </Typography>
+        <Typography variant="h5" style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}>
+          Writing to Learn and Share my Thoughts with the World
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          I publish a blog post a couple times a week on this site
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          Sign up for my newsletter for updates on my site, what I learn, and what I find in the world
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          Writing spans topics that include engineering, the economy, self improvement, and my travels
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          I'm also active on Twitter and you can follow me below
+        </Typography>
+        <Typography variant="h5" style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}>
+          This Intersection Makes Me <b>A Public Citizen of the World</b>
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          My address is planet earth
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          My software is open for anyone to use
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          My writing is available for anyone to see
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          All in an effort to make my home a better place
         </Typography>
       </Container>
     </Layout>
