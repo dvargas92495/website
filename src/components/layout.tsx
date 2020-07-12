@@ -6,10 +6,12 @@ import GitHub from "@material-ui/icons/GitHub";
 import Instagram from "@material-ui/icons/Instagram";
 import LinkedIn from "@material-ui/icons/LinkedIn";
 import Twitter from "@material-ui/icons/Twitter";
+import Reddit from "@material-ui/icons/Reddit";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import { colors } from "../utils/typography";
 import Container from "@material-ui/core/Container";
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 const FooterIcon = ({ children, href }) => (
   <a
@@ -33,6 +35,9 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
         }
+      }
+      logo: file(absolutePath: { regex: "/StravaLogo.png/" }) {
+        publicURL
       }
     }
   `);
@@ -94,9 +99,30 @@ const Layout = ({ children }) => {
           </Toolbar>
         </Toolbar>
       </AppBar>
-      <main style={{ flexGrow: 1, backgroundColor: colors.tertiary }}>
+      <main
+        style={{
+          flexGrow: 1,
+          backgroundColor: colors.tertiary,
+          marginBottom: 32,
+        }}
+      >
         {children}
-        <Container maxWidth="xs" style={{ marginTop: 32 }}>
+        <Container
+          maxWidth="sm"
+          style={{
+            marginTop: 32,
+            textAlign: "center",
+            border: `dashed 1px ${colors.primary}`,
+            borderRadius: 32,
+          }}
+        >
+          <Typography variant="h6">Strava Listens</Typography>
+          <Typography variant="subtitle2" style={{ marginBottom: 16 }}>
+            Every morning I go on a run, I listen to a podcast and tag my run on
+            Strava with my main takeaway. Subscribe to my newsletter below to
+            see me expand on these takeaways, as well as get general updates to
+            the site!
+          </Typography>
           <script data-uid="cd67433313"></script>
         </Container>
       </main>
@@ -130,6 +156,14 @@ const Layout = ({ children }) => {
           </FooterIcon>
           <FooterIcon href="https://github.com/dvargas92495">
             <GitHub />
+          </FooterIcon>
+          <FooterIcon href="https://www.strava.com/athletes/dvargas92495">
+            <SvgIcon>
+              <image href={data.logo.publicURL} style={{ height: "100%" }} />
+            </SvgIcon>
+          </FooterIcon>
+          <FooterIcon href="https://www.reddit.com/user/dvargas92495">
+            <Reddit />
           </FooterIcon>
           <FooterIcon href="mailto:dvargas92495@gmail.com">
             <Email />

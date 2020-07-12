@@ -87,7 +87,7 @@ const Index = () => {
           I publish a blog post a couple times a week on this site
         </Typography>
         <Typography style={{ color: colors.primary }}>
-          Sign up for my newsletter for updates on my site, what I learn, and what I find in the world
+          Sign up for my newsletter for updates on my site, what I learn, and what I find interesting
         </Typography>
         <Typography style={{ color: colors.primary }}>
           Writing spans topics that include engineering, the economy, self improvement, and my travels
