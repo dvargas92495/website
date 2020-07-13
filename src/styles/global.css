@@ -12,3 +12,7 @@ body,
 ul {
   margin-left: 1.75em;
 }
+
+figcaption {
+  text-align: center;
+}

@@ -46,7 +46,7 @@ const Blogs = ({ data }: Partial<PageProps<Data>>) => (
                       >
                         <Link
                           style={{ boxShadow: `none`, color: colors.primary }}
-                          to={`/blog${node.fields.slug}`}
+                          to={`/blog/${node.fields.slug.substring(10)}`}
                         >
                           {title}
                         </Link>

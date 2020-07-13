@@ -67,26 +67,35 @@ module.exports = {
         },
         {
           title: "Good Problem Solvers are Optimists",
-          description: "No matter how dire a problem seems, being pessimistic neither inspires action nor brings us closer to a solution. To be an optimist is to say how do we solve this problem, not can we.",
+          description:
+            "No matter how dire a problem seems, being pessimistic neither inspires action nor brings us closer to a solution. To be an optimist is to say how do we solve this problem, not can we.",
         },
         {
           title: "We're All Morons",
-          description: "The answer to imposter syndrome is realizing we're all underqualified. The key is to always be willing to learn and iterate towards being less imperfect."
-        }
+          description:
+            "The answer to imposter syndrome is realizing we're all underqualified. The key is to always be willing to learn and iterate towards being less imperfect.",
+        },
       ],
-      books: [{
-        title: "Drive",
-        author: "Daniel Pink",
-        description: "Pink explores human motivation, and argues we need to evolve past the current carrot-stick model of motivation into intrinsic motivators. Book was an astounding mindshift for me in how I thought about human behavior."
-      },{
-        title: "The Infinite Game",
-        author: "Simon Sinek",
-        description: "Our institutions today operate more often than not with a finite mindset: increasing the bottom line or winning the next election. Sinek argues, quite compellingly, that the best organizations are ones who operate with an infinite mindset."
-      },{
-        title: "Enlightenment Now",
-        author: "Steven Pinker",
-        description: "Before this book, I had a blind optimism about the world. Pinker shows with data spanning hundreds of years that this optimism isn't blind; humanity has been and will continue to progress and prosper."
-      }]
+      books: [
+        {
+          title: "Drive",
+          author: "Daniel Pink",
+          description:
+            "Pink explores human motivation, and argues we need to evolve past the current carrot-stick model of motivation into intrinsic motivators. Book was an astounding mindshift for me in how I thought about human behavior.",
+        },
+        {
+          title: "The Infinite Game",
+          author: "Simon Sinek",
+          description:
+            "Our institutions today operate more often than not with a finite mindset: increasing the bottom line or winning the next election. Sinek argues, quite compellingly, that the best organizations are ones who operate with an infinite mindset.",
+        },
+        {
+          title: "Enlightenment Now",
+          author: "Steven Pinker",
+          description:
+            "Before this book, I had a blind optimism about the world. Pinker shows with data spanning hundreds of years that this optimism isn't blind; humanity has been and will continue to progress and prosper.",
+        },
+      ],
     },
   },
   plugins: [
@@ -119,6 +128,8 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              showCaptions: true,
+              markdownCaptions: true,
             },
           },
           {
