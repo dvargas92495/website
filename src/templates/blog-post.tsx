@@ -38,6 +38,15 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          {post.frontmatter.acknowledgement && (
+            <p
+              style={{
+                marginBottom: 16,
+              }}
+            >
+              <i> {post.frontmatter.acknowledgement}</i>
+            </p>
+          )}
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -91,6 +100,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        acknowledgement
       }
     }
   }

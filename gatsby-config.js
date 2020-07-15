@@ -41,6 +41,11 @@ module.exports = {
     interests: {
       coreBeliefs: [
         {
+          title: "Bias Towards Transparency",
+          description:
+            "Always opt to be as honest and transparent as humanly possible. I'm always asking, how could I be more public about what I'm doing?",
+        },
+        {
           title: "Enlightened Self-Interest",
           description:
             "This principle states that acting in the best interest of others is actually in our own best self interests. So serving others is basically the most selfish thing we could do!",
@@ -48,7 +53,7 @@ module.exports = {
         {
           title: "Don't Attribute to Malice",
           description:
-            "Almost everything we attribute to malice more often than not could be attributed to ignorance. Understand why we act a certain way and discover how our premises differ.",
+            "Almost everything we attribute to malice could be attributed to ignorance. Understand why we act a certain way and discover how our premises differ.",
         },
         {
           title: "Happiness Lies in Growth",
@@ -59,11 +64,6 @@ module.exports = {
           title: "Any System Can Be Gamed",
           description:
             "The world runs on systems, it's how we've achieved great progress in society. The most robust systems are ones that thrive despite being gamed, not by avoiding it.",
-        },
-        {
-          title: "Honesty and Transparency",
-          description:
-            "Always opt to be as honest and transparent as humanly possible. What seems painful in the short term, will pale in comparison to the pain we experience long term.",
         },
         {
           title: "Good Problem Solvers are Optimists",
