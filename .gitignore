@@ -70,3 +70,4 @@ yarn-error.log
 
 terraform.exe
 .terraform
+.vscode
