@@ -27,8 +27,8 @@ module.exports = {
           title: "Longwave",
           link: "https://longwave.app",
           description: `
-              A journal sharing app, spear headed by my good friend Kenny Friedman (https://kennethfriedman.org/).
-              What started as a school project that I worked on and never touched after, Kenny took over and is 
+              A journal sharing app, spear headed by my good friend Tuesday Labs (a pseudonym).
+              What started as a school project that I worked on and never touched after, Tuesday took over and is 
               making tremendous progress. It has inspired me to help out again, but under his vision. The premise 
               is that you form a group with friends and up to once a day, journal about whatever's on your mind. The 
               next morning, you will get an email with everyone who journaled the previous day. We view it as a new
