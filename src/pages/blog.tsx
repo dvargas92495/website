@@ -16,8 +16,7 @@ const Blogs = ({ data }: Partial<PageProps<Data>>) => (
         My Personal Blog
       </Typography>
       <Typography variant="body1" style={{ marginBottom: 16 }}>
-        On this page, you'll find various articles that reflect my random
-        thoughts and observations of the world.
+        Articles reflecting the many lessons I've learned so far.
       </Typography>
       <Grid container spacing={2}>
         {data.allMarkdownRemark.edges.map(({ node }, i) => {
