@@ -4,7 +4,7 @@ date: "2020-08-05T08:25:00.00Z"
 description: "The spanish parable that shifted the way I experience events that happen to me."
 ---
 
-__The title is spanish for "Everything Happens For a Reason"__
+_The title is spanish for "Everything Happens For a Reason"_
 
 This phrase is usually told through a religious context. It asks to have faith in the events that happen to us, that they happen due to some grander purpose. During a formative moment of my childhood, I heard a story that shifted my perspective on this. The following parable was originally told to me in Spanish, and is being retold through translation to the best of my recollection.
 
