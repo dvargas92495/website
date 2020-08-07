@@ -15,6 +15,12 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        meta={[
+          {
+            name: "monetization",
+            content: "$ilp.uphold.com/kJfRG8LxiaAy",
+          },
+        ]}
       />
       <Container maxWidth={"md"}>
         <article>
