@@ -96,6 +96,220 @@ module.exports = {
             "Before this book, I had a blind optimism about the world. Pinker shows with data spanning hundreds of years that this optimism isn't blind; humanity has been and will continue to progress and prosper.",
         },
       ],
+      podcasts: [
+        {
+          title: "Impact Theory",
+          description:
+            "Tom Bilyeu hosts a business and mindset-focused interview show that will teach anyone aspiring to greatness the secretes to success.",
+          url: "https://impacttheory.com/",
+          imgSrc: "impacttheory.jpg",
+        },
+        {
+          title: "Artificial Intelligence",
+          description:
+            "Lex Fridman hosts conversations about the nature of Intelligence, science, and technology from the perspective of robotics, AI, and more.",
+          url: "https://lexfridman.com/ai/",
+          imgSrc: "artificialintelligence.png",
+        },
+        {
+          title: "Daily Tech News Show",
+          description:
+            "Tom Merritt hosts a daily tech show reviewing the top headlines of the day and deep diving on one with the daily guest.",
+          url: "https://dailytechnewsshow.com/",
+          imgSrc: "dtns.png",
+        },
+        {
+          title: "Work Life",
+          description:
+            "Adam Grant takes you inside the minds of some of the world's most unusual professionals to discover the keys to a better work life.",
+          url: "https://www.ted.com/podcasts/worklife/",
+          imgSrc: "worklife.png",
+        },
+        {
+          title: "Business Casual",
+          description:
+            "Kinsey Grant sits down with the biggest names in business and asks them the questions you'd want to ask yourself.",
+          url: "https://www.businesscasual.fm/",
+          imgSrc: "businesscasual.jpg",
+        },
+        {
+          title: "Freakonomics",
+          description:
+            "Discover the hidden side of everything with Stephen J. Dubner.",
+          url: "https://freakonomics.com/",
+          imgSrc: "freakonomics.jpg",
+        },
+        {
+          title: "Bigger Pockets Money",
+          description:
+            "Mindey Jensen and Scott Trench interview unique and powerful thought leaders about how to earn more, keep more, spend smarter, and grow wealth.",
+          url: "https://www.biggerpockets.com/moneyshow/",
+          imgSrc: "bpmoney.jpg",
+        },
+        {
+          title: "Bigger Pockets Business",
+          description:
+            "J and Carol Scott meet new guests to learn actionable tips for hiring, firing, marketing, raising capital, and more.",
+          url: "https://www.biggerpockets.com/biggerpockets-business-podcast",
+          imgSrc: "bpbusiness.jfif",
+        },
+        {
+          title: "Bigger Pockets Real Estate",
+          description:
+            "Co-hosts Brandon Turner and David Greene provide actionable advice from investors and other real estate professionals every week.",
+          url: "https://www.biggerpockets.com/podcast",
+          imgSrc: "bprealestate.jpeg",
+        },
+        {
+          title: "Ken Coleman Show",
+          description:
+            "Ken Coleman delivers practical advice to help you discover the role you were born to play and map out a plan to get there",
+          url: "https://www.kencoleman.com/show",
+          imgSrc: "kencoleman.jpg",
+        },
+        {
+          title: "The Brendon Show",
+          description:
+            "Brendon Burchard shares what he's struggling with, working on and marching towards - and how we can all live an extraordinary life.",
+          url: "https://brendon.com/podcast/",
+          imgSrc: "brendon.jpg",
+        },
+        {
+          title: "The Tony Robbins Podcast",
+          description:
+            "Tony Robbins shares proven strategies and tactics to achieve massice results in your business, relationships, health, and finances.",
+          url: "https://www.tonyrobbins.com/podcasts/",
+          imgSrc: "tonyrobbins.jfif",
+        },
+        {
+          title: "The Genius Life",
+          description:
+            "Max Lugavere speaks to the most insightful minds of our time about what it means to live healthily like a Genius.",
+          url: "https://www.maxlugavere.com/podcast-1",
+          imgSrc: "geniuslife.png",
+        },
+        {
+          title: "The Joe Rogan Experience",
+          description:
+            "Joe Rogan engages a wide variety of guests in free form conversation. ",
+          url: "http://podcasts.joerogan.net/",
+          imgSrc: "joerogan.jfif",
+        },
+        {
+          title: "The Musicboys Podcast",
+          description:
+            "Join the musicboys as they talk about music, things related to music, and things not at all related to music.",
+          url: "https://musicboys.biz/",
+          imgSrc: "musicboys.png",
+        },
+        {
+          title: "Yang Speaks",
+          description:
+            "Andrew Yang speaks to guests that vary across political, technological, and entrepreneurial backgrounds.",
+          url: "https://yangspeaks.com/",
+          imgSrc: "yangspeaks.jpg",
+        },
+        {
+          title: "North Star",
+          description:
+            "David Perell invites guests that are guided by purpose, live with intense joy, learn passionately, and see the world with a unique lens.",
+          url: "https://www.perell.com/podcast",
+          imgSrc: "northstar.png",
+        },
+        {
+          title: "Anatomy of Next",
+          description:
+            "Michael Solana sits down with the founders creating the new wave of innovation.",
+          url:
+            "https://podcasts.apple.com/us/podcast/anatomy-of-next/id1123461944",
+          imgSrc: "anatomyofnext.jfif",
+        },
+        {
+          title: "Naval",
+          description: "Naval Ravikant speaks on wealth and happiness.",
+          url: "https://nav.al/",
+          imgSrc: "naval.jfif",
+        },
+        {
+          title: "The Knowledge Project",
+          description:
+            "Shane Parrish masters the best of what other people have already figured out.",
+          url: "https://fs.blog/knowledge-project/",
+          imgSrc: "knowledgeproject.png",
+        },
+        {
+          title: "Student Mindset",
+          description:
+            "Brandon Zhang aims to tells stories about self-improvement and online content creation with his guests.",
+          url: "https://www.brandonzhang.com/podcast",
+          imgSrc: "studentmindset.jfif",
+        },
+        {
+          title: "Invest Like The Best",
+          description:
+            "Patrick O'Shaugnessy explores the ideas, methods, and stories of people that will help you better invest your time and money.",
+          url: "http://investorfieldguide.com/podcast/",
+          imgSrc: "investlikethebest.jpg",
+        },
+        {
+          title: "Distributed",
+          description:
+            "Matt Mullenweg embarks on a journey to understand the future of work.",
+          url: "https://distributed.blog/podcast/",
+          imgSrc: "distributed.jpg",
+        },
+        {
+          title: "The Nomad Capitalist",
+          description:
+            "Andrew Henderson shares tips and insights gleaned from his world travels on how you can find more freedom, grow and protect your assets.",
+          url: "https://nomadcapitalist.com/podcast/",
+          imgSrc: "nomadcapitalist.jfif",
+        },
+        {
+          title: "The Minimalists",
+          description:
+            "Joshua Fields Millburn & Ryan Nicodemus discuss living a meaningful life with less.",
+          url: "https://www.theminimalists.com/podcast/",
+          imgSrc: "minimalists.jpg",
+        },
+        {
+          title: "Exponent",
+          description:
+            "Ben Thompson and James Allworth seek to explore the massive effect technology is having not just on technology companies, but also on society as a whole.",
+          url: "https://exponent.fm",
+          imgSrc: "exponent.jpg",
+        },
+      ],
+      charities: [
+        {
+          title: "Operation Underground Railroad",
+          description:
+            "They exist to rescue children from sex trafficking, one of the few crime sectors growing today.",
+          url: "https://ourrescue.org/",
+          imgSrc: "our.png",
+        },
+        {
+          title: "Charity: Water",
+          description:
+            "1 in 10 people still lack access to clean drinking water. They’re on a mission to change that.",
+          url: "https://www.charitywater.org/",
+          imgSrc: "charitywater.png",
+        },
+        {
+          title: "New Story",
+          description:
+            "They are working to build a world without global homelessness.",
+          url: "https://newstorycharity.org/",
+          imgSrc: "newstory.png",
+        },
+        {
+          title: "Give Well",
+          description:
+            "This effective altruism group searches for the charities that save or improve lives the most per dollar.",
+          url: "https://givewell.org",
+          imgSrc: "givewell.png",
+        },
+      ],
     },
   },
   plugins: [
@@ -118,6 +332,20 @@ module.exports = {
       options: {
         name: `projects`,
         path: `${__dirname}/content/projects`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `podcasts`,
+        path: `${__dirname}/content/podcasts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `charities`,
+        path: `${__dirname}/content/charities`,
       },
     },
     {

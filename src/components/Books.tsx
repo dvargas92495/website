@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Grow from "@material-ui/core/Grow";
+import Fade from "@material-ui/core/Fade";
 import Grid from "@material-ui/core/Grid";
 import { colors } from "../utils/typography";
 import { graphql, useStaticQuery } from "gatsby";
@@ -19,7 +19,7 @@ const Book = ({
   index: number;
 }) => (
   <Grid item xs={4} style={{ color: colors.primary }}>
-    <Grow
+    <Fade
       in={true}
       mountOnEnter
       unmountOnExit
@@ -39,7 +39,7 @@ const Book = ({
           <Typography variant="body1">{description}</Typography>
         </Container>
       </Card>
-    </Grow>
+    </Fade>
   </Grid>
 );
 
