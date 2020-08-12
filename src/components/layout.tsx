@@ -96,6 +96,12 @@ const Layout = ({ children }) => {
             >
               Interests
             </Link>
+            <Link
+              style={{ marginLeft: 8, color: colors.secondary }}
+              to="/support"
+            >
+              
+            </Link>
           </Toolbar>
         </Toolbar>
       </AppBar>
