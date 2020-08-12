@@ -401,5 +401,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-175228505-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: [],
+        pageTransitionDelay: 0,
+        defer: false,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "davidvargas.me",
+      },
+    },
   ],
 };
