@@ -98,6 +98,12 @@ const Layout = ({ children }) => {
             </Link>
             <Link
               style={{ marginLeft: 8, color: colors.secondary }}
+              to="/goals"
+            >
+              Goals
+            </Link>
+            <Link
+              style={{ marginLeft: 8, color: colors.secondary }}
               to="/support"
             >
               

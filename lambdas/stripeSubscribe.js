@@ -5,7 +5,7 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, {
 });
 
 exports.handler = async event => {
-  const { email } = JSON.parse(event.body);
+  const { email } = event.body;
 
   return stripe.customers
     .list()

@@ -311,6 +311,92 @@ module.exports = {
         },
       ],
     },
+    goals: [
+      {
+        year: "Life",
+        title: "Raise a Happy Family",
+        description:
+          "I was blessed with one of the best childhoods a kid could wish for. I want to pay this forward and give my kids a childhood that's just as good.",
+        status: "0",
+      },
+      {
+        year: "Life",
+        title: "Live Forever",
+        description:
+          "More realistically, live as long as I can. Currently shooting for 150 as a first step.",
+        status: "16",
+      },
+      {
+        year: "Life",
+        title: "Build in Public",
+        description:
+          "For everything I work on, ask myself, how could I do this as publicly as possible?",
+        status: "0",
+      },
+      {
+        year: "Life",
+        title: "Delete My Address",
+        description:
+          "By travelling all over the world, learn about as many different perspectives as possible.",
+        status: "0",
+      },
+      {
+        year: "Life",
+        title: "Angel Invest",
+        description:
+          "Raise enough capital to invest in up and coming companies and individuals",
+        status: "0",
+      },
+      {
+        year: "Life",
+        title: "End Poverty",
+        description:
+          "It will end in our lifetime. Find work in education and housing to accelerate this process.",
+        status: "90",
+      },
+      {
+        year: "2020",
+        title: "Get Users on Moonlight",
+        description:
+          "My first time working with someone on my free time, it was a valuable lesson in not getting ahead of myself and start building too early.",
+        status: "Fail",
+      },
+      {
+        year: "2020",
+        title: "Finish Kindle Wishlist",
+        description:
+          "Adopted a 2 book/month pace that allowed me to clear the Kindle wish list I had at the time.",
+        status: "Success",
+      },
+      {
+        year: "2020",
+        title: "Save Twice as much as 2019",
+        description:
+          "I was pretty reckless with my spending in 2019, and I wanted to be more responsible with my cash.",
+        status: "77",
+      },
+      {
+        year: "2020",
+        title: "Get Laughs at an Open Mic",
+        description:
+          "I signed up for classes right as COVID hit. Now, I think this is an interest that's going on the back burner.",
+        status: "Fail",
+      },
+      {
+        year: "2020",
+        title: "Stop Paying for Cetacea",
+        description:
+          "Not only did it end, but helped my friend launch the successor, Longwave!",
+        status: "Success",
+      },
+      {
+        year: "2020",
+        title: "Reach 10% Body Fat",
+        description:
+          "Started the year at around 22%, and am about halfway to 10%.",
+        status: "50",
+      },
+    ],
   },
   plugins: [
     {

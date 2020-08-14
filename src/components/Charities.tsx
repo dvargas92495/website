@@ -23,39 +23,37 @@ const Charity = ({
   imgSrc: string;
   index: number;
 }) => (
-  <>
-    <Grid item xs={12} style={{ color: colors.primary }}>
-      <Fade
-        in={true}
-        mountOnEnter
-        unmountOnExit
-        timeout={{ enter: (index + 1) * 500, exit: (index + 1) * 500 }}
-      >
-        <Card style={{ backgroundColor: colors.tertiary }}>
-          <Grid container>
-            <Grid item xs={4}>
-              <NoSsr>
-                <Image src={imgSrc} aspectRatio={1.5} />
-              </NoSsr>
-            </Grid>
-            <Grid item xs={8} style={{ color: colors.primary }}>
-              <Container style={{ textAlign: "center" }}>
-                <Typography variant="h4">{title}</Typography>
-              </Container>
-              <Container style={{ textAlign: "center" }}>
-                <Link href={url} target="_blank" rel="noopener">
-                  Home
-                </Link>
-              </Container>
-              <Container style={{ marginTop: 8, textAlign: "center" }}>
-                <Typography variant="body1">{description}</Typography>
-              </Container>
-            </Grid>
+  <Grid item xs={12} style={{ color: colors.primary }}>
+    <Fade
+      in={true}
+      mountOnEnter
+      unmountOnExit
+      timeout={{ enter: (index + 1) * 500, exit: (index + 1) * 500 }}
+    >
+      <Card style={{ backgroundColor: colors.tertiary }}>
+        <Grid container>
+          <Grid item xs={4}>
+            <NoSsr>
+              <Image src={imgSrc} aspectRatio={1.5} />
+            </NoSsr>
           </Grid>
-        </Card>
-      </Fade>
-    </Grid>
-  </>
+          <Grid item xs={8} style={{ color: colors.primary }}>
+            <Container style={{ textAlign: "center" }}>
+              <Typography variant="h4">{title}</Typography>
+            </Container>
+            <Container style={{ textAlign: "center" }}>
+              <Link href={url} target="_blank" rel="noopener">
+                Home
+              </Link>
+            </Container>
+            <Container style={{ marginTop: 8, textAlign: "center" }}>
+              <Typography variant="body1">{description}</Typography>
+            </Container>
+          </Grid>
+        </Grid>
+      </Card>
+    </Fade>
+  </Grid>
 );
 
 const Charities = () => {
