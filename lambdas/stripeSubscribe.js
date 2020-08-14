@@ -5,15 +5,15 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, {
 });
 
 exports.handler = async event => {
-  const { email } = event.body;
-  console.log(JSON.stringify(event));
+  const email = decodeURIComponent(event.body.substring(6));
+  console.log(email);
 
   return stripe.customers
     .list()
     .then(customers => {
       const { data } = customers;
       const c = data.find(c => c.email === email);
-      console.log(JSON.stringify(customers) + " | " + JSON.stringify(c));
+      console.log(JSON.stringify(c));
       if (c) {
         return c;
       }
