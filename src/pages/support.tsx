@@ -26,6 +26,7 @@ const Support = () => {
           <TextField
             defaultValue={""}
             placeholder="email"
+            name="email"
             required={true}
             style={{ width: 300 }}
           />
