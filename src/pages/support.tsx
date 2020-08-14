@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -7,6 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import { colors } from "../utils/typography";
 
 const Support = () => {
+  const [loading, setLoading] = useState(false);
   return (
     <Layout>
       <Container maxWidth={"md"}>
@@ -33,11 +34,21 @@ const Support = () => {
               background: colors.primary,
               color: colors.tertiary,
               marginLeft: 16,
+              display: "inline-block",
             }}
             type="submit"
+            onClick={() => setLoading(true)}
           >
             SPONSOR ME!
           </Button>
+          {loading && (
+            <Typography
+              variant="body1"
+              style={{ margin: "0 16px", display: "inline-block" }}
+            >
+              Loading...
+            </Typography>
+          )}
         </form>
       </Container>
     </Layout>

@@ -6,12 +6,14 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, {
 
 exports.handler = async event => {
   const { email } = event.body;
+  console.log(JSON.stringify(event));
 
   return stripe.customers
     .list()
     .then(customers => {
       const { data } = customers;
       const c = data.find(c => c.email === email);
+      console.log(JSON.stringify(customers) + " | " + JSON.stringify(c));
       if (c) {
         return c;
       }
@@ -21,7 +23,7 @@ exports.handler = async event => {
     .then(customer =>
       stripe.billingPortal.sessions.create({
         customer: customer.id,
-        return_url: "https://davidvargas.me",
+        return_url: "https://davidvargas.me/support",
       })
     )
     .then(session => ({
