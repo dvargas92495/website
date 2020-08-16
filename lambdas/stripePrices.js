@@ -18,7 +18,7 @@ exports.handler = async () => {
           price: prices.find(s => s.product === p.id).unit_amount/100,
         }))
       ),
-    }))
+    })))
     .catch(e => ({
       statusCode: 500,
       body: e.message,
