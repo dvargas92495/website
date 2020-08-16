@@ -10,12 +10,12 @@ exports.handler = async () => {
     .then(products => stripe.prices.list().then(prices => ({
       statusCode: 200,
       body: JSON.stringify(
-        products.map(p => ({
+        products.data.map(p => ({
           id: p.id,
           name: p.name,
           description: p.description,
-          priceId: prices.find(s => s.product === p.id).id,
-          price: prices.find(s => s.product === p.id).unit_amount/100,
+          priceId: prices.data.find(s => s.product === p.id).id,
+          price: prices.data.find(s => s.product === p.id).unit_amount/100,
         }))
       ),
     })))
