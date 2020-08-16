@@ -1,13 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Layout from "../components/layout";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { colors } from "../utils/typography";
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import NoSsr from "@material-ui/core/NoSsr";
 
-const Support = () => {
+const stripePromise = loadStripe(
+  "pk_test_51HERaHFHEvC1s7vkxMfTOWuGCHWCyukcRbwF5WNOUgeWWkAUHj2btlzxGhO1NjEfW4VXGc22j0InqJHAWF2zhc7h004fnwZ3uE"
+);
+
+const SupportComponent = () => {
   const [loading, setLoading] = useState(false);
+  const stripe = useStripe();
+  const elements = useElements();
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = useCallback(
+    event => {
+      setLoading(true);
+      event.preventDefault();
+      return stripe
+        .createPaymentMethod({
+          type: "card",
+          card: elements.getElement(CardElement),
+          billing_details: { email },
+        })
+        .then(() => setLoading(false));
+    },
+    [elements, stripe, email]
+  );
+
   return (
     <Layout>
       <Container maxWidth={"md"}>
@@ -22,14 +53,16 @@ const Support = () => {
           subscribe below and support me in my dream to become a public citizen
           of the world.
         </Typography>
-        <form method="POST" action="/.netlify/functions/stripeSubscribe">
+        <form onSubmit={handleSubmit}>
           <TextField
-            defaultValue={""}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
             placeholder="email"
             name="email"
             required={true}
             style={{ width: 300 }}
           />
+          <CardElement />
           <Button
             style={{
               background: colors.primary,
@@ -38,7 +71,7 @@ const Support = () => {
               display: "inline-block",
             }}
             type="submit"
-            onClick={() => setLoading(true)}
+            disabled={!stripe}
           >
             SPONSOR ME!
           </Button>
@@ -55,5 +88,13 @@ const Support = () => {
     </Layout>
   );
 };
+
+const Support = () => (
+  <Elements stripe={stripePromise}>
+    <NoSsr>
+      <SupportComponent />
+    </NoSsr>
+  </Elements>
+);
 
 export default Support;
