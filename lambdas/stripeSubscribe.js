@@ -5,27 +5,14 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, {
 });
 
 exports.handler = async event => {
-  const email = decodeURIComponent(event.body.substring(6));
-  console.log(email);
+  const { customer, price, default_payment_method } = JSON.parse(event.body);
 
-  return stripe.customers
-    .list()
-    .then(customers => {
-      const { data } = customers;
-      const c = data.find(c => c.email === email);
-      console.log(JSON.stringify(c));
-      if (c) {
-        return c;
-      }
-      const params = { email };
-      return stripe.customers.create(params);
+  return stripe.subscriptions
+    .create({
+      customer,
+      items: [{ price }],
+      default_payment_method,
     })
-    .then(customer =>
-      stripe.billingPortal.sessions.create({
-        customer: customer.id,
-        return_url: "https://davidvargas.me/support",
-      })
-    )
     .then(session => ({
       statusCode: 302,
       headers: {
