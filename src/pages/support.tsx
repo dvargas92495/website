@@ -40,11 +40,11 @@ const SupportComponent = () => {
               card: elements.getElement(CardElement),
             })
             .then(({ paymentMethod }) =>
-              fetch("/.netlify/functions/stripeCustomer", {
+              fetch("/.netlify/functions/stripeSubscribe", {
                 method: "POST",
                 body: JSON.stringify({
                   customer: body.customerId,
-                  default_payment_method: paymentMethod,
+                  default_payment_method: paymentMethod.id,
                   price: prices[0].priceId,
                 }),
               })
