@@ -17,10 +17,8 @@ exports.handler = async event => {
       })
     )
     .then(session => ({
-      statusCode: 302,
-      headers: {
-        Location: session.url,
-      },
+      statusCode: 200,
+      body: JSON.stringify({ success: true }),
     }))
     .catch(e => ({
       statusCode: 500,

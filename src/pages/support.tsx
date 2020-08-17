@@ -24,6 +24,7 @@ const SupportComponent = () => {
   const [email, setEmail] = useState("");
   const [prices, setPrices] = useState([]);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = useCallback(
     event => {
@@ -80,49 +81,56 @@ const SupportComponent = () => {
           subscribe below and support me in my dream to become a public citizen
           of the world.
         </Typography>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="email"
-            name="email"
-            required={true}
-            style={{ width: 300 }}
-          />
-          <CardElement />
-          <Button
-            style={{
-              background: colors.primary,
-              color: colors.tertiary,
-              marginLeft: 16,
-              display: "inline-block",
-            }}
-            type="submit"
-            disabled={!stripe}
-          >
-            SPONSOR ME!
-          </Button>
-          {loading && (
-            <Typography
-              variant="body1"
-              style={{ margin: "0 16px", display: "inline-block" }}
-            >
-              Loading...
-            </Typography>
-          )}
-          {error && (
-            <Typography
-              variant="body1"
+        {success ? (
+          <Typography variant="h4" style={{ margin: "16px 0" }}>
+            Thank you so much for your support! It means the world to me and I
+            will add you to this page shortly :)
+          </Typography>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <TextField
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="email"
+              name="email"
+              required={true}
+              style={{ width: 300 }}
+            />
+            <CardElement />
+            <Button
               style={{
-                margin: "0 16px",
+                background: colors.primary,
+                color: colors.tertiary,
+                marginLeft: 16,
                 display: "inline-block",
-                color: "red",
               }}
+              type="submit"
+              disabled={!stripe}
             >
-              {error}
-            </Typography>
-          )}
-        </form>
+              SPONSOR ME!
+            </Button>
+            {loading && (
+              <Typography
+                variant="body1"
+                style={{ margin: "0 16px", display: "inline-block" }}
+              >
+                Loading...
+              </Typography>
+            )}
+            {error && (
+              <Typography
+                variant="body1"
+                style={{
+                  margin: "0 16px",
+                  display: "inline-block",
+                  color: "red",
+                }}
+              >
+                {error}
+              </Typography>
+            )}
+          </form>
+        )}
       </Container>
     </Layout>
   );
