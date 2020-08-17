@@ -106,7 +106,7 @@ const Layout = ({ children }) => {
               style={{ marginLeft: 8, color: colors.secondary }}
               to="/support"
             >
-              
+              Support
             </Link>
           </Toolbar>
         </Toolbar>
@@ -153,7 +153,7 @@ const Layout = ({ children }) => {
         }}
       >
         <span>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()} Vargas Arts, LLC, Built with
           {` `}
           <a
             href="https://www.gatsbyjs.org"

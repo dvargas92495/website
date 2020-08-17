@@ -86,7 +86,7 @@ const Support = () => {
           height="775px"
           name="givebutter"
           frameBorder="0"
-          scrolling="no"
+          scrolling={false}
           seamless
           allow="payment"
         />
