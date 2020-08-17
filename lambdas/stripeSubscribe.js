@@ -7,12 +7,15 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, {
 exports.handler = async event => {
   const { customer, price, default_payment_method } = JSON.parse(event.body);
 
-  return stripe.subscriptions
-    .create({
-      customer,
-      items: [{ price }],
-      default_payment_method,
-    })
+  return stripe.paymentMethods
+    .attach(default_payment_method, { customer })
+    .then(() =>
+      stripe.subscriptions.create({
+        customer,
+        items: [{ price }],
+        default_payment_method,
+      })
+    )
     .then(session => ({
       statusCode: 302,
       headers: {

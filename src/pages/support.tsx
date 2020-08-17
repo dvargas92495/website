@@ -23,11 +23,13 @@ const SupportComponent = () => {
   const elements = useElements();
   const [email, setEmail] = useState("");
   const [prices, setPrices] = useState([]);
+  const [error, setError] = useState("");
 
   const handleSubmit = useCallback(
     event => {
       event.preventDefault();
       setLoading(true);
+      setError("");
       return fetch("/.netlify/functions/stripeCustomer", {
         method: "POST",
         body: JSON.stringify({ email }),
@@ -49,9 +51,13 @@ const SupportComponent = () => {
                 }),
               })
             )
-        );
+        )
+        .catch(() =>
+          setError("Failed to save subscription. Send me an email if you can!")
+        )
+        .finally(() => setLoading(false));
     },
-    [elements, stripe, email, prices]
+    [elements, stripe, email, prices, setError]
   );
 
   useEffect(() => {
@@ -102,6 +108,18 @@ const SupportComponent = () => {
               style={{ margin: "0 16px", display: "inline-block" }}
             >
               Loading...
+            </Typography>
+          )}
+          {error && (
+            <Typography
+              variant="body1"
+              style={{
+                margin: "0 16px",
+                display: "inline-block",
+                color: "red",
+              }}
+            >
+              {error}
             </Typography>
           )}
         </form>
