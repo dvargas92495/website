@@ -404,6 +404,18 @@ module.exports = {
         status: "50",
       },
     ],
+    sponsors: [
+      {
+        title: "Nikhil Punwaney",
+        imgSrc: "nikhil.jfif",
+        url: "https://twitter.com/nikhilpunwaney",
+      },
+      {
+        title: "Kenneth Friedman",
+        imgSrc: "kenny.jpg",
+        url: "https://kennethfriedman.org/",
+      },
+    ],
   },
   plugins: [
     {
@@ -439,6 +451,13 @@ module.exports = {
       options: {
         name: `charities`,
         path: `${__dirname}/content/charities`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sponsors`,
+        path: `${__dirname}/content/sponsors`,
       },
     },
     {

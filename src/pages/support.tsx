@@ -1,145 +1,119 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React from "react";
+import IframeResizer from "iframe-resizer-react";
+import Image from "material-ui-image";
 import Layout from "../components/layout";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import { useStaticQuery, graphql } from "gatsby";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
+import NoSsr from "@material-ui/core/NoSsr";
+import Card from "@material-ui/core/Card";
 import { colors } from "../utils/typography";
-import {
-  CardElement,
-  Elements,
-  useStripe,
-  useElements,
-} from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe(
-  "pk_test_51HERaHFHEvC1s7vkxMfTOWuGCHWCyukcRbwF5WNOUgeWWkAUHj2btlzxGhO1NjEfW4VXGc22j0InqJHAWF2zhc7h004fnwZ3uE"
+const Sponsor = ({
+  title,
+  url,
+  imgSrc,
+}: {
+  imgSrc: string;
+  title: string;
+  url: string;
+}) => (
+  <Grid item xs={2}>
+    <Card style={{ backgroundColor: colors.tertiary, textAlign: "center" }}>
+      <NoSsr>
+        <Image src={imgSrc} aspectRatio={1} />
+      </NoSsr>
+      <Typography variant="h6" style={{ margin: "16px 0" }}>
+        <Link href={url} target="_blank" rel="noopener">
+          {title}
+        </Link>
+      </Typography>
+    </Card>
+  </Grid>
 );
 
-const SupportComponent = () => {
-  const [loading, setLoading] = useState(false);
-  const stripe = useStripe();
-  const elements = useElements();
-  const [email, setEmail] = useState("");
-  const [prices, setPrices] = useState([]);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = useCallback(
-    event => {
-      event.preventDefault();
-      setLoading(true);
-      setError("");
-      return fetch("/.netlify/functions/stripeCustomer", {
-        method: "POST",
-        body: JSON.stringify({ email }),
-      })
-        .then(res => res.json())
-        .then(body =>
-          stripe
-            .createPaymentMethod({
-              type: "card",
-              card: elements.getElement(CardElement),
-            })
-            .then(({ paymentMethod }) =>
-              fetch("/.netlify/functions/stripeSubscribe", {
-                method: "POST",
-                body: JSON.stringify({
-                  customer: body.customerId,
-                  default_payment_method: paymentMethod.id,
-                  price: prices[0].priceId,
-                }),
-              })
-            )
-        )
-        .catch(() =>
-          setError("Failed to save subscription. Send me an email if you can!")
-        )
-        .finally(() => setLoading(false));
+const Support = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          sponsors {
+            title
+            url
+            imgSrc
+          }
+        }
+      }
+      allFile(filter: { sourceInstanceName: { eq: "sponsors" } }) {
+        edges {
+          node {
+            publicURL
+          }
+        }
+      }
+    }
+  `);
+  const {
+    site: {
+      siteMetadata: { sponsors },
     },
-    [elements, stripe, email, prices, setError]
-  );
-
-  useEffect(() => {
-    fetch("/.netlify/functions/stripePrices")
-      .then(res => res.json())
-      .then(body => setPrices(body));
-  }, [setPrices]);
-
+    allFile,
+  } = data;
   return (
     <Layout>
       <Container maxWidth={"md"}>
         <Typography variant="h2" style={{ margin: "16px 0" }}>
-          Support [PAGE STILL UNDER DEVELOPMENT]
+          Support
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>
-          In August 2020, I decided to start creating content full time. This
-          content includes the blog on this site, the newsletter I send, and the
-          personal engineering projects I take on and contribute to open source.
-          If you get value out of this content, it would mean the world to me to
-          subscribe below and support me in my dream to become a public citizen
-          of the world.
+          In August 2020, I decided to start creating content full time. The
+          best way to support my work is to sponsor me directly! If you benefit
+          from the software I create and are on Github, I would prefer{" "}
+          <Link
+            href={"https://github.com/sponsors/dvargas92495"}
+            target="_blank"
+            rel="noopener"
+          >
+            Github Sponsors
+          </Link>{" "}
+          instead of using the widget below, as I experience no fee there.
         </Typography>
-        {success ? (
-          <Typography variant="h4" style={{ margin: "16px 0" }}>
-            Thank you so much for your support! It means the world to me and I
-            will add you to this page shortly :)
-          </Typography>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <TextField
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="email"
-              name="email"
-              required={true}
-              style={{ width: 300 }}
+        <IframeResizer
+          src="https://givebutter.com/embed/c/dvargas92495"
+          width="100%"
+          height="775px"
+          name="givebutter"
+          frameBorder="0"
+          scrolling="no"
+          seamless
+          allow="payment"
+        />
+        <script src="https://givebutter.com/js/widget.js"></script>
+        <Typography variant="h2" style={{ margin: "16px 0" }}>
+          Thank You To My Sponsors!
+        </Typography>
+        <Typography variant="body1" style={{ margin: "16px 0" }}>
+          I will be updating this page daily, so let me know if you don't see
+          yourself here after sponsoring.
+        </Typography>
+        <Grid container style={{ margin: "16px 0" }} spacing={1}>
+          {sponsors.map(({ title, imgSrc, url }, i) => (
+            <Sponsor
+              title={title}
+              imgSrc={
+                allFile.edges.find(l => l.node.publicURL.endsWith(imgSrc))?.node
+                  .publicURL
+              }
+              url={url}
+              key={i}
             />
-            <CardElement />
-            <Button
-              style={{
-                background: colors.primary,
-                color: colors.tertiary,
-                marginLeft: 16,
-                display: "inline-block",
-              }}
-              type="submit"
-              disabled={!stripe}
-            >
-              SPONSOR ME!
-            </Button>
-            {loading && (
-              <Typography
-                variant="body1"
-                style={{ margin: "0 16px", display: "inline-block" }}
-              >
-                Loading...
-              </Typography>
-            )}
-            {error && (
-              <Typography
-                variant="body1"
-                style={{
-                  margin: "0 16px",
-                  display: "inline-block",
-                  color: "red",
-                }}
-              >
-                {error}
-              </Typography>
-            )}
-          </form>
-        )}
+          ))}
+        </Grid>
       </Container>
     </Layout>
   );
 };
-
-const Support = () => (
-  <Elements stripe={stripePromise}>
-    <SupportComponent />
-  </Elements>
-);
 
 export default Support;
