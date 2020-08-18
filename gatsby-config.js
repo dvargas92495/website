@@ -415,6 +415,11 @@ module.exports = {
         imgSrc: "kenny.jpg",
         url: "https://kennethfriedman.org/",
       },
+      {
+        title: "David Vargas",
+        imgSrc: "dad.jpg",
+        url: "",
+      },
     ],
   },
   plugins: [

@@ -21,14 +21,18 @@ const Sponsor = ({
   url: string;
 }) => (
   <Grid item xs={2}>
-    <Card style={{ backgroundColor: colors.tertiary, textAlign: "center" }}>
+    <Card style={{ backgroundColor: colors.tertiary, textAlign: "center", minHeight: 250 }}>
       <NoSsr>
         <Image src={imgSrc} aspectRatio={1} />
       </NoSsr>
       <Typography variant="h6" style={{ margin: "16px 0" }}>
-        <Link href={url} target="_blank" rel="noopener">
-          {title}
-        </Link>
+        {url ? (
+          <Link href={url} target="_blank" rel="noopener">
+            {title}
+          </Link>
+        ) : (
+          title
+        )}
       </Typography>
     </Card>
   </Grid>
