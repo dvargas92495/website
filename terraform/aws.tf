@@ -72,12 +72,12 @@ resource "aws_iam_user" "roam_js_extensions" {
   name = "roam_js_extensions"
 }
 
-resource "aws_iam_user_policy_attachment" "s3" {
+resource "aws_iam_user_policy_attachment" "s3_roam" {
   user       = aws_iam_user.roam_js_extensions.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
 
-resource "aws_iam_user_policy_attachment" "route53" {
+resource "aws_iam_user_policy_attachment" "route53_roam" {
   user       = aws_iam_user.roam_js_extensions.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
 }
