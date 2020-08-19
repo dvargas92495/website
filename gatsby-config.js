@@ -406,6 +406,11 @@ module.exports = {
     ],
     sponsors: [
       {
+        title: "Jenny Fuertes",
+        imgSrc: "mom.jpg",
+        url: "",
+      },
+      {
         title: "Nikhil Punwaney",
         imgSrc: "nikhil.jfif",
         url: "https://twitter.com/nikhilpunwaney",
@@ -419,6 +424,11 @@ module.exports = {
         title: "David Vargas",
         imgSrc: "dad.jpg",
         url: "",
+      },
+      {
+        title: "Anthony Vargas",
+        imgSrc: "anthony.jfif",
+        url: "https://www.linkedin.com/in/anthony-vargas-37826a172/",
       },
     ],
   },
