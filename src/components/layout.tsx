@@ -39,6 +39,18 @@ const Layout = ({ children }) => {
       logo: file(absolutePath: { regex: "/StravaLogo.png/" }) {
         publicURL
       }
+
+      medium: file(absolutePath: { regex: "/medium.png/" }) {
+        publicURL
+      }
+
+      indieHacker: file(absolutePath: { regex: "/indie-hacker.png/" }) {
+        publicURL
+      }
+
+      devto: file(absolutePath: { regex: "/devto.png/" }) {
+        publicURL
+      }
     }
   `);
   const { title } = data.site.siteMetadata;
@@ -169,6 +181,22 @@ const Layout = ({ children }) => {
           <FooterIcon href="https://github.com/dvargas92495">
             <GitHub />
           </FooterIcon>
+          <FooterIcon href="mailto:dvargas92495@gmail.com">
+            <Email />
+          </FooterIcon>
+          <FooterIcon href="https://www.indiehackers.com/dvargas92495">
+            <SvgIcon>
+              <image
+                href={data.indieHacker.publicURL}
+                style={{ height: "100%" }}
+              />
+            </SvgIcon>
+          </FooterIcon>
+          <FooterIcon href="https://dev.to/dvargas92495">
+            <SvgIcon>
+              <image href={data.devto.publicURL} style={{ height: "100%" }} />
+            </SvgIcon>
+          </FooterIcon>
           <FooterIcon href="https://www.strava.com/athletes/dvargas92495">
             <SvgIcon>
               <image href={data.logo.publicURL} style={{ height: "100%" }} />
@@ -177,8 +205,10 @@ const Layout = ({ children }) => {
           <FooterIcon href="https://www.reddit.com/user/dvargas92495">
             <Reddit />
           </FooterIcon>
-          <FooterIcon href="mailto:dvargas92495@gmail.com">
-            <Email />
+          <FooterIcon href="https://medium.com/@dvargas92495">
+            <SvgIcon>
+              <image href={data.medium.publicURL} style={{ height: "100%" }} />
+            </SvgIcon>
           </FooterIcon>
           <FooterIcon href="https://instagram.com/dvargas92495">
             <Instagram />
