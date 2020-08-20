@@ -9,7 +9,9 @@ import Container from "@material-ui/core/Container";
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
-
+  const seo = data.seo?.childImageSharp?.fixed?.src;
+  console.log(data.seo);
+  console.log(pageContext.seoImage);
   return (
     <Layout>
       <SEO
@@ -20,6 +22,18 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             name: "monetization",
             content: "$ilp.uphold.com/kJfRG8LxiaAy",
           },
+          ...(seo
+            ? [
+                {
+                  name: "og:image",
+                  content: seo,
+                },
+                {
+                  name: "twitter:image",
+                  content: seo,
+                },
+              ]
+            : []),
         ]}
       />
       <Container maxWidth={"md"}>
@@ -97,7 +111,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $seoImage: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
@@ -107,6 +121,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         acknowledgement
+      }
+    }
+    seo: file(absolutePath: { regex: $seoImage }) {
+      childImageSharp {
+        fixed(width: 50, height: 50) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
   }
