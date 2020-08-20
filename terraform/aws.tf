@@ -42,21 +42,6 @@ resource "aws_iam_user" "davidvargas" {
   name = "davidvargas"
 }
 
-resource "aws_iam_user_policy_attachment" "s3" {
-  user       = aws_iam_user.davidvargas.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "acm" {
-  user       = aws_iam_user.davidvargas.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "cloudfront" {
-  user       = aws_iam_user.davidvargas.name
-  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
-}
-
 resource "aws_iam_user_policy_attachment" "route53" {
   user       = aws_iam_user.davidvargas.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
