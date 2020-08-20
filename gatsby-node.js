@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
-        seoImage: `/blog${post.node.fields.slug}seo.png/`,
+        socialImage: `/blog${post.node.fields.slug}social.png/`,
         previous,
         next,
       },
