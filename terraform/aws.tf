@@ -1,16 +1,15 @@
 terraform {
     backend "remote" {
         hostname = "app.terraform.io"
-        organization = "Website"
+        organization = "VargasArts"
         workspaces {
-            prefix = "site-"
+            prefix = "website"
         }
     }
 }
 
 locals {
     domain    = "davidvargas.me"
-    s3_origin = "S3-${replace(local.domain, ".", "-")}"
 }
 
 provider "aws" {
