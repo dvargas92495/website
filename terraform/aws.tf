@@ -77,7 +77,22 @@ resource "aws_iam_user_policy_attachment" "s3_roam" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
 
+resource "aws_iam_user_policy_attachment" "acm_roam" {
+  user       = aws_iam_user.roam_js_extensions.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "cloudfront_roam" {
+  user       = aws_iam_user.roam_js_extensions.name
+  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
+}
+
 resource "aws_iam_user_policy_attachment" "route53_roam" {
   user       = aws_iam_user.roam_js_extensions.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "iam_roam" {
+  user       = aws_iam_user.roam_js_extensions.name
+  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
 }
