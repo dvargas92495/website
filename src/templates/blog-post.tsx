@@ -9,7 +9,7 @@ import Container from "@material-ui/core/Container";
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
-  const social = data.social?.childImageSharp?.fixed?.src;
+  const social = data.social?.childImageSharp?.fluid?.src;
   return (
     <Layout>
       <SEO
