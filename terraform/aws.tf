@@ -8,12 +8,12 @@ terraform {
     }
 }
 
-locals {
-    domain    = "davidvargas.me"
-}
-
 provider "aws" {
     region = "us-east-1"
+}
+
+locals {
+    domain    = "davidvargas.me"
 }
 
 resource "aws_route53_zone" "zone" {
