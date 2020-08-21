@@ -3,7 +3,7 @@ terraform {
         hostname = "app.terraform.io"
         organization = "VargasArts"
         workspaces {
-            prefix = "website"
+            prefix = "web"
         }
     }
 }

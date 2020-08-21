@@ -24,11 +24,11 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             ? [
                 {
                   name: "og:image",
-                  content: social,
+                  content: `https://davidvargas.me/${social}`,
                 },
                 {
                   name: "twitter:image",
-                  content: social,
+                  content: `https://davidvargas.me/${social}`,
                 },
               ]
             : []),
@@ -123,7 +123,7 @@ export const pageQuery = graphql`
     }
     social: file(absolutePath: { regex: $socialImage }) {
       childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 250) {
+        fluid(maxWidth: 2000, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
