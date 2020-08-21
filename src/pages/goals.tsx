@@ -81,7 +81,7 @@ const Goals = () => {
               centered
             >
               {years.map(y => (
-                <Tab label={`${y} Goals`} />
+                <Tab label={`${y} Goals`} key={y} />
               ))}
             </Tabs>
           </AppBar>

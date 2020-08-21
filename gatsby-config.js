@@ -430,6 +430,11 @@ module.exports = {
         imgSrc: "anthony.jfif",
         url: "https://www.linkedin.com/in/anthony-vargas-37826a172/",
       },
+      {
+        title: "Sravya Bhamidipati",
+        imgSrc: "sravya.png",
+        url: "https://www.instagram.com/sraavs/",
+      },
     ],
   },
   plugins: [
