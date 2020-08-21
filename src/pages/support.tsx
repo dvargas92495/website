@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import NoSsr from "@material-ui/core/NoSsr";
 import Card from "@material-ui/core/Card";
 import { colors } from "../utils/typography";
+import SEO from "../components/seo";
 
 const Sponsor = ({
   title,
@@ -73,6 +74,7 @@ const Support = () => {
   } = data;
   return (
     <Layout>
+      <SEO title="Support" />
       <Container maxWidth={"md"}>
         <Typography variant="h2" style={{ margin: "16px 0" }}>
           Support

@@ -15,6 +15,7 @@ import Card from "@material-ui/core/Card";
 import Check from "@material-ui/icons/Check";
 import Close from "@material-ui/icons/Close";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import SEO from "../components/seo";
 
 const bodies = {
   Life: "Evergreen objectives that express what I am working towards.",
@@ -53,6 +54,7 @@ const Goals = () => {
   const years = keys(goalsByYear).sort().reverse();
   return (
     <Layout>
+    <SEO title="Goals" />
       <Container maxWidth={"md"}>
         <Typography variant="h2" style={{ margin: "16px 0" }}>
           Goals

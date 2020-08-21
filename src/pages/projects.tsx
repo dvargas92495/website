@@ -10,6 +10,7 @@ import Link from "@material-ui/core/Link";
 import NoSsr from "@material-ui/core/NoSsr";
 import { colors } from "../utils/typography";
 import { graphql } from "gatsby";
+import SEO from "../components/seo";
 
 const Project = ({
   title,
@@ -65,6 +66,7 @@ const Project = ({
 
 const Projects = ({ data }) => (
   <Layout>
+    <SEO title="Projects" />
     <Container maxWidth={"md"}>
       <Typography variant="h2" style={{ margin: "16px 0" }}>
         Projects
@@ -94,6 +96,25 @@ const Projects = ({ data }) => (
           />
         )
       )}
+
+      <Typography variant="h3" style={{ margin: "16px 0" }}>
+        Previous Projects
+      </Typography>
+      {data.site.siteMetadata.projects.previous.map(
+        ({ title, link, description, imgSrc }, i) => (
+          <Project
+            key={i}
+            title={title}
+            link={link}
+            description={description}
+            imgSrc={
+              data.allFile.edges.find(l => l.node.publicURL.endsWith(imgSrc))
+                ?.node.publicURL
+            }
+            ltr={i % 2 === 0}
+          />
+        )
+      )}
     </Container>
   </Layout>
 );
@@ -106,6 +127,12 @@ export const pageQuery = graphql`
       siteMetadata {
         projects {
           current {
+            title
+            description
+            link
+            imgSrc
+          }
+          previous {
             title
             description
             link

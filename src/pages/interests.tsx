@@ -12,6 +12,7 @@ import CoreBeliefs from "../components/CoreBeliefs";
 import Books from "../components/Books";
 import Podcasts from "../components/Pocasts";
 import Charities from "../components/Charities";
+import SEO from "../components/seo";
 
 const tabContent = [<CoreBeliefs />, <Books />, <Podcasts />, <Charities />];
 
@@ -25,6 +26,7 @@ const Interests = () => {
   );
   return (
     <Layout>
+      <SEO title="Interests" />
       <Container maxWidth={"md"}>
         <Typography variant="h2" style={{ margin: "16px 0" }}>
           Interests

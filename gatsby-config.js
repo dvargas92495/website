@@ -1,14 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `David Vargas`,
-    author: {
-      name: `David Vargas`,
-      summary: `The site is under construction, check back later!`,
-    },
-    description: `David Vargas' Online Home`,
+    description: `Public Citizen of the World`,
     siteUrl: `https://davidvargas.me/`,
     projects: {
-      current: [
+      previous: [
         {
           title: "Mark43",
           link: "https://mark43.com",
@@ -23,6 +19,8 @@ module.exports = {
           `,
           imgSrc: "mark43.jpg",
         },
+      ],
+      current: [
         {
           title: "Longwave",
           link: "https://longwave.app",

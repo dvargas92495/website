@@ -10,6 +10,7 @@ import Card from "@material-ui/core/Card";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import NoSsr from "@material-ui/core/NoSsr";
+import SEO from "../components/seo";
 
 type ImageFileData = {
   allFile: {
@@ -42,6 +43,7 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
   );
   return (
     <Layout>
+      <SEO title="Blog" />
       <Container maxWidth={"md"}>
         <Typography variant="h2" style={{ margin: "16px 0" }}>
           My Personal Blog

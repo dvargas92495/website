@@ -10,14 +10,16 @@ import Box from "@material-ui/core/Box";
 import NoSsr from "@material-ui/core/NoSsr";
 import Link from "@material-ui/core/Link";
 
-const WIDTH = 1527;
-const HEIGHT = 562;
-
 const Index = () => {
   const data = useStaticQuery(graphql`
     query IndexQuery {
       landingImage: file(absolutePath: { regex: "/landing-image.png/" }) {
         publicURL
+        childImageSharp {
+          fluid {
+            aspectRatio
+          }
+        }
       }
     }
   `);
@@ -28,7 +30,7 @@ const Index = () => {
         <NoSsr>
           <Image
             src={data.landingImage.publicURL}
-            aspectRatio={WIDTH / HEIGHT}
+            aspectRatio={data.landingImage.childImageSharp.fluid.aspectRatio}
           />
         </NoSsr>
       </Box>
@@ -65,7 +67,10 @@ const Index = () => {
         <Typography style={{ color: colors.primary }}>
           If I come to a city near you, feel free to reach out!
         </Typography>
-        <Typography variant="h5" style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}>
+        <Typography
+          variant="h5"
+          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+        >
           Engineer Specializing in Technologically Poor Industries
         </Typography>
         <Typography style={{ color: colors.primary }}>
@@ -80,22 +85,30 @@ const Index = () => {
         <Typography style={{ color: colors.primary }}>
           Hoping to bring inefficiency to an end
         </Typography>
-        <Typography variant="h5" style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}>
+        <Typography
+          variant="h5"
+          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+        >
           Writing to Learn and Share my Thoughts with the World
         </Typography>
         <Typography style={{ color: colors.primary }}>
           I publish a blog post a couple times a week on this site
         </Typography>
         <Typography style={{ color: colors.primary }}>
-          Sign up for my newsletter for updates on my site, what I learn, and what I find interesting
+          Sign up for my newsletter for updates on my site, what I learn, and
+          what I find interesting
         </Typography>
         <Typography style={{ color: colors.primary }}>
-          Writing spans topics that include engineering, the economy, self improvement, and my travels
+          Writing spans topics that include engineering, the economy, self
+          improvement, and my travels
         </Typography>
         <Typography style={{ color: colors.primary }}>
           I'm also active on Twitter and you can follow me below
         </Typography>
-        <Typography variant="h5" style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}>
+        <Typography
+          variant="h5"
+          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+        >
           This Intersection Makes Me <b>A Public Citizen of the World</b>
         </Typography>
         <Typography style={{ color: colors.primary }}>
