@@ -80,3 +80,13 @@ resource "aws_iam_user_policy_attachment" "iam_roam" {
   user       = aws_iam_user.roam_js_extensions.name
   policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
 }
+
+resource "aws_iam_user_policy_attachment" "apigateway_roam" {
+  user       = aws_iam_user.roam_js_extensions.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator"
+}
+
+resource "aws_iam_user_policy_attachment" "lambda_roam" {
+  user       = aws_iam_user.roam_js_extensions.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
+}
