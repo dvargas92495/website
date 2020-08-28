@@ -60,7 +60,12 @@ const Index = () => {
           I choose a new city to live every month with a group of friends
         </Typography>
         <Typography style={{ color: colors.primary }}>
-          <Link href="https://chamilea.com" style={{ color: colors.secondary }}>
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://chamilea.com"
+            style={{ color: colors.secondary }}
+          >
             You can follow our journey here
           </Link>
         </Typography>

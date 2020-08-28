@@ -22,6 +22,18 @@ module.exports = {
       ],
       current: [
         {
+          title: "Roam JS Extensions",
+          link: "https://roam.davidvargas.me",
+          description: `
+            The introduction of native javascript blocks has blown the doors open to a whole new world of what Roam
+            is now capable of. We could now think of Roam as a platform. We are still in the early days of development
+            and seeing what the community is capable of building on top of it. These are the extensions that I'm building.
+            They are ones that help me in my personal day-to-day workflows and hope that they empower the rest of the #roamcult
+            as well.
+          `,
+          imgSrc: "roam.png",
+        },
+        {
           title: "Longwave",
           link: "https://longwave.app",
           description: `
@@ -36,6 +48,11 @@ module.exports = {
         },
       ],
     },
+    consulting: [
+      {
+        title: "TEACH ME HOW TO ROAM with Greg Frontiero",
+      },
+    ],
     interests: {
       coreBeliefs: [
         {
