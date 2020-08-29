@@ -1,12 +1,12 @@
 ---
-title: "Terraform - Best Thing Since Git"
+title: "Terraform - The Best Thing Since Git"
 date: "2020-08-27T23:21:00.00Z"
 description: "The tool helping engineering teams manage their infrastructure as code."
 ---
 
 Imagine working on the next big operating system with multiple other developers. Suddenly, this feature for running applications that has been working for weeks broke. Who broke it? What change did it? How easy is it to just roll back to a previous version of the operating system where the feature was no longer broken?
  
-These are the many frustrations that Git was created to solve when Linus Torvalds built it in 2005. The tool accelerated the ability for multiple engineers to work on a single software project. By knowing who was responsible for each change and why, engineers moved faster without fear of having to diagnose mysteriously appearing issues. This also allowed open source to catch fire, with GitHub launching in 2008 on top of the tool to allow developers across team collaborate and learn from each other's projects.
+These are the many frustrations that Git was created to solve when Linus Torvalds built it in 2005. The tool accelerated the ability for multiple engineers to work on a single software project. By knowing who was responsible for each change and why, engineers moved faster without fear of having to diagnose mysteriously appearing issues. This also allowed open source to catch fire, with GitHub launching in 2008 on top of the tool to allow developers across teams to collaborate and learn from each other's projects.
 
 As teams start to migrate their software projects from self-hosted machines on to cloud services like AWS and Azure, we are seeing the same problems reappear but in a new domain. 
 
@@ -17,7 +17,7 @@ Cloud computing is starting to support way more use cases than just hosting code
 
 Here are some of these challenges.
 ### Configuration Spread Across Different UIs
-Most of the cloud providers have consoles to teams to configure what resources they'd like to use. This manual work is proving to not be scalable and hard to manage. With a different dashboard dedicated for each resource, it's hard to get a holistic picture of what are all the resources your organization is using.
+Most of the cloud providers have consoles for teams to configure what resources they'd like to use. This manual work is proving to not be scalable and hard to manage. With a different dashboard dedicated for each resource, it's hard to get a holistic picture of what are all the resources your organization is using.
 
 ### Lack of Context
 A poorly configured environment variable or resource setting has the potential to take your entire site down. With no version control over who made what change, when several changes were made, and why, tracking down why the application is not running is getting increasingly difficult. This is especially true as engineering teams rely on these cloud services more than usual.
@@ -51,7 +51,7 @@ The above file specifies a single S3 bucket on AWS named `"example-bucket"`. You
 
 The plan outlines to the user exactly what resources Terraform plans to create, change, and destroy to give the user a chance to sanity check for any possible errors. To actually go through with the changes, the user simply has to enter `terraform apply`. The `apply` command will run a `plan` as well, so you typically don't have to run `plan` on its own when looking to apply new changes to your infrastructure.
 
-The documentation on Terraform is excellent, and would encourage anyone considering getting started to [start with their introduction.](https://www.terraform.io/intro/index.html) I'd recommend anyone who was facing the previously mentioned problems with handling their infrastructure to do so, as Terraform solves for each one.
+The documentation on Terraform is excellent, and I would encourage anyone considering getting started to [start with their introduction.](https://www.terraform.io/intro/index.html) I'd recommend anyone who was facing the previously mentioned problems with handling their infrastructure to do so, as Terraform solves for each one.
 ### Configuration Away From UIs
 Instead of having to hunt through various cloud consoles to track exactly how our infrastructure is configured, it is now tracked all in these `.tf` files in a central repository. Terraform officially supports most of the popular cloud providers, while allowing the community to build hundreds more and make available through its [registry](https://registry.terraform.io/).
 
