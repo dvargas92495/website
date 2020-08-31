@@ -11,7 +11,7 @@ As I travel city to city in the coming months, I'll publish an article at the en
 I want to first talk about Florida itself, before going into the community living experience and how this stop affected my thoughts on nomading going forward.
 
 ## Davenport, Florida
-We are still in a precautionary state due to Coronavirus in the U.S.. As a result, we did not spend much time exploring Davenport and Orlando, spending most of our month quarantining ourselves in the Airbnb. Luckily, our place had a bunch of sick amenities that included a pool and a hot tub. This was my bedroom, which curiously had a bunch of Despicable Me Minions taped all over the walls:
+We are still in a precautionary state due to Coronavirus in the U.S. As a result, we did not spend much time exploring Davenport and Orlando, spending most of our month quarantining ourselves in the Airbnb. Luckily, our place had a bunch of sick amenities that included a pool and a hot tub. This was my bedroom, which curiously had a bunch of Despicable Me Minions taped all over the walls:
 
 ![](./bedroom.png)
 
