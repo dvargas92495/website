@@ -63,7 +63,7 @@ const Index = () => {
           <Link
             target="_blank"
             rel="noopener"
-            href="https://chamilea.com"
+            href="https://covilla.life"
             style={{ color: colors.secondary }}
           >
             You can follow our journey here
