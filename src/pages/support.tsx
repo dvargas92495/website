@@ -116,7 +116,7 @@ const Support = () => {
               title={title}
               imgSrc={
                 allFile.edges.find(l => l.node.publicURL.endsWith(imgSrc))?.node
-                  .publicURL
+                  ?.publicURL
               }
               url={url}
               key={i}

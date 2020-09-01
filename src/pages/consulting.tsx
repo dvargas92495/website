@@ -58,7 +58,7 @@ const Thumbnail = ({ title, i }: { i: number; title: string }) => {
 
 const Consulting = ({ data }) => (
   <Layout>
-    <SEO title="consulting" />
+    <SEO title="Consulting" />
 
     <Container maxWidth={"md"}>
       <Typography variant="h2" style={{ margin: "16px 0" }}>

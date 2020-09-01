@@ -450,6 +450,11 @@ module.exports = {
         imgSrc: "sravya.png",
         url: "https://www.instagram.com/sraavs/",
       },
+      {
+        title: "Lina Taveras",
+        imgSrc: "default.jpg",
+        url: "",
+      },
     ],
   },
   plugins: [
