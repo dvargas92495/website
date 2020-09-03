@@ -51,6 +51,8 @@ module.exports = {
     consulting: [
       {
         title: "TEACH ME HOW TO ROAM with Greg Frontiero",
+        url: "https://youtu.be/ap8FF52J6-M",
+        imgSrc: "20200903_Greg_Fronteiro_Teach_Roam.png",
       },
     ],
     interests: {
@@ -463,6 +465,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/consulting`,
+        name: `consulting`,
       },
     },
     {

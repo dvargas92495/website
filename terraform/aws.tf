@@ -90,3 +90,42 @@ resource "aws_iam_user_policy_attachment" "lambda_roam" {
   user       = aws_iam_user.roam_js_extensions.name
   policy_arn = "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
 }
+
+resource "aws_iam_user" "floss" {
+  name = "floss"
+}
+
+resource "aws_iam_user_policy_attachment" "s3_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "acm_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "cloudfront_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "route53_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "iam_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "apigateway_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator"
+}
+
+resource "aws_iam_user_policy_attachment" "lambda_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
+}

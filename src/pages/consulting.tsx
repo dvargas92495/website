@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "material-ui-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Container from "@material-ui/core/Container";
@@ -9,10 +10,23 @@ import { graphql } from "gatsby";
 import Zoom from "@material-ui/core/Zoom";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
+import NoSsr from "@material-ui/core/NoSsr";
 
-const Thumbnail = ({ title, i }: { i: number; title: string }) => {
+const Thumbnail = ({
+  title,
+  i,
+  url,
+  thumbnailImage,
+}: {
+  i: number;
+  title: string;
+  url: string;
+  thumbnailImage: {
+    imgSrc: string;
+    aspectRatio: number;
+  };
+}) => {
   const delay = (Math.floor(i / 3) + 1) * 500;
-  // const socialImg = socialImagesByBlog[node.fields.slug];
   return (
     <Zoom
       in={true}
@@ -26,27 +40,28 @@ const Thumbnail = ({ title, i }: { i: number; title: string }) => {
       <Grid item xs={4}>
         <Card style={{ height: 400 }}>
           <div style={{ height: 200 }}>
-            {/*
-              socialImg && (
-                <NoSsr>
-                  <Image
-                    src={socialImg.imgSrc}
-                    aspectRatio={socialImg.aspectRatio}
-                  />
-                </NoSsr>
-              )  */}
-            Thumbnail Coming Soon...
+            {thumbnailImage ? (
+              <NoSsr>
+                <Image
+                  src={thumbnailImage.imgSrc}
+                  aspectRatio={thumbnailImage.aspectRatio}
+                />
+              </NoSsr>
+            ) : (
+              "Thumbnail Image Coming Soon..."
+            )}
           </div>
           <Container style={{ color: colors.primary, height: 200 }}>
             <header>
               <Typography variant="h5">
-                {/*<Link
-                    style={{ boxShadow: `none`, color: colors.primary }}
-                    to={`/blog/${node.fields.slug.substring(10)}`}
-                  >
-                    {title}
-                  </Link>*/}
-                {title}
+                <Link
+                  style={{ boxShadow: `none`, color: colors.secondary }}
+                  href={url}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {title}
+                </Link>
               </Typography>
             </header>
           </Container>
@@ -56,37 +71,58 @@ const Thumbnail = ({ title, i }: { i: number; title: string }) => {
   );
 };
 
-const Consulting = ({ data }) => (
-  <Layout>
-    <SEO title="Consulting" />
+const Consulting = ({ data }) => {
+  const thumbnailImagesByVideo = Object.fromEntries(
+    data.allFile.edges.map(({ node }) => [
+      node.absolutePath.substring(
+        node.absolutePath.indexOf("/content/consulting/") + 20
+      ),
+      {
+        imgSrc: node.publicURL,
+        aspectRatio: node.childImageSharp.fluid.aspectRatio,
+      },
+    ])
+  );
+  return (
+    <Layout>
+      <SEO title="Consulting" />
 
-    <Container maxWidth={"md"}>
-      <Typography variant="h2" style={{ margin: "16px 0" }}>
-        Consulting
-      </Typography>
-      <Typography variant="body1" style={{ margin: "16px 0" }}>
-        I offer consulting calls to give advice and insights on how to improve
-        your Roam usage, general productivity tips, AWS help, React help, and
-        more! If you are interested,{" "}
-        <Link
-          href="https://calendly.com/dvargas92495/consulting"
-          style={{ color: colors.secondary }}
-          target="_blank"
-          rel="noopener"
-        >
-          book a slot on my calendly.
-        </Link>{" "}
-        With your permission, I'd like to publish as many of these consulting
-        calls, in case someone else finds it helpful!
-      </Typography>
-      <Grid container spacing={2}>
-        {data.site.siteMetadata.consulting.map(({ title }, i) => (
-          <Thumbnail title={title} i={i} key={i} />
-        ))}
-      </Grid>
-    </Container>
-  </Layout>
-);
+      <Container maxWidth={"md"}>
+        <Typography variant="h2" style={{ margin: "16px 0" }}>
+          Consulting
+        </Typography>
+        <Typography variant="body1" style={{ margin: "16px 0" }}>
+          I offer consulting calls to give advice and insights on how to improve
+          your Roam usage, general productivity tips, AWS help, React help, and
+          more! If you are interested,{" "}
+          <Link
+            href="https://calendly.com/dvargas92495/consulting"
+            style={{ color: colors.secondary }}
+            target="_blank"
+            rel="noopener"
+          >
+            book a slot on my calendly.
+          </Link>{" "}
+          With your permission, I'd like to publish as many of these consulting
+          calls, in case someone else finds it helpful!
+        </Typography>
+        <Grid container spacing={2}>
+          {data.site.siteMetadata.consulting.map(
+            ({ title, imgSrc, url }, i) => (
+              <Thumbnail
+                title={title}
+                i={i}
+                key={i}
+                thumbnailImage={thumbnailImagesByVideo[imgSrc]}
+                url={url}
+              />
+            )
+          )}
+        </Grid>
+      </Container>
+    </Layout>
+  );
+};
 
 export default Consulting;
 
@@ -96,6 +132,21 @@ export const pageQuery = graphql`
       siteMetadata {
         consulting {
           title
+          imgSrc
+          url
+        }
+      }
+    }
+    allFile(filter: { sourceInstanceName: { eq: "consulting" } }) {
+      edges {
+        node {
+          publicURL
+          absolutePath
+          childImageSharp {
+            fluid {
+              aspectRatio
+            }
+          }
         }
       }
     }
