@@ -85,7 +85,16 @@ const Consulting = ({ data }) => {
   );
   return (
     <Layout>
-      <SEO title="Consulting" />
+      <SEO title="Consulting">
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+        />
+      </SEO>
 
       <Container maxWidth={"md"}>
         <Typography variant="h2" style={{ margin: "16px 0" }}>
@@ -96,10 +105,12 @@ const Consulting = ({ data }) => {
           your Roam usage, general productivity tips, AWS help, React help, and
           more! If you are interested,{" "}
           <Link
-            href="https://calendly.com/dvargas92495/consulting"
-            style={{ color: colors.secondary }}
-            target="_blank"
-            rel="noopener"
+            onClick={() =>
+              Calendly.initPopupWidget({
+                url: "https://calendly.com/dvargas92495/consulting",
+              })
+            }
+            style={{ color: colors.secondary, cursor: 'pointer' }}
           >
             book a slot on my calendly.
           </Link>{" "}

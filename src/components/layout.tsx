@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import AppBar from "@material-ui/core/AppBar";
 import Email from "@material-ui/icons/Email";
@@ -9,9 +9,13 @@ import Twitter from "@material-ui/icons/Twitter";
 import Reddit from "@material-ui/icons/Reddit";
 import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
+import Youtube from "@material-ui/icons/YouTube";
+import ChevronLeft from "@material-ui/icons/ChevronLeft";
+import ChevronRight from "@material-ui/icons/ChevronRight";
 import { colors } from "../utils/typography";
 import Container from "@material-ui/core/Container";
 import SvgIcon from "@material-ui/core/SvgIcon";
+import { IconButton } from "@material-ui/core";
 
 const FooterIcon = ({ children, href }) => (
   <a
@@ -53,6 +57,13 @@ const Layout = ({ children }) => {
       }
     }
   `);
+  const [footerExpanded, setFooterExpanded] = useState(false);
+  const expandFooter = useCallback(() => setFooterExpanded(true), [
+    setFooterExpanded,
+  ]);
+  const collapseFooter = useCallback(() => setFooterExpanded(false), [
+    setFooterExpanded,
+  ]);
   const { title } = data.site.siteMetadata;
   useEffect(() => {
     const script = document.createElement("script");
@@ -187,41 +198,82 @@ const Layout = ({ children }) => {
           <FooterIcon href="https://github.com/dvargas92495">
             <GitHub />
           </FooterIcon>
+          <FooterIcon href="https://www.youtube.com/channel/UC6UVFCK1BcIMnT0XY4iUS_g">
+            <Youtube />
+          </FooterIcon>
           <FooterIcon href="mailto:dvargas92495@gmail.com">
             <Email />
           </FooterIcon>
-          <FooterIcon href="https://www.indiehackers.com/dvargas92495">
-            <SvgIcon>
-              <image
-                href={data.indieHacker.publicURL}
-                style={{ height: "100%" }}
-              />
-            </SvgIcon>
-          </FooterIcon>
-          <FooterIcon href="https://dev.to/dvargas92495">
-            <SvgIcon>
-              <image href={data.devto.publicURL} style={{ height: "100%" }} />
-            </SvgIcon>
-          </FooterIcon>
-          <FooterIcon href="https://www.strava.com/athletes/dvargas92495">
-            <SvgIcon>
-              <image href={data.logo.publicURL} style={{ height: "100%" }} />
-            </SvgIcon>
-          </FooterIcon>
-          <FooterIcon href="https://www.reddit.com/user/dvargas92495">
-            <Reddit />
-          </FooterIcon>
-          <FooterIcon href="https://medium.com/@dvargas92495">
-            <SvgIcon>
-              <image href={data.medium.publicURL} style={{ height: "100%" }} />
-            </SvgIcon>
-          </FooterIcon>
-          <FooterIcon href="https://instagram.com/dvargas92495">
-            <Instagram />
-          </FooterIcon>
-          <FooterIcon href="https://linkedin.com/in/dvargas92495">
-            <LinkedIn />
-          </FooterIcon>
+          {footerExpanded ? (
+            <>
+              <FooterIcon href="https://www.indiehackers.com/dvargas92495">
+                <SvgIcon>
+                  <image
+                    href={data.indieHacker.publicURL}
+                    style={{ height: "100%" }}
+                  />
+                </SvgIcon>
+              </FooterIcon>
+              <FooterIcon href="https://dev.to/dvargas92495">
+                <SvgIcon>
+                  <image
+                    href={data.devto.publicURL}
+                    style={{ height: "100%" }}
+                  />
+                </SvgIcon>
+              </FooterIcon>
+              <FooterIcon href="https://www.strava.com/athletes/dvargas92495">
+                <SvgIcon>
+                  <image
+                    href={data.logo.publicURL}
+                    style={{ height: "100%" }}
+                  />
+                </SvgIcon>
+              </FooterIcon>
+              <FooterIcon href="https://www.reddit.com/user/dvargas92495">
+                <Reddit />
+              </FooterIcon>
+              <FooterIcon href="https://medium.com/@dvargas92495">
+                <SvgIcon>
+                  <image
+                    href={data.medium.publicURL}
+                    style={{ height: "100%" }}
+                  />
+                </SvgIcon>
+              </FooterIcon>
+              <FooterIcon href="https://instagram.com/dvargas92495">
+                <Instagram />
+              </FooterIcon>
+              <FooterIcon href="https://linkedin.com/in/dvargas92495">
+                <LinkedIn />
+              </FooterIcon>
+              <IconButton
+                onClick={collapseFooter}
+                style={{
+                  color: colors.secondary,
+                  margin: "0 8px",
+                  padding: 0,
+                  boxShadow: "none",
+                  top: -8,
+                }}
+              >
+                <ChevronRight />
+              </IconButton>
+            </>
+          ) : (
+            <IconButton
+              onClick={expandFooter}
+              style={{
+                color: colors.secondary,
+                margin: "0 8px",
+                padding: 0,
+                boxShadow: "none",
+                top: -8,
+              }}
+            >
+              <ChevronLeft />
+            </IconButton>
+          )}
         </span>
       </footer>
     </div>

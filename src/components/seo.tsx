@@ -14,11 +14,13 @@ const SEO = ({
   lang = "en",
   meta = [],
   title,
+  children,
 }: {
   description?: string;
   lang?: string;
   title: string;
   meta?: { name: string; content: string }[];
+  children?: React.ReactChildren;
 }) => {
   const data = useStaticQuery(
     graphql`
@@ -77,7 +79,9 @@ const SEO = ({
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      {children}
+    </Helmet>
   );
 };
 
