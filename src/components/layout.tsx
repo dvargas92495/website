@@ -1,4 +1,5 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import AppBar from "@material-ui/core/AppBar";
 import Email from "@material-ui/icons/Email";
@@ -65,6 +66,7 @@ const Layout = ({ children }) => {
     setFooterExpanded,
   ]);
   const { title } = data.site.siteMetadata;
+
   useEffect(() => {
     const script = document.createElement("script");
 
@@ -81,6 +83,7 @@ const Layout = ({ children }) => {
       document.body.removeChild(otherScript);
     };
   }, []);
+
   return (
     <div
       style={{
@@ -157,12 +160,12 @@ const Layout = ({ children }) => {
             borderRadius: 32,
           }}
         >
-          <Typography variant="h6">Strava Listens</Typography>
+          <Typography variant="h6">Vargas Ventures</Typography>
           <Typography variant="subtitle2" style={{ marginBottom: 16 }}>
-            Every morning I go on a run, I listen to a podcast and tag my run on
-            Strava with my main takeaway. Subscribe to my newsletter below to
-            see me expand on these takeaways, as well as some personal updates.
-            New issues Sunday mornings!
+            Subscribe to my newsletter below for updates on what I'm building,
+            what I'm writing, and where I'm travelling. I also share the
+            podcasts that I listened to that week each tagged with my personal
+            takeaway. New issues Sunday mornings!
           </Typography>
           <script data-uid="cd67433313"></script>
         </Container>
