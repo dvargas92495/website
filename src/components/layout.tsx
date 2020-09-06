@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { BrowserView, MobileView } from "react-device-detect";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import AppBar from "@material-ui/core/AppBar";
 import Email from "@material-ui/icons/Email";
@@ -16,7 +16,21 @@ import ChevronRight from "@material-ui/icons/ChevronRight";
 import { colors } from "../utils/typography";
 import Container from "@material-ui/core/Container";
 import SvgIcon from "@material-ui/core/SvgIcon";
-import { IconButton } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import IconButton from "@material-ui/core/IconButton";
+import Drawer from "@material-ui/core/Drawer";
+import CancelIcon from "@material-ui/icons/Cancel";
+import WorkIcon from "@material-ui/icons/Work";
+import CreateIcon from "@material-ui/icons/Create";
+import VideoCallIcon from "@material-ui/icons/VideoCall";
+import MenuBookIcon from "@material-ui/icons/MenuBook";
+import TrackChangesIcon from "@material-ui/icons/TrackChanges";
+import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import Divider from "@material-ui/core/Divider";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const FooterIcon = ({ children, href }) => (
   <a
@@ -59,6 +73,9 @@ const Layout = ({ children }) => {
     }
   `);
   const [footerExpanded, setFooterExpanded] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const openDrawer = useCallback(() => setDrawerOpen(true), [setDrawerOpen]);
+  const closeDrawer = useCallback(() => setDrawerOpen(false), [setDrawerOpen]);
   const expandFooter = useCallback(() => setFooterExpanded(true), [
     setFooterExpanded,
   ]);
@@ -106,48 +123,66 @@ const Layout = ({ children }) => {
               {title}
             </Link>
           </Typography>
-          <Toolbar>
-            <Link
-              style={{ marginLeft: 8, color: colors.secondary }}
-              to="/projects"
+          <BrowserView>
+            <Toolbar>
+              <Link
+                style={{ marginLeft: 8, color: colors.secondary }}
+                to="/projects"
+              >
+                Projects
+              </Link>
+              <Link
+                style={{ marginLeft: 8, color: colors.secondary }}
+                to="/blog"
+              >
+                Blog
+              </Link>
+              <Link
+                style={{ marginLeft: 8, color: colors.secondary }}
+                to="/consulting"
+              >
+                Consulting
+              </Link>
+              <Link
+                style={{ marginLeft: 8, color: colors.secondary }}
+                to="/interests"
+              >
+                Interests
+              </Link>
+              <Link
+                style={{ marginLeft: 8, color: colors.secondary }}
+                to="/goals"
+              >
+                Goals
+              </Link>
+              <Link
+                style={{ marginLeft: 8, color: colors.secondary }}
+                to="/support"
+              >
+                Support
+              </Link>
+            </Toolbar>
+          </BrowserView>
+          <MobileView>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="end"
+              onClick={openDrawer}
+              style={{
+                color: colors.secondary,
+              }}
             >
-              Projects
-            </Link>
-            <Link style={{ marginLeft: 8, color: colors.secondary }} to="/blog">
-              Blog
-            </Link>
-            <Link
-              style={{ marginLeft: 8, color: colors.secondary }}
-              to="/consulting"
-            >
-              Consulting
-            </Link>
-            <Link
-              style={{ marginLeft: 8, color: colors.secondary }}
-              to="/interests"
-            >
-              Interests
-            </Link>
-            <Link
-              style={{ marginLeft: 8, color: colors.secondary }}
-              to="/goals"
-            >
-              Goals
-            </Link>
-            <Link
-              style={{ marginLeft: 8, color: colors.secondary }}
-              to="/support"
-            >
-              Support
-            </Link>
-          </Toolbar>
+              <MenuIcon />
+            </IconButton>
+          </MobileView>
         </Toolbar>
       </AppBar>
       <main
         style={{
           flexGrow: 1,
           backgroundColor: colors.tertiary,
-          marginBottom: 32,
+          paddingBottom: 32,
         }}
       >
         {children}
@@ -170,30 +205,64 @@ const Layout = ({ children }) => {
           <script data-uid="cd67433313"></script>
         </Container>
       </main>
+      <Drawer
+        variant="persistent"
+        anchor="right"
+        open={drawerOpen}
+        PaperProps={{
+          style: {
+            backgroundColor: colors.primary,
+          },
+        }}
+      >
+        <div>
+          <IconButton
+            onClick={closeDrawer}
+            style={{
+              color: colors.secondary,
+            }}
+          >
+            <CancelIcon />
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {[
+            { text: "Projects", IconComponent: WorkIcon },
+            { text: "Blog", IconComponent: CreateIcon },
+            { text: "Consulting", IconComponent: VideoCallIcon },
+            { text: "Interests", IconComponent: MenuBookIcon },
+            { text: "Goals", IconComponent: TrackChangesIcon },
+            { text: "Support", IconComponent: AttachMoneyIcon },
+          ].map(({ text, IconComponent }, index) => (
+            <Link
+              style={{ color: colors.secondary }}
+              to={`/${text.toLowerCase()}`}
+              key={index}
+            >
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  <IconComponent style={{ color: colors.secondary }} />
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+      </Drawer>
       <footer
         style={{
           display: "flex",
           justifyContent: "space-between",
           padding: 8,
-          bottom: 0,
-          position: "sticky",
-          right: 0,
-          left: 0,
           flexShrink: 0,
           backgroundColor: colors.primary,
           color: colors.tertiary,
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
         }}
       >
-        <span>
-          © {new Date().getFullYear()} Vargas Arts, LLC, Built with
-          {` `}
-          <a
-            href="https://www.gatsbyjs.org"
-            style={{ color: colors.secondary }}
-          >
-            Gatsby
-          </a>
-        </span>
         <span>
           <FooterIcon href="https://twitter.com/dvargas92495">
             <Twitter />
@@ -260,7 +329,7 @@ const Layout = ({ children }) => {
                   top: -8,
                 }}
               >
-                <ChevronRight />
+                <ChevronLeft />
               </IconButton>
             </>
           ) : (
@@ -274,9 +343,19 @@ const Layout = ({ children }) => {
                 top: -8,
               }}
             >
-              <ChevronLeft />
+              <ChevronRight />
             </IconButton>
           )}
+        </span>
+        <span>
+          © {new Date().getFullYear()} Vargas Arts, LLC, Built with
+          {` `}
+          <a
+            href="https://www.gatsbyjs.org"
+            style={{ color: colors.secondary }}
+          >
+            Gatsby
+          </a>
         </span>
       </footer>
     </div>

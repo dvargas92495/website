@@ -87,7 +87,7 @@ const Podcasts = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h4" style={{ margin: "16px 0" }}>
           Podcasts
         </Typography>
         <Typography variant="body1">
@@ -95,8 +95,6 @@ const Podcasts = () => {
           follow. These are the shows that I'm currently subscribed to and you
           could see broken down in my weekly newsletter.
         </Typography>
-      </Container>
-      <Container maxWidth={"md"}>
         <Grid container style={{ padding: "24px 0" }}>
           {site.siteMetadata.interests.podcasts.map(
             ({ title, description, url, imgSrc }, i) => (

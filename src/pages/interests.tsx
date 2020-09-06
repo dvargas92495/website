@@ -28,14 +28,14 @@ const Interests = () => {
     <Layout>
       <SEO title="Interests" />
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h3" style={{ margin: "16px 0" }}>
           Interests
         </Typography>
-        <p>
+        <Typography variant="body1" style={{ margin: "16px 0" }}>
           This page lists all of my various interests and content that are
           actively influencing me. My hope is that you could find something here
           that is of interest to you too!
-        </p>
+        </Typography>
       </Container>
       <Container maxWidth={"md"}>
         <Paper

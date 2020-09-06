@@ -1,4 +1,5 @@
 import React from "react";
+import { isBrowser } from "react-device-detect";
 import IframeResizer from "iframe-resizer-react";
 import Image from "material-ui-image";
 import Layout from "../components/layout";
@@ -21,7 +22,7 @@ const Sponsor = ({
   title: string;
   url: string;
 }) => (
-  <Grid item xs={2}>
+  <Grid item xs={isBrowser ? 2 : 4}>
     <Card
       style={{
         backgroundColor: colors.tertiary,
@@ -76,7 +77,7 @@ const Support = () => {
     <Layout>
       <SEO title="Support" />
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h3" style={{ margin: "16px 0" }}>
           Support
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>
@@ -103,7 +104,7 @@ const Support = () => {
           allow="payment"
         />
         <script src="https://givebutter.com/js/widget.js"></script>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h3" style={{ margin: "16px 0" }}>
           Thank You To My Sponsors!
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>

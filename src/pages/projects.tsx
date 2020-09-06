@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+import { isBrowser, BrowserView, MobileView } from "react-device-detect";
 import Image from "material-ui-image";
 import Layout from "../components/layout";
 import Typography from "@material-ui/core/Typography";
@@ -11,6 +12,9 @@ import NoSsr from "@material-ui/core/NoSsr";
 import { colors } from "../utils/typography";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
+import IconButton from "@material-ui/core/IconButton";
+import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
+import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
 
 const Project = ({
   title,
@@ -25,25 +29,55 @@ const Project = ({
   imgSrc: string;
   ltr: boolean;
 }) => {
+  const [showDescription, setShowDescription] = useState(false);
+  const openDescription = useCallback(() => setShowDescription(true), [
+    setShowDescription,
+  ]);
+  const closeDescription = useCallback(() => setShowDescription(false), [
+    setShowDescription,
+  ]);
   const imageGrid = (
-    <Grid item xs={4}>
+    <Grid item xs={isBrowser ? 4 : 2}>
       <NoSsr>
         <Image src={imgSrc} aspectRatio={1} />
       </NoSsr>
     </Grid>
   );
   const contentGrid = (
-    <Grid item xs={8} style={{ color: colors.primary }}>
-      <Container style={{ textAlign: "center" }}>
-        <Typography variant="h4">{title}</Typography>
-      </Container>
+    <Grid item xs={isBrowser ? 8 : 10} style={{ color: colors.primary }}>
       <Container style={{ textAlign: "center" }}>
         <Link href={link} target="_blank" rel="noopener">
-          {link}
+          <Typography variant="h5">{title}</Typography>
         </Link>
       </Container>
-      <Container style={{ marginTop: 8 }}>
-        <Typography variant="body1">{description}</Typography>
+      <Container style={{ textAlign: "justify" }}>
+        <BrowserView>
+          <Typography variant="body1" style={{ marginTop: 8 }}>
+            {description}
+          </Typography>
+        </BrowserView>
+        <MobileView>
+          {showDescription ? (
+            <>
+              <Typography variant="body1" style={{ marginTop: 8 }}>
+                {description}
+              </Typography>
+              <IconButton
+                onClick={closeDescription}
+                style={{ padding: 0, width: "100%", textAlign: "center" }}
+              >
+                <ArrowDropUp fontSize={"large"} />
+              </IconButton>
+            </>
+          ) : (
+            <IconButton
+              onClick={openDescription}
+              style={{ padding: 0, width: "100%", textAlign: "center" }}
+            >
+              <ArrowDropDown fontSize={"large"} />
+            </IconButton>
+          )}
+        </MobileView>
       </Container>
     </Grid>
   );
@@ -68,17 +102,17 @@ const Projects = ({ data }) => (
   <Layout>
     <SEO title="Projects" />
     <Container maxWidth={"md"}>
-      <Typography variant="h2" style={{ margin: "16px 0" }}>
+      <Typography variant="h3" style={{ margin: "16px 0" }}>
         Projects
       </Typography>
-      <p>
+      <Typography variant="body1" style={{ margin: "16px 0" }}>
         This page lists all the projects that I am currently working on, I have
         worked on, and types of projects I am interested in working on. I
         consider places of employment both past and present as projects as well.
-      </p>
+      </Typography>
     </Container>
     <Container maxWidth={"md"} style={{ marginBottom: 16 }}>
-      <Typography variant="h3" style={{ margin: "16px 0" }}>
+      <Typography variant="h4" style={{ margin: "16px 0" }}>
         Current Projects
       </Typography>
       {data.site.siteMetadata.projects.current.map(
@@ -97,7 +131,7 @@ const Projects = ({ data }) => (
         )
       )}
 
-      <Typography variant="h3" style={{ margin: "16px 0" }}>
+      <Typography variant="h4" style={{ margin: "16px 0" }}>
         Previous Projects
       </Typography>
       {data.site.siteMetadata.projects.previous.map(

@@ -1,4 +1,5 @@
 import React from "react";
+import { isBrowser, BrowserView } from "react-device-detect";
 import Image from "material-ui-image";
 import { useStaticQuery, graphql } from "gatsby";
 import Container from "@material-ui/core/Container";
@@ -32,23 +33,22 @@ const Charity = ({
     >
       <Card style={{ backgroundColor: colors.tertiary }}>
         <Grid container>
-          <Grid item xs={4}>
+          <Grid item xs={isBrowser ? 4 : 2}>
             <NoSsr>
               <Image src={imgSrc} aspectRatio={1.5} />
             </NoSsr>
           </Grid>
-          <Grid item xs={8} style={{ color: colors.primary }}>
-            <Container style={{ textAlign: "center" }}>
-              <Typography variant="h4">{title}</Typography>
-            </Container>
+          <Grid item xs={isBrowser ? 8 : 10} style={{ color: colors.primary }}>
             <Container style={{ textAlign: "center" }}>
               <Link href={url} target="_blank" rel="noopener">
-                Home
+                <Typography variant="h6">{title}</Typography>
               </Link>
             </Container>
-            <Container style={{ marginTop: 8, textAlign: "center" }}>
-              <Typography variant="body1">{description}</Typography>
-            </Container>
+            <BrowserView>
+              <Container style={{ marginTop: 8, textAlign: "center" }}>
+                <Typography variant="body1">{description}</Typography>
+              </Container>
+            </BrowserView>
           </Grid>
         </Grid>
       </Card>
@@ -91,7 +91,7 @@ const Charities = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h4" style={{ margin: "16px 0" }}>
           Charities
         </Typography>
         <Typography variant="body1">
@@ -101,8 +101,6 @@ const Charities = () => {
           year. Here are the charities I've found tackling the problems I care
           most about eradicating, hoping that it inspires others to do so too.
         </Typography>
-      </Container>
-      <Container maxWidth={"md"}>
         <Grid container style={{ padding: "24px 0" }} spacing={2}>
           {charities.map(({ title, description, url, imgSrc }, i) => (
             <Charity

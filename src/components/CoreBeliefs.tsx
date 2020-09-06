@@ -17,8 +17,7 @@ const CoreBelief = ({
   index: number;
 }) => (
   <>
-    <Grid item xs={2} />
-    <Grid item xs={8} style={{ color: colors.primary }}>
+    <Grid item xs={12} style={{ color: colors.primary }}>
       <Fade
         in={true}
         mountOnEnter
@@ -35,7 +34,6 @@ const CoreBelief = ({
         </Card>
       </Fade>
     </Grid>
-    <Grid item xs={2} />
   </>
 );
 
@@ -57,30 +55,30 @@ const CoreBeliefs = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h4" style={{ margin: "16px 0" }}>
           Core Beliefs
         </Typography>
-        <p>
+        <Typography variant="body1" style={{ margin: "16px 0" }}>
           I'd like to consider myself a rational person that's open minded to
           new perspectives. Despite this, I do think it's valuable to have a
           couple of fundamental principles that anchor you. This allows you to
           build out the rest of your value set. These are mine. I consider them
           beliefs, because they are axioms that cannot be proven or disproven.
           They are my religion.
-        </p>
+        </Typography>
+        <Grid container style={{ marginBottom: 16 }} spacing={2}>
+          {data.site.siteMetadata.interests.coreBeliefs.map(
+            ({ title, description }, i) => (
+              <CoreBelief
+                key={i}
+                title={title}
+                description={description}
+                index={i}
+              />
+            )
+          )}
+        </Grid>
       </Container>
-      <Grid container style={{ marginBottom: 16 }} spacing={2}>
-        {data.site.siteMetadata.interests.coreBeliefs.map(
-          ({ title, description }, i) => (
-            <CoreBelief
-              key={i}
-              title={title}
-              description={description}
-              index={i}
-            />
-          )
-        )}
-      </Grid>
     </>
   );
 };

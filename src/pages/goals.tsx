@@ -56,7 +56,7 @@ const Goals = () => {
     <Layout>
     <SEO title="Goals" />
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h3" style={{ margin: "16px 0" }}>
           Goals
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>
@@ -88,7 +88,7 @@ const Goals = () => {
             </Tabs>
           </AppBar>
           <Container maxWidth={"md"}>
-            <Typography variant="h2" style={{ margin: "16px 0" }}>
+            <Typography variant="h4" style={{ margin: "16px 0" }}>
               {`${years[tabValue]} Goals`}
             </Typography>
             <Typography variant="body1">{bodies[years[tabValue]]}</Typography>

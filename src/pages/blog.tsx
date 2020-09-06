@@ -1,8 +1,9 @@
 import React from "react";
+import { isBrowser } from "react-device-detect";
 import Image from "material-ui-image";
 import { graphql, PageProps, Link } from "gatsby";
 import { Data } from "../utils/data";
-import { rhythm, colors } from "../utils/typography";
+import { colors } from "../utils/typography";
 import Layout from "../components/layout";
 import Zoom from "@material-ui/core/Zoom";
 import Grid from "@material-ui/core/Grid";
@@ -45,7 +46,7 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
     <Layout>
       <SEO title="Blog" />
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h3" style={{ margin: "16px 0" }}>
           My Personal Blog
         </Typography>
         <Typography variant="body1" style={{ marginBottom: 16 }}>
@@ -67,9 +68,9 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
                 }}
                 key={node.fields.slug}
               >
-                <Grid item xs={4}>
+                <Grid item xs={isBrowser ? 4 : 12}>
                   <Card style={{ height: 400 }}>
-                    <div style={{ height: 200 }}>
+                    <div style={{ height: isBrowser ? 200 : 225 }}>
                       {socialImg && (
                         <NoSsr>
                           <Image
@@ -79,7 +80,12 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
                         </NoSsr>
                       )}
                     </div>
-                    <Container style={{ color: colors.primary, height: 200 }}>
+                    <Container
+                      style={{
+                        color: colors.primary,
+                        height: isBrowser ? 200 : 175,
+                      }}
+                    >
                       <header>
                         <Typography variant="h5">
                           <Link

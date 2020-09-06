@@ -1,4 +1,5 @@
 import React from "react";
+import { isBrowser } from "react-device-detect";
 import Image from "material-ui-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -37,8 +38,8 @@ const Thumbnail = ({
         exit: delay,
       }}
     >
-      <Grid item xs={4}>
-        <Card style={{ height: 400 }}>
+      <Grid item xs={isBrowser ? 4 : 12}>
+        <Card style={{ height: 300 }}>
           <div style={{ height: 200 }}>
             {thumbnailImage ? (
               <NoSsr>
@@ -51,7 +52,7 @@ const Thumbnail = ({
               "Thumbnail Image Coming Soon..."
             )}
           </div>
-          <Container style={{ color: colors.primary, height: 200 }}>
+          <Container style={{ color: colors.primary, height: 100 }}>
             <header>
               <Typography variant="h5">
                 <Link
@@ -97,7 +98,7 @@ const Consulting = ({ data }) => {
       </SEO>
 
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h3" style={{ margin: "16px 0" }}>
           Consulting
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>
@@ -110,7 +111,7 @@ const Consulting = ({ data }) => {
                 url: "https://calendly.com/dvargas92495/consulting",
               })
             }
-            style={{ color: colors.secondary, cursor: 'pointer' }}
+            style={{ color: colors.secondary, cursor: "pointer" }}
           >
             book a slot on my calendly.
           </Link>{" "}

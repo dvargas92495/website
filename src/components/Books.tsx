@@ -1,4 +1,5 @@
 import React from "react";
+import { isBrowser } from "react-device-detect";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Fade from "@material-ui/core/Fade";
@@ -18,7 +19,7 @@ const Book = ({
   author: string;
   index: number;
 }) => (
-  <Grid item xs={4} style={{ color: colors.primary }}>
+  <Grid item xs={isBrowser ? 4 : 12} style={{ color: colors.primary }}>
     <Fade
       in={true}
       mountOnEnter
@@ -62,7 +63,7 @@ const Books = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h2" style={{ margin: "16px 0" }}>
+        <Typography variant="h4" style={{ margin: "16px 0" }}>
           Books
         </Typography>
         <Typography variant="body1">
@@ -75,8 +76,6 @@ const Books = () => {
           these books that have been really impactful for me will be for you
           too.
         </Typography>
-      </Container>
-      <Container maxWidth={"md"}>
         <Grid container style={{ marginBottom: 16 }} spacing={2}>
           {data.site.siteMetadata.interests.books.map(
             ({ title, description, author }, i) => (
