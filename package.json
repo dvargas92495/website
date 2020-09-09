@@ -10,6 +10,7 @@
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@weknow/gatsby-remark-twitter": "^0.2.3",
     "axios": "0.19.2",
     "gatsby": "^2.21.37",

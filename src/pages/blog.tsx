@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { isBrowser } from "react-device-detect";
 import Image from "material-ui-image";
 import { graphql, PageProps, Link } from "gatsby";
@@ -11,6 +11,7 @@ import Card from "@material-ui/core/Card";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import NoSsr from "@material-ui/core/NoSsr";
+import Pagination from "@material-ui/lab/Pagination";
 import SEO from "../components/seo";
 
 type ImageFileData = {
@@ -29,18 +30,32 @@ type ImageFileData = {
   };
 };
 
+const PAGE_SIZE = 9;
+
 const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
-  const socialImagesByBlog = Object.fromEntries(
-    data.allFile.edges.map(({ node }) => [
-      node.absolutePath.substring(
-        node.absolutePath.indexOf("/content/blog/") + 13,
-        node.absolutePath.indexOf("social.png")
+  const socialImagesByBlog = useMemo(
+    () =>
+      Object.fromEntries(
+        data.allFile.edges.map(({ node }) => [
+          node.absolutePath.substring(
+            node.absolutePath.indexOf("/content/blog/") + 13,
+            node.absolutePath.indexOf("social.png")
+          ),
+          {
+            imgSrc: node.publicURL,
+            aspectRatio: node.childImageSharp.fluid.aspectRatio,
+          },
+        ])
       ),
-      {
-        imgSrc: node.publicURL,
-        aspectRatio: node.childImageSharp.fluid.aspectRatio,
-      },
-    ])
+    [data.allFile.edges]
+  );
+  const allBlogs = data.allMarkdownRemark.edges;
+  const total = allBlogs.length;
+  const [blogs, setBlogs] = useState(allBlogs.slice(0, PAGE_SIZE));
+  const onPageChange = useCallback(
+    (_, value) =>
+      setBlogs(allBlogs.slice((value - 1) * PAGE_SIZE, value * PAGE_SIZE)),
+    [allBlogs, setBlogs]
   );
   return (
     <Layout>
@@ -52,8 +67,15 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
         <Typography variant="body1" style={{ marginBottom: 16 }}>
           Articles reflecting the many lessons I've learned so far.
         </Typography>
+        <Pagination
+          count={Math.ceil(total / PAGE_SIZE)}
+          shape="rounded"
+          onChange={onPageChange}
+          size="large"
+          
+        />
         <Grid container spacing={2}>
-          {data.allMarkdownRemark.edges.map(({ node }, i) => {
+          {blogs.map(({ node }, i) => {
             const title = node.frontmatter.title || node.fields.slug;
             const delay = (Math.floor(i / 3) + 1) * 500;
             const socialImg = socialImagesByBlog[node.fields.slug];

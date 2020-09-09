@@ -16,3 +16,7 @@ ul {
 figcaption {
   text-align: center;
 }
+
+.MuiPagination-ul {
+  justify-content: center;
+}
