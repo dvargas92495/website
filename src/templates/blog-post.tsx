@@ -5,11 +5,18 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 import Container from "@material-ui/core/Container";
+import MaterialLink from "@material-ui/core/Link";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
   const social = data.social?.childImageSharp?.fluid?.src;
+  const editorByName = Object.fromEntries(
+    data.site.siteMetadata.editors.map(e => [e.name, e.url])
+  );
+  const acks = post.frontmatter.acknowledgement
+    ? post.frontmatter.acknowledgement.split(", ")
+    : [];
   return (
     <Layout>
       <SEO
@@ -60,9 +67,25 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             <p
               style={{
                 marginBottom: 16,
+                fontSize: 12,
               }}
             >
-              <i> {post.frontmatter.acknowledgement}</i>
+              <i>
+                A special thanks to my friends for help with this article:{" "}
+                {acks.map((name, i) => (
+                  <>
+                    {i > 0 && acks.length > 2 && ", "}
+                    {i > 0 && i === acks.length - 1 && "and "}
+                    <MaterialLink
+                      href={editorByName[name]}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {name}
+                    </MaterialLink>
+                  </>
+                ))}
+              </i>
             </p>
           )}
           <hr
@@ -125,6 +148,14 @@ export const pageQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 2000, quality: 100) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        editors {
+          name
+          url
         }
       }
     }

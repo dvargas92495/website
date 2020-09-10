@@ -48,6 +48,21 @@ module.exports = {
         },
       ],
     },
+    editors: [
+      {
+        name: 'Kenny Friedman',
+        url: "https://kennethfriedman.org/"
+      }, {
+        name: "Nikhil Punwaney",
+        url: "https://twitter.com/nikhilpunwaney",
+      }, {
+        name: "Parth Shah",
+        url: "https://www.parthhemalshah.com",
+      }, {
+        name: "Ben Baker",
+        url: "https://www.linkedin.com/in/benrbaker/",
+      }
+    ],
     consulting: [
       {
         title: "TEACH ME HOW TO ROAM with Greg Frontiero",
