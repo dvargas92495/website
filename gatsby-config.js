@@ -57,7 +57,7 @@ module.exports = {
         url: "https://twitter.com/nikhilpunwaney",
       }, {
         name: "Parth Shah",
-        url: "https://www.parthhemalshah.com",
+        url: "http://www.parthhemalshah.com",
       }, {
         name: "Ben Baker",
         url: "https://www.linkedin.com/in/benrbaker/",
