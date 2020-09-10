@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from "react";
+import React, { useMemo, useState, useCallback, ChangeEvent } from "react";
 import { isBrowser } from "react-device-detect";
 import Image from "material-ui-image";
 import { graphql, PageProps, Link } from "gatsby";
@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import NoSsr from "@material-ui/core/NoSsr";
 import Pagination from "@material-ui/lab/Pagination";
 import SEO from "../components/seo";
+import TextField from "@material-ui/core/TextField";
 
 type ImageFileData = {
   allFile: {
@@ -49,13 +50,27 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
       ),
     [data.allFile.edges]
   );
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
   const allBlogs = data.allMarkdownRemark.edges;
-  const total = allBlogs.length;
-  const [blogs, setBlogs] = useState(allBlogs.slice(0, PAGE_SIZE));
-  const onPageChange = useCallback(
-    (_, value) =>
-      setBlogs(allBlogs.slice((value - 1) * PAGE_SIZE, value * PAGE_SIZE)),
-    [allBlogs, setBlogs]
+  const filteredBlogs = search
+    ? allBlogs.filter(
+        ({ node }) =>
+          node.frontmatter.title.indexOf(search) > -1 ||
+          node.frontmatter.description.indexOf(search) > -1
+      )
+    : allBlogs;
+  const total = filteredBlogs.length;
+  const currentPage = Math.min(page, Math.ceil(total / PAGE_SIZE));
+
+  const blogs = filteredBlogs.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  );
+  const onPageChange = useCallback((_, value) => setPage(value), [setPage]);
+  const onSearchChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value),
+    [setSearch]
   );
   return (
     <Layout>
@@ -64,15 +79,29 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
         <Typography variant="h3" style={{ margin: "16px 0" }}>
           My Personal Blog
         </Typography>
-        <Typography variant="body1" style={{ marginBottom: 16 }}>
+        <Typography
+          variant="body1"
+          style={{
+            marginBottom: 16,
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           Articles reflecting the many lessons I've learned so far.
+          <TextField
+            label="Search..."
+            variant="outlined"
+            style={{ width: 400 }}
+            onChange={onSearchChange}
+            value={search}
+          />
         </Typography>
         <Pagination
           count={Math.ceil(total / PAGE_SIZE)}
           shape="rounded"
           onChange={onPageChange}
+          page={currentPage}
           size="large"
-          
         />
         <Grid container spacing={2}>
           {blogs.map(({ node }, i) => {
