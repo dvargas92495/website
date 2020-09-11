@@ -50,18 +50,21 @@ module.exports = {
     },
     editors: [
       {
-        name: 'Kenny Friedman',
-        url: "https://kennethfriedman.org/"
-      }, {
+        name: "Kenny Friedman",
+        url: "https://kennethfriedman.org/",
+      },
+      {
         name: "Nikhil Punwaney",
         url: "https://twitter.com/nikhilpunwaney",
-      }, {
+      },
+      {
         name: "Parth Shah",
         url: "http://www.parthhemalshah.com",
-      }, {
+      },
+      {
         name: "Ben Baker",
         url: "https://www.linkedin.com/in/benrbaker/",
-      }
+      },
     ],
     consulting: [
       {
@@ -350,6 +353,7 @@ module.exports = {
         description:
           "I was blessed with one of the best childhoods a kid could wish for. I want to pay this forward and give my kids a childhood that's just as good.",
         status: "0",
+        imgSrc: "family.jpg",
       },
       {
         year: "Life",
@@ -357,6 +361,7 @@ module.exports = {
         description:
           "More realistically, live as long as I can. Currently shooting for 150 as a first step.",
         status: "16",
+        imgSrc: "forever.png",
       },
       {
         year: "Life",
@@ -364,6 +369,7 @@ module.exports = {
         description:
           "For everything I work on, ask myself, how could I do this as publicly as possible?",
         status: "0",
+        imgSrc: "build.png",
       },
       {
         year: "Life",
@@ -371,6 +377,7 @@ module.exports = {
         description:
           "By travelling all over the world, learn about as many different perspectives as possible.",
         status: "0",
+        imgSrc: "nomad.jpg",
       },
       {
         year: "Life",
@@ -378,6 +385,7 @@ module.exports = {
         description:
           "Raise enough capital to invest in up and coming companies and individuals",
         status: "0",
+        imgSrc: "angel.jpg",
       },
       {
         year: "Life",
@@ -385,6 +393,7 @@ module.exports = {
         description:
           "It will end in our lifetime. Find work in education and housing to accelerate this process.",
         status: "90",
+        imgSrc: "poverty.png",
       },
       {
         year: "2020",
@@ -392,6 +401,7 @@ module.exports = {
         description:
           "My first time working with someone on my free time, it was a valuable lesson in not getting ahead of myself and start building too early.",
         status: "Fail",
+        imgSrc: "moonlight.jpg",
       },
       {
         year: "2020",
@@ -399,6 +409,7 @@ module.exports = {
         description:
           "Adopted a 2 book/month pace that allowed me to clear the Kindle wish list I had at the time.",
         status: "Success",
+        imgSrc: "kindle.png",
       },
       {
         year: "2020",
@@ -406,6 +417,7 @@ module.exports = {
         description:
           "An idea I had for a online education + college campus blend, I did technically share a first draft with friends. The goal is too large to pursue anytime soon.",
         status: "Success",
+        imgSrc: "unleash.png",
       },
       {
         year: "2020",
@@ -413,6 +425,7 @@ module.exports = {
         description:
           "I was pretty reckless with my spending in 2019, and I wanted to be more responsible with my cash.",
         status: "77",
+        imgSrc: "savings.jpg",
       },
       {
         year: "2020",
@@ -420,6 +433,7 @@ module.exports = {
         description:
           "I signed up for classes right as COVID hit. Now, I think this is an interest that's going on the back burner.",
         status: "Fail",
+        imgSrc: "mic.png",
       },
       {
         year: "2020",
@@ -427,6 +441,7 @@ module.exports = {
         description:
           "Not only did it end, but helped my friend launch the successor, Longwave!",
         status: "Success",
+        imgSrc: "longwave.png",
       },
       {
         year: "2020",
@@ -434,6 +449,7 @@ module.exports = {
         description:
           "Started the year at around 22%, and am about halfway to 10%.",
         status: "50",
+        imgSrc: "scale.jpg",
       },
     ],
     sponsors: [
@@ -494,6 +510,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `goals`,
+        path: `${__dirname}/content/goals`,
       },
     },
     {

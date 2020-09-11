@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import Image from "material-ui-image";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Layout from "../components/layout";
@@ -16,6 +17,7 @@ import Check from "@material-ui/icons/Check";
 import Close from "@material-ui/icons/Close";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import SEO from "../components/seo";
+import NoSsr from "@material-ui/core/NoSsr";
 
 const bodies = {
   Life: "Evergreen objectives that express what I am working towards.",
@@ -40,6 +42,20 @@ const Goals = () => {
             title
             description
             status
+            imgSrc
+          }
+        }
+      }
+      allFile(filter: { sourceInstanceName: { eq: "goals" } }) {
+        edges {
+          node {
+            publicURL
+            absolutePath
+            childImageSharp {
+              fluid {
+                aspectRatio
+              }
+            }
           }
         }
       }
@@ -50,11 +66,22 @@ const Goals = () => {
       siteMetadata: { goals },
     },
   } = data;
+  const imagesByName = Object.fromEntries(
+    data.allFile.edges.map(({ node }) => [
+      node.absolutePath.substring(
+        node.absolutePath.indexOf("/content/goals/") + 15
+      ),
+      {
+        imgSrc: node.publicURL,
+        aspectRatio: node.childImageSharp.fluid.aspectRatio,
+      },
+    ])
+  );
   const goalsByYear = groupBy(goals, "year");
   const years = keys(goalsByYear).sort().reverse();
   return (
     <Layout>
-    <SEO title="Goals" />
+      <SEO title="Goals" />
       <Container maxWidth={"md"}>
         <Typography variant="h3" style={{ margin: "16px 0" }}>
           Goals
@@ -114,14 +141,18 @@ const Goals = () => {
                     <Card style={{ backgroundColor: colors.tertiary }}>
                       <Grid container>
                         <Grid item xs={2}>
-                          {/* <NoSsr>
-                        <Image src={imgSrc} aspectRatio={1.5} />
-                     </NoSsr>*/}
+                          <NoSsr>
+                            <Image
+                              src={imagesByName[g.imgSrc]?.imgSrc}
+                              aspectRatio={imagesByName[g.imgSrc]?.aspectRatio}
+                              height="100%"
+                            />
+                          </NoSsr>
                         </Grid>
                         <Grid
                           item
                           xs={10}
-                          style={{ color: colors.primary, padding: 16 }}
+                          style={{ color: colors.primary, padding: "16px 0" }}
                         >
                           <Container>
                             <Typography variant="h4">{g.title}</Typography>
