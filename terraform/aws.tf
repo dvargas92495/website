@@ -129,3 +129,8 @@ resource "aws_iam_user_policy_attachment" "lambda_floss" {
   user       = aws_iam_user.floss.name
   policy_arn = "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
 }
+
+resource "aws_iam_user_policy_attachment" "dynamo_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSDynamoDBFullAccess"
+}
