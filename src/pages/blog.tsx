@@ -44,7 +44,7 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
           ),
           {
             imgSrc: node.publicURL,
-            aspectRatio: node.childImageSharp.fluid.aspectRatio,
+            aspectRatio: node?.childImageSharp?.fluid?.aspectRatio || 1,
           },
         ])
       ),
@@ -79,15 +79,15 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
         <Typography variant="h3" style={{ margin: "16px 0" }}>
           My Personal Blog
         </Typography>
-        <Typography
-          variant="body1"
-          style={{
-            marginBottom: 16,
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          Articles reflecting the many lessons I've learned so far.
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography
+            variant="body1"
+            style={{
+              marginBottom: 16,
+            }}
+          >
+            Articles reflecting the many lessons I've learned so far.
+          </Typography>
           <TextField
             label="Search..."
             variant="outlined"
@@ -95,7 +95,7 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
             onChange={onSearchChange}
             value={search}
           />
-        </Typography>
+        </div>
         <Pagination
           count={Math.ceil(total / PAGE_SIZE)}
           shape="rounded"
