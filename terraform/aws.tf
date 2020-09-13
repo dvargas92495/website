@@ -134,3 +134,32 @@ resource "aws_iam_user_policy_attachment" "dynamo_floss" {
   user       = aws_iam_user.floss.name
   policy_arn = "arn:aws:iam::aws:policy/AWSDynamoDBFullAccess"
 }
+
+resource "aws_iam_user" "wings" {
+  name = "wings"
+}
+
+resource "aws_iam_user_policy_attachment" "s3_wings" {
+  user       = aws_iam_user.wings.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "acm_wings" {
+  user       = aws_iam_user.wings.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "cloudfront_wings" {
+  user       = aws_iam_user.wings.name
+  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "route53_wings" {
+  user       = aws_iam_user.wings.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "iam_wings" {
+  user       = aws_iam_user.wings.name
+  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+}
