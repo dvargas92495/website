@@ -65,6 +65,9 @@ module.exports = {
         name: "Ben Baker",
         url: "https://www.linkedin.com/in/benrbaker/",
       },
+      { name: "Robbie Crabtree", url: "https://www.robbiecrab.com/" },
+      { name: "Doc Ayomide", url: "https://docayomide.com/" },
+      { name: "Dipan Patel", url: "https://disco.substack.com/" },
     ],
     consulting: [
       {
