@@ -168,3 +168,8 @@ resource "aws_iam_user_policy_attachment" "ec2_wings" {
   user       = aws_iam_user.wings.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
 }
+
+resource "aws_iam_user_policy_attachment" "rds_wings" {
+  user       = aws_iam_user.wings.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
+}
