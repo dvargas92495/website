@@ -132,7 +132,7 @@ resource "aws_iam_user_policy_attachment" "lambda_floss" {
 
 resource "aws_iam_user_policy_attachment" "dynamo_floss" {
   user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSDynamoDBFullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
 }
 
 resource "aws_iam_user" "wings" {
@@ -162,4 +162,9 @@ resource "aws_iam_user_policy_attachment" "route53_wings" {
 resource "aws_iam_user_policy_attachment" "iam_wings" {
   user       = aws_iam_user.wings.name
   policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "ec2_wings" {
+  user       = aws_iam_user.wings.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
 }
