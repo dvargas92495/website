@@ -41,7 +41,14 @@ const Charity = ({
           <Grid item xs={isBrowser ? 8 : 10} style={{ color: colors.primary }}>
             <Container style={{ textAlign: "center" }}>
               <Link href={url} target="_blank" rel="noopener">
-                <Typography variant="h6">{title}</Typography>
+                <Typography
+                  variant="h6"
+                  style={{
+                    fontFamily: "'Merriweather','Georgia',serif",
+                  }}
+                >
+                  {title}
+                </Typography>
               </Link>
             </Container>
             <BrowserView>
@@ -91,7 +98,13 @@ const Charities = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h4" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h4"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Charities
         </Typography>
         <Typography variant="body1">

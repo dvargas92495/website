@@ -11,7 +11,12 @@ const Subscribe = () => (
     <Container maxWidth="md" style={{ textAlign: "center" }}>
       <Typography
         variant="h5"
-        style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+        style={{
+          color: colors.primary,
+          paddingTop: 32,
+          paddingBottom: 32,
+          fontFamily: "'Merriweather','Georgia',serif",
+        }}
       >
         Join the other 42 subscribers and stay up to date on what I'm creating!
       </Typography>

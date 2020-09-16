@@ -111,7 +111,12 @@ const Layout = ({ children }) => {
     >
       <AppBar position="sticky" style={{ backgroundColor: colors.primary }}>
         <Toolbar style={{ justifyContent: "space-between" }}>
-          <Typography variant="h6">
+          <Typography
+            variant="h6"
+            style={{
+              fontFamily: "'Merriweather','Georgia',serif",
+            }}
+          >
             <Link
               to="/"
               style={{
@@ -195,7 +200,14 @@ const Layout = ({ children }) => {
             borderRadius: 32,
           }}
         >
-          <Typography variant="h6">Vargas Ventures</Typography>
+          <Typography
+            variant="h6"
+            style={{
+              fontFamily: "'Merriweather','Georgia',serif",
+            }}
+          >
+            Vargas Ventures
+          </Typography>
           <Typography variant="subtitle2" style={{ marginBottom: 16 }}>
             Subscribe to my newsletter below for updates on what I'm building,
             what I'm writing, and where I'm travelling. I also share the

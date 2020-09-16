@@ -56,9 +56,16 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
   const filteredBlogs = search
     ? allBlogs.filter(
         ({ node }) =>
-          node.frontmatter.title.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-          node.frontmatter.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-          !!(node.frontmatter.tags || "").split(",").find(t => t.trim().toLowerCase().indexOf(search.toLowerCase()) > -1)
+          node.frontmatter.title.toLowerCase().indexOf(search.toLowerCase()) >
+            -1 ||
+          node.frontmatter.description
+            .toLowerCase()
+            .indexOf(search.toLowerCase()) > -1 ||
+          !!(node.frontmatter.tags || "")
+            .split(",")
+            .find(
+              t => t.trim().toLowerCase().indexOf(search.toLowerCase()) > -1
+            )
       )
     : allBlogs;
   const total = filteredBlogs.length;
@@ -77,7 +84,13 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
     <Layout>
       <SEO title="Blog" />
       <Container maxWidth={"md"}>
-        <Typography variant="h3" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h3"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           My Personal Blog
         </Typography>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -139,7 +152,12 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
                       }}
                     >
                       <header>
-                        <Typography variant="h5">
+                        <Typography
+                          variant="h5"
+                          style={{
+                            fontFamily: "'Merriweather','Georgia',serif",
+                          }}
+                        >
                           <Link
                             style={{ boxShadow: `none`, color: colors.primary }}
                             to={`/blog/${node.fields.slug.substring(10)}`}

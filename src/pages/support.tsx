@@ -33,7 +33,14 @@ const Sponsor = ({
       <NoSsr>
         <Image src={imgSrc} aspectRatio={1} />
       </NoSsr>
-      <Typography variant="h6" style={{ margin: "16px 0", padding: "0 4px" }}>
+      <Typography
+        variant="h6"
+        style={{
+          margin: "16px 0",
+          padding: "0 4px",
+          fontFamily: "'Merriweather','Georgia',serif",
+        }}
+      >
         {url ? (
           <Link href={url} target="_blank" rel="noopener">
             {title}
@@ -77,21 +84,32 @@ const Support = () => {
     <Layout>
       <SEO title="Support" />
       <Container maxWidth={"md"}>
-        <Typography variant="h3" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h3"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Support
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>
           In August 2020, I decided to start creating content full time. The
-          best way to support my work is to sponsor me directly! If you benefit
-          from the software I create and are on Github, I would prefer{" "}
-          <Link
-            href={"https://github.com/sponsors/dvargas92495"}
-            target="_blank"
-            rel="noopener"
-          >
-            Github Sponsors
-          </Link>{" "}
-          instead of using the widget below, as I experience no fee there.
+          best way to support my work is to sponsor me directly!
+        </Typography>
+        <Typography variant="body1" style={{ margin: "16px 0" }}>
+          If you benefit from the software I create and are on GitHub, sponsor
+          me there!
+        </Typography>
+        <iframe
+          src="https://github.com/sponsors/dvargas92495/card"
+          title="Sponsor dvargas92495"
+          height="225"
+          width="600"
+          style={{ border: 0 }}
+        />
+        <Typography variant="body1" style={{ margin: "16px 0" }}>
+          Otherwise, sponsor me using the widget below!
         </Typography>
         <IframeResizer
           src="https://givebutter.com/embed/c/dvargas92495"
@@ -104,7 +122,13 @@ const Support = () => {
           allow="payment"
         />
         <script src="https://givebutter.com/js/widget.js"></script>
-        <Typography variant="h3" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h3"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Thank You To My Sponsors!
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>

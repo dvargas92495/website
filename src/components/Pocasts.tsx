@@ -87,7 +87,13 @@ const Podcasts = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h4" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h4"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Podcasts
         </Typography>
         <Typography variant="body1">
@@ -126,7 +132,14 @@ const Podcasts = () => {
                         }}
                       >
                         <Container style={{ textAlign: "center" }}>
-                          <Typography variant="h4">{selected.title}</Typography>
+                          <Typography
+                            variant="h4"
+                            style={{
+                              fontFamily: "'Merriweather','Georgia',serif",
+                            }}
+                          >
+                            {selected.title}
+                          </Typography>
                         </Container>
                         <Container style={{ textAlign: "center" }}>
                           <Link

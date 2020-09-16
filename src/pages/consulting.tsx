@@ -54,7 +54,12 @@ const Thumbnail = ({
           </div>
           <Container style={{ color: colors.primary, height: 100 }}>
             <header>
-              <Typography variant="h5">
+              <Typography
+                variant="h5"
+                style={{
+                  fontFamily: "'Merriweather','Georgia',serif",
+                }}
+              >
                 <Link
                   style={{ boxShadow: `none`, color: colors.secondary }}
                   href={url}
@@ -101,7 +106,13 @@ const Consulting = ({ data }) => {
       </SEO>
 
       <Container maxWidth={"md"}>
-        <Typography variant="h3" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h3"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Consulting
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>

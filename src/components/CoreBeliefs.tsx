@@ -26,7 +26,14 @@ const CoreBelief = ({
       >
         <Card style={{ backgroundColor: colors.tertiary }}>
           <Container style={{ textAlign: "center" }}>
-            <Typography variant="h6">{title}</Typography>
+            <Typography
+              variant="h6"
+              style={{
+                fontFamily: "'Merriweather','Georgia',serif",
+              }}
+            >
+              {title}
+            </Typography>
           </Container>
           <Container style={{ marginTop: 8 }}>
             <Typography variant="body1">{description}</Typography>
@@ -55,7 +62,13 @@ const CoreBeliefs = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h4" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h4"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Core Beliefs
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>

@@ -37,7 +37,12 @@ const Index = () => {
       <Container maxWidth="md" style={{ textAlign: "center" }}>
         <Typography
           variant="h4"
-          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+          style={{
+            color: colors.primary,
+            paddingTop: 32,
+            paddingBottom: 32,
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
         >
           Nomad, Engineer, Writer
         </Typography>
@@ -49,7 +54,12 @@ const Index = () => {
         </Typography>
         <Typography
           variant="h5"
-          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+          style={{
+            color: colors.primary,
+            paddingTop: 32,
+            paddingBottom: 32,
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
         >
           Traveling to Different Cities as a Digital Nomad
         </Typography>
@@ -74,7 +84,12 @@ const Index = () => {
         </Typography>
         <Typography
           variant="h5"
-          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+          style={{
+            color: colors.primary,
+            paddingTop: 32,
+            paddingBottom: 32,
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
         >
           Engineer Specializing in Technologically Poor Industries
         </Typography>
@@ -92,7 +107,12 @@ const Index = () => {
         </Typography>
         <Typography
           variant="h5"
-          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+          style={{
+            color: colors.primary,
+            paddingTop: 32,
+            paddingBottom: 32,
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
         >
           Writing to Learn and Share my Thoughts with the World
         </Typography>
@@ -112,7 +132,12 @@ const Index = () => {
         </Typography>
         <Typography
           variant="h5"
-          style={{ color: colors.primary, paddingTop: 32, paddingBottom: 32 }}
+          style={{
+            color: colors.primary,
+            paddingTop: 32,
+            paddingBottom: 32,
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
         >
           This Intersection Makes Me <b>A Public Citizen of the World</b>
         </Typography>

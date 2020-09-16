@@ -28,7 +28,13 @@ const Interests = () => {
     <Layout>
       <SEO title="Interests" />
       <Container maxWidth={"md"}>
-        <Typography variant="h3" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h3"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Interests
         </Typography>
         <Typography variant="body1" style={{ margin: "16px 0" }}>

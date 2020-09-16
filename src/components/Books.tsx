@@ -31,7 +31,14 @@ const Book = ({
     >
       <Card style={{ backgroundColor: colors.tertiary }}>
         <Container style={{ textAlign: "center" }}>
-          <Typography variant="h6">{title}</Typography>
+          <Typography
+            variant="h6"
+            style={{
+              fontFamily: "'Merriweather','Georgia',serif",
+            }}
+          >
+            {title}
+          </Typography>
         </Container>
         <Container style={{ textAlign: "center" }}>
           <Typography variant="subtitle1">{author}</Typography>
@@ -63,7 +70,13 @@ const Books = () => {
   return (
     <>
       <Container maxWidth={"md"}>
-        <Typography variant="h4" style={{ margin: "16px 0" }}>
+        <Typography
+          variant="h4"
+          style={{
+            margin: "16px 0",
+            fontFamily: "'Merriweather','Georgia',serif",
+          }}
+        >
           Books
         </Typography>
         <Typography variant="body1">

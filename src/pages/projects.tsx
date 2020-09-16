@@ -47,7 +47,14 @@ const Project = ({
     <Grid item xs={isBrowser ? 8 : 10} style={{ color: colors.primary }}>
       <Container style={{ textAlign: "center" }}>
         <Link href={link} target="_blank" rel="noopener">
-          <Typography variant="h5">{title}</Typography>
+          <Typography
+            variant="h5"
+            style={{
+              fontFamily: "'Merriweather','Georgia',serif",
+            }}
+          >
+            {title}
+          </Typography>
         </Link>
       </Container>
       <Container style={{ textAlign: "justify" }}>
@@ -102,7 +109,13 @@ const Projects = ({ data }) => (
   <Layout>
     <SEO title="Projects" />
     <Container maxWidth={"md"}>
-      <Typography variant="h3" style={{ margin: "16px 0" }}>
+      <Typography
+        variant="h3"
+        style={{
+          margin: "16px 0",
+          fontFamily: "'Merriweather','Georgia',serif",
+        }}
+      >
         Projects
       </Typography>
       <Typography variant="body1" style={{ margin: "16px 0" }}>
@@ -112,7 +125,13 @@ const Projects = ({ data }) => (
       </Typography>
     </Container>
     <Container maxWidth={"md"} style={{ marginBottom: 16 }}>
-      <Typography variant="h4" style={{ margin: "16px 0" }}>
+      <Typography
+        variant="h4"
+        style={{
+          margin: "16px 0",
+          fontFamily: "'Merriweather','Georgia',serif",
+        }}
+      >
         Current Projects
       </Typography>
       {data.site.siteMetadata.projects.current.map(
@@ -131,7 +150,13 @@ const Projects = ({ data }) => (
         )
       )}
 
-      <Typography variant="h4" style={{ margin: "16px 0" }}>
+      <Typography
+        variant="h4"
+        style={{
+          margin: "16px 0",
+          fontFamily: "'Merriweather','Georgia',serif",
+        }}
+      >
         Previous Projects
       </Typography>
       {data.site.siteMetadata.projects.previous.map(
