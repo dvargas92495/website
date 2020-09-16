@@ -2,6 +2,7 @@
 title: How Scott Santens Flipped My View On UBI
 date: "2020-07-21T21:39:00.00Z"
 description: "Free money? For everybody? It's less crazy than it sounds."
+tags: Universal Basic Income, Economy, Capitalism, Politics, Change
 ---
 
 When I first heard of Universal Basic Income from my friend, I laughed in his face. What an absurd idea. Labeling it as a communist dream didn't even seem to do this pathway to dystopia justice. Clearly my friend had a fundamental misunderstanding of how value is created in society.

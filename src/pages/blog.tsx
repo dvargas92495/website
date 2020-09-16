@@ -56,8 +56,9 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
   const filteredBlogs = search
     ? allBlogs.filter(
         ({ node }) =>
-          node.frontmatter.title.indexOf(search) > -1 ||
-          node.frontmatter.description.indexOf(search) > -1
+          node.frontmatter.title.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+          node.frontmatter.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+          !!(node.frontmatter.tags || "").split(",").find(t => t.trim().toLowerCase().indexOf(search.toLowerCase()) > -1)
       )
     : allBlogs;
   const total = filteredBlogs.length;
@@ -187,6 +188,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

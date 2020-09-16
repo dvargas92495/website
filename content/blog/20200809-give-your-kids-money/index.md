@@ -2,6 +2,7 @@
 title: Give Your Kids Money
 date: "2020-08-09T08:25:00.00Z"
 description: "The solution to preventing future generations from handling money as poorly as the current ones."
+tags: Childhood, Finance, Education, Economy, Family
 ---
 
 I'm walking towards my gate at the airport with my stepbrother David when he suddenly pumps the brakes. He eyes one of those electronics vending machines, realizing that he is without headphones. "Go on and I'll catch you up with you guys," he says.

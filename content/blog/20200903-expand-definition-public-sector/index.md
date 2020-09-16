@@ -2,6 +2,7 @@
 title: "Time To Expand How We Define The Public Sector"
 date: "2020-09-03T17:16:00.00Z"
 description: "Emphasizing accessibility over control opens up who we consider to be part of the public sector."
+tags: Open Source, Economy, Politics, Social, Optimism
 ---
 
 The internet is radically changing how we should start thinking of the public sector.

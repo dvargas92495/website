@@ -2,6 +2,7 @@
 title: Naval's UBI Critiques Are Misguided
 date: "2020-08-24T15:29:00.00Z"
 description: "An inspiration for several ideas, but off the mark on one."
+tags: Universal Basic Income, Economy, Capitalism, Entrepreneur, Jobs
 ---
 
 Naval Ravikant is the founder of [Angelist](https://angel.co/) and one of the most influential investors in Silicon Valley. His [interview on Joe Rogan](https://www.youtube.com/watch?v=3qHkcs3kG44) was one of the most impactful podcasts I've ever listened to. He expressed several ideas during the interview that really struck a chord with me, ranging from the emerging decentralized world to wealth creation.

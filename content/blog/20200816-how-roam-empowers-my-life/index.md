@@ -2,6 +2,7 @@
 title: How Roam Empowers My Life
 date: "2020-08-16T15:50:00.00Z"
 description: "5 personal strategies I use with this incredible tool for thought."
+tags: Self Improvement, Note Taking, Education, Knowledge Management, Productivity
 ---
 
 I run my life on [Roam](https://roamresearch.com/).

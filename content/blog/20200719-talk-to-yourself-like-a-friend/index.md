@@ -2,6 +2,7 @@
 title: Talk to Yourself Like a Friend
 date: "2020-07-19T22:19:00.00Z"
 description: "Most of us are incredibly nice to all of our friends. Except one."
+tags: Friends, Personal, Self Improvement, Mental Health, MIT
 ---
 
 Imagine you see your friend having a bad day. They talked about all of the failures they had to face. A job interview didn’t go as well as expected. Homework that needed to be punted another day. Basketball team losing due to a key error made in the final seconds. Your natural reaction is to comfort them, because they are your friend and you know how special of a person they really are to let these events determine otherwise. Now, imagine that this friend who's having a bad day is you.

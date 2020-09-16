@@ -2,6 +2,7 @@
 title: Hello, World
 date: "2020-06-30T22:36:00.00Z"
 description: "My first official blog post! And why I started a site."
+tags: Writing, Personal, Education, Change, Community
 ---
 
 I hated writing.

@@ -2,6 +2,7 @@
 title: Taking A Gap Year On Life
 date: "2020-08-19T09:20:00.00Z"
 description: "Taking a year off to discover what work most excites me."
+tags: Writing, Engineering, Nomad, Change, Mark43
 ---
 
 My youngest brother Danny was supposed to be on MIT's campus right now, getting ready for orientation. However, [MIT decided to take a rather conservative approach to reopening](https://covid19.mit.edu/fall-2020-faq), opting to only allow seniors on campus in the fall. 

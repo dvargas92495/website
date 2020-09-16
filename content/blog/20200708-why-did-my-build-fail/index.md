@@ -2,6 +2,7 @@
 title: Why Did My Build Fail?
 date: "2020-07-08T16:09:00.00Z"
 description: "Turning the most frequently asked question I get at work into an explanation of how I diagnose problems more generally."
+tags: Engineering, Debugging, Systems, Build, Testing
 ---
 
 "Hey Vargas, I saw this failure come up, any idea what it means?"

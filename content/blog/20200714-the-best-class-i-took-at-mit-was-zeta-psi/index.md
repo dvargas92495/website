@@ -3,6 +3,7 @@ title: The Best Class I Took At MIT Was Zeta Psi
 date: "2020-07-14T22:10:00.00Z"
 description: "And it wasn't even one I took in one of my two majors."
 acknowledgement: "Kenny Friedman"
+tags: Education, Personal, MIT, Friends, Community
 ---
 
 I consider myself extremely fortunate to have been able to attend MIT. It's filled with brilliant professors and experts conducting some of the most innovative research in their fields. The courses are the most challenging any student will encounter in their life. But it’s not why I feel fortunate.

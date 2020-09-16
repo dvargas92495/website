@@ -12,6 +12,7 @@ export type Data = {
           title: string;
           date: string;
           description: string;
+          tags: string;
         };
         fields: {
           slug: string;

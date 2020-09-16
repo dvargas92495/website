@@ -2,6 +2,7 @@
 title: Testing Sucks
 date: "2020-08-12T08:25:00.00Z"
 description: "When the solution for software quality causes more problems than it solves."
+tags: Engineering, Testing, Debugging, Mark43, Continuous Delivery
 ---
 
 There's a creeping moment of dread that seeps into me every weekday morning. I open my work-issued Macbook and see that red dot on the corner of Slack mocking me. Knowing what's on the other side, I avoid it. Try to keep myself busy with email or jumping into whatever Jira ticket I was working on yesterday. But eventually I have to open it. And I know what's coming. Sure enough, I open Slack and there it is, greeting me with it's gross robotic smile as it does every morning.

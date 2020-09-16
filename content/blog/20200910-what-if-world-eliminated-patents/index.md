@@ -3,6 +3,7 @@ title: "What If The World Eliminated Patents?"
 date: "2020-09-10T11:13:15.00Z"
 description: "Is a world without patents possible, or even desirable?"
 acknowledgement: Ben Baker, Nikhil Punwaney, Parth Shah
+tags: Economy, Capitalism, Open Source, Engineering, Optimism
 ---
 
 Imagine you're sitting in your research lab when you come across a really sweet art generating AI tool. To use the tool, you simply have to upload a bunch of images that look vaguely like something you would want to make, and press a button. The tool reads all the images and generates a new piece of art. It's absolutely breathtaking. It's so beautiful, that you look into creating a patent for the created art so that no one replicates it and profits from what you created. 

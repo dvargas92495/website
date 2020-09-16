@@ -2,6 +2,7 @@
 title: I Got Scammed Out Of $5K
 date: "2020-08-02T13:45:00.00Z"
 description: "No matter how smart you think you are, you could still fall victim to emotional decision making."
+tags: Mistake, Personal, Craigslist, Change, Funny
 ---
 
 You might feel sympathetic for me after reading the title. I promise that after reading all the mistakes I made, you will come to the conclusion that my dumbass deserved to get scammed.

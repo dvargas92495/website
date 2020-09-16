@@ -2,6 +2,7 @@
 title: "Terraform - The Best Thing Since Git"
 date: "2020-08-27T23:21:00.00Z"
 description: "The tool helping engineering teams manage their infrastructure as code."
+tags: Engineering, Infrastructure, Cloud, Version Control, GitHub
 ---
 
 Imagine working on the next big operating system with multiple other developers. Suddenly, this feature for running applications that has been working for weeks broke. Who broke it? What change did it? How easy is it to just roll back to a previous version of the operating system where the feature was no longer broken?

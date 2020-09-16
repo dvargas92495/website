@@ -3,6 +3,7 @@ title: "The Birth Of My Self-Confidence"
 date: "2020-09-13T18:11:15.00Z"
 description: "Sharing the moment that I view as my personal turning point."
 acknowledgement: Robbie Crabtree, Doc Ayomide, Dipan Patel
+tags: Mental Health, Personal, MIT, Self Improvement, Friends
 ---
 
 I was the punching bag.

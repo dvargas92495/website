@@ -2,6 +2,7 @@
 title: "Chronicles of Digital Nomading - Davenport, Florida"
 date: "2020-08-30T16:16:00.00Z"
 description: "Recapping the first month of our travels quarantined in our Florida villa."
+tags: Nomad, Orlando, Friends, Covilla, Coronavirus
 ---
 
 Yesterday I wrapped up my first month on my [digital nomad journey](https://davidvargas.me/blog/rise-of-the-digital-nomads). I can't tell if I'm stuck in a honeymoon phase or if this is actually one of the greatest decisions I've made in my life.

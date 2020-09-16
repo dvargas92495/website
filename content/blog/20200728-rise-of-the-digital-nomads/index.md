@@ -2,6 +2,7 @@
 title: Rise of the Digital Nomads
 date: "2020-07-28T22:44:00.00Z"
 description: "Many people are changing their way of life due to Coronavirus. Should I?"
+tags: Nomad, Personal, Covilla, Friends, Community
 ---
 
 I love having a home. I love my stuff. For the last year, I had been ruthlessly cutting expenses to save money for a down payment on a house by 2021. I was seeking permanence. Then my friend [Nikhil](https://twitter.com/nikhilpunwaney), who was ending his Boston lease with the intention of moving to New York, pitched me this insane idea:

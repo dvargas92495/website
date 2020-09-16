@@ -2,6 +2,7 @@
 title: Humanity is Finite - And That's Exciting
 date: "2020-07-26T22:44:00.00Z"
 description: "How the species being finite incentivizes us towards progress."
+tags: Future, Economy, Optimism, Global, Social
 ---
 
 Climate Change. Nuclear War. Artificial Intelligence. These existential risks are growing as topics in public conversation, with two sides of the argument forming. On the one hand, these risks seem too impossibly large to be likely to happen or worth worrying about. I'll call people with this view Skeptics. On the other hand, we should drop all current priorities to devote all of our resources to tackling these risks. I'll call people with this view Alarmists. They’re both misguided.

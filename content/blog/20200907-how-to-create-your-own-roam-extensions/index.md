@@ -2,6 +2,7 @@
 title: "How To Create Your Own Roam Extensions"
 date: "2020-09-07T22:23:24.00Z"
 description: "Learn how to use the powerful [[roam/js]] block to build your own features!"
+tags: Engineering, Javascript, Note Taking, Productivity, Open Source
 ---
 
 I've spent the last few weeks in my young solopreneur career developing and sharing Roam JavaScript extensions. These tools are meant to extend the Roam core feature set to cover niche workflows that will be useful for the community but are too small of a problem for the company's developers themselves to tackle. You could find the ones I've built so far at https://roam.davidvargas.me.

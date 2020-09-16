@@ -2,6 +2,7 @@
 title: Todo Sucede Por Una Razón
 date: "2020-08-05T08:25:00.00Z"
 description: "The spanish parable that shifted the way I experience events that happen to me."
+tags: Family, Personal, Change, Optimism, Childhood
 ---
 
 _The title is spanish for "Everything Happens For a Reason"_

@@ -2,6 +2,7 @@
 title: I Regret Playing Hearthstone... Shallowly
 date: "2020-07-12T18:57:00.00Z"
 description: "A hobby I loved, but not enough to embrace it as much as I should have."
+tags: Gaming, Community, Public, Audience, Personal
 ---
 
 For 4 years of my life, I spent an average of 20 hours per week playing [Hearthstone](https://playhearthstone.com/). This amounts to about **4000** hours. I do not regret playing the game. The game is beautifully designed, with a very intuitive interface and a deep strategy that becomes incredibly rewarding the more you understand it. My regret is that I chose to spend the time playing the game **shallowly**.
