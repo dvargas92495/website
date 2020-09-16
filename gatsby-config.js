@@ -75,6 +75,11 @@ module.exports = {
         url: "https://youtu.be/ap8FF52J6-M",
         imgSrc: "20200903_Greg_Fronteiro_Teach_Roam.png",
       },
+      {
+        title: "Exploring Possible Roam Extensions with David Mehlman",
+        url: "https://youtu.be/u71R37dDD2Y",
+        imgSrc: "20200916_David_Mehlman_Extensions_Roam.png",
+      },
     ],
     interests: {
       coreBeliefs: [

@@ -84,6 +84,9 @@ const Consulting = ({ data }) => {
       },
     ])
   );
+  const entries = data.site.siteMetadata.consulting.sort(
+    (a, b) => -a.imgSrc.localeCompare(b.imgSrc)
+  );
   return (
     <Layout>
       <SEO title="Consulting">
@@ -119,17 +122,15 @@ const Consulting = ({ data }) => {
           calls, in case someone else finds it helpful!
         </Typography>
         <Grid container spacing={2}>
-          {data.site.siteMetadata.consulting.map(
-            ({ title, imgSrc, url }, i) => (
-              <Thumbnail
-                title={title}
-                i={i}
-                key={i}
-                thumbnailImage={thumbnailImagesByVideo[imgSrc]}
-                url={url}
-              />
-            )
-          )}
+          {entries.map(({ title, imgSrc, url }, i) => (
+            <Thumbnail
+              title={title}
+              i={i}
+              key={i}
+              thumbnailImage={thumbnailImagesByVideo[imgSrc]}
+              url={url}
+            />
+          ))}
         </Grid>
       </Container>
     </Layout>
