@@ -68,6 +68,8 @@ module.exports = {
       { name: "Robbie Crabtree", url: "https://www.robbiecrab.com/" },
       { name: "Doc Ayomide", url: "https://docayomide.com/" },
       { name: "Dipan Patel", url: "https://disco.substack.com/" },
+      { name: "Zachary Fleischmann", url: "https://www.hawthorne.io/" },
+      { name: "Zain Rizvi", url: "https://www.zainrizvi.io/" },
     ],
     consulting: [
       {
