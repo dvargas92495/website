@@ -360,7 +360,7 @@ const Layout = ({ children }) => {
           )}
         </span>
         <span>
-          © {new Date().getFullYear()} Vargas Arts, LLC, Built with
+          © {new Date().getFullYear()} Vargas Arts LLC, Built with
           {` `}
           <a
             href="https://www.gatsbyjs.org"
