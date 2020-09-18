@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { isBrowser } from "react-device-detect";
 import Image from "material-ui-image";
 import Layout from "../components/layout";
@@ -92,6 +92,15 @@ const Consulting = ({ data }) => {
   const entries = data.site.siteMetadata.consulting.sort(
     (a, b) => -a.imgSrc.localeCompare(b.imgSrc)
   );
+
+  useEffect(() => {
+    return () => {
+      const widget = document.getElementById("otechie-widget");
+      const s = document.getElementById("ow");
+      widget.parentElement.removeChild(widget);
+      s.parentElement.removeChild(s);
+    };
+  }, []);
   return (
     <Layout>
       <SEO title="Consulting">
@@ -103,6 +112,14 @@ const Consulting = ({ data }) => {
           type="text/javascript"
           src="https://assets.calendly.com/assets/external/widget.js"
         />
+        <script>
+          {`(function (w,d,s,o,f,js,fjs) {
+        w['Otechie-Widget']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+        js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+    }(window, document, 'script', 'ow', 'https://widget.otechie.com/widget.js'));
+    ow('init', { username: 'dvargas92495' });`}
+        </script>
       </SEO>
 
       <Container maxWidth={"md"}>
