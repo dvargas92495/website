@@ -110,9 +110,7 @@ const Layout = ({ children }) => {
         flexDirection: "column",
       }}
     >
-      <Helmet>
-        
-      </Helmet>
+      <Helmet></Helmet>
       <AppBar position="sticky" style={{ backgroundColor: colors.primary }}>
         <Toolbar style={{ justifyContent: "space-between" }}>
           <Typography
@@ -363,16 +361,30 @@ const Layout = ({ children }) => {
             </IconButton>
           )}
         </span>
-        <span>
-          © {new Date().getFullYear()} Vargas Arts LLC, Built with
-          {` `}
-          <a
-            href="https://www.gatsbyjs.org"
-            style={{ color: colors.secondary }}
-          >
-            Gatsby
-          </a>
-        </span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+          }}
+        >
+          <span>© {new Date().getFullYear()} Vargas Arts LLC</span>
+          <span>
+            <Link to="/manifesto" style={{ color: colors.secondary }}>
+              Manifesto
+            </Link>
+          </span>
+          <span>
+            Built with
+            {` `}
+            <a
+              href="https://www.gatsbyjs.org"
+              style={{ color: colors.secondary }}
+            >
+              Gatsby
+            </a>
+          </span>
+        </div>
       </footer>
     </div>
   );

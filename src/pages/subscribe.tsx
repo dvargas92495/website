@@ -18,7 +18,7 @@ const Subscribe = () => (
           fontFamily: "'Merriweather','Georgia',serif",
         }}
       >
-        Join the other 42 subscribers and stay up to date on what I'm creating!
+        Join the other 48 subscribers and stay up to date on what I'm creating!
       </Typography>
     </Container>
   </Layout>
