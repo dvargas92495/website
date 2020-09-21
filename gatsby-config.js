@@ -498,6 +498,11 @@ module.exports = {
         imgSrc: "default.jpg",
         url: "",
       },
+      {
+        title: "Scott Block",
+        imgSrc: "scottblock.jpg",
+        url: "https://twitter.com/insidetheblock",
+      },
     ],
   },
   plugins: [
