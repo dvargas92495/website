@@ -70,6 +70,10 @@ module.exports = {
       { name: "Dipan Patel", url: "https://disco.substack.com/" },
       { name: "Zachary Fleischmann", url: "https://www.hawthorne.io/" },
       { name: "Zain Rizvi", url: "https://www.zainrizvi.io/" },
+      {
+        name: "Michael Koutsoubis",
+        url: "https://michaelkoutsoubis.substack.com/",
+      },
     ],
     consulting: [
       {
