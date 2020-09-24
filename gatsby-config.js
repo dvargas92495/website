@@ -74,6 +74,15 @@ module.exports = {
         name: "Michael Koutsoubis",
         url: "https://michaelkoutsoubis.substack.com/",
       },
+      { name: "Ari Parker", url: "http://ariparker.substack.com" },
+      {
+        name: "Joshua Mitchell",
+        url: "https://lelon.io/",
+      },
+      {
+        name: "Compound Writing",
+        url: "https://www.compoundwriting.com/",
+      },
     ],
     consulting: [
       {

@@ -141,6 +141,8 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
                           <Image
                             src={socialImg.imgSrc}
                             aspectRatio={socialImg.aspectRatio}
+                            style={{backgroundColor: 'transparent'}}
+                            imageStyle={{maxHeight: isBrowser ? 200 : 225}}
                           />
                         </NoSsr>
                       )}
