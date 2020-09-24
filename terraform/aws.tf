@@ -135,6 +135,11 @@ resource "aws_iam_user_policy_attachment" "dynamo_floss" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
 }
 
+resource "aws_iam_user_policy_attachment" "ses_floss" {
+  user       = aws_iam_user.floss.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSESFullAccess"
+}
+
 resource "aws_iam_user" "wings" {
   name = "wings"
 }
