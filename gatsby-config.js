@@ -95,6 +95,11 @@ module.exports = {
         url: "https://youtu.be/u71R37dDD2Y",
         imgSrc: "20200916_David_Mehlman_Extensions_Roam.png",
       },
+      {
+        title: "Roam Apple Pencil Ideas with Scott Blockn",
+        url: "https://youtu.be/u_tuWoV_quQ",
+        imgSrc: "20200926_Scott_Block_Apple_Pencil.png",
+      },
     ],
     interests: {
       coreBeliefs: [
