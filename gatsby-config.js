@@ -521,6 +521,11 @@ module.exports = {
         imgSrc: "scottblock.jpg",
         url: "https://twitter.com/insidetheblock",
       },
+      {
+        title: "Parth Shah",
+        imgSrc: "parthshah.jpg",
+        url: "http://www.parthhemalshah.com",
+      },
     ],
   },
   plugins: [
