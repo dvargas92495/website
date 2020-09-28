@@ -83,6 +83,14 @@ module.exports = {
         name: "Compound Writing",
         url: "https://www.compoundwriting.com/",
       },
+      {
+        name: "Stew Fortier",
+        url: "https://stewfortier.com/stews-letter/",
+      },
+      {
+        name: "Andrew Spector",
+        url: "https://www.linkedin.com/in/andrewspector",
+      },
     ],
     consulting: [
       {
