@@ -104,9 +104,14 @@ module.exports = {
         imgSrc: "20200916_David_Mehlman_Extensions_Roam.png",
       },
       {
-        title: "Roam Apple Pencil Ideas with Scott Blockn",
+        title: "Roam Apple Pencil Ideas with Scott Block",
         url: "https://youtu.be/u_tuWoV_quQ",
         imgSrc: "20200926_Scott_Block_Apple_Pencil.png",
+      },
+      {
+        title: "Aliases, Searches, and More! with David Mehlman",
+        url: "https://youtu.be/LOvGttvjTJk",
+        imgSrc: "20201001_David_Mehlman_Aliases_Searches.png",
       },
     ],
     interests: {
