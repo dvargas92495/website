@@ -91,6 +91,10 @@ module.exports = {
         name: "Andrew Spector",
         url: "https://www.linkedin.com/in/andrewspector",
       },
+      {
+        name: "Noah Maier",
+        url: "http://fundraisingrants.com/",
+      },
     ],
     consulting: [
       {
