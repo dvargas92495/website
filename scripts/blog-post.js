@@ -8,7 +8,7 @@ const format = `---
 title: "${title}"
 date: "${time.toISOString()}"
 description: "${description}"
-acknowledgement: ${acknowledgement}
+${acknowledgement ? `acknowledgement: ${acknowledgement}` : ""}
 tags: ${tags}
 ---
 `;
