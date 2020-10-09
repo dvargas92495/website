@@ -553,6 +553,11 @@ module.exports = {
         imgSrc: "abhayprasanna.jpg",
         url: "https://twitter.com/AbhayPrasanna",
       },
+      {
+        title: "Matt Brockwell",
+        imgSrc: "mattbrockwell.jpg",
+        url: "https://twitter.com/jeanvaljean689",
+      },
     ],
   },
   plugins: [
