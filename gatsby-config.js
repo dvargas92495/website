@@ -543,6 +543,16 @@ module.exports = {
         imgSrc: "parthshah.jpg",
         url: "http://www.parthhemalshah.com",
       },
+      {
+        title: "David Eaton",
+        imgSrc: "davideaton.jpg",
+        url: "https://twitter.com/gottalead",
+      },
+      {
+        title: "Abhay Prasanna",
+        imgSrc: "abhayprasanna.jpg",
+        url: "https://twitter.com/AbhayPrasanna",
+      },
     ],
   },
   plugins: [
