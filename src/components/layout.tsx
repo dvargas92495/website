@@ -31,6 +31,8 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import { Icon, InlineIcon } from "@iconify/react";
+import twitchIcon from "@iconify/icons-mdi/twitch";
 import Helmet from "react-helmet";
 
 const FooterIcon = ({ children, href }) => (
@@ -284,6 +286,9 @@ const Layout = ({ children }) => {
           <FooterIcon href="https://github.com/dvargas92495">
             <GitHub />
           </FooterIcon>
+          <FooterIcon href="https://www.twitch.tv/dvargas92495">
+            <Icon icon={twitchIcon} style={{ fontSize: "1.5rem" }} />
+          </FooterIcon>
           <FooterIcon href="https://www.youtube.com/channel/UC6UVFCK1BcIMnT0XY4iUS_g">
             <Youtube />
           </FooterIcon>
@@ -370,7 +375,7 @@ const Layout = ({ children }) => {
         >
           <span>© {new Date().getFullYear()} Vargas Arts LLC</span>
           <span>
-            <Link to="/manifesto" style={{ color: colors.secondary }}>
+            <Link to="/manifesto" style={{ color: colors.secondary, marginRight: 64 }}>
               Manifesto
             </Link>
           </span>

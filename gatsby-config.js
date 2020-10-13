@@ -95,6 +95,26 @@ module.exports = {
         name: "Noah Maier",
         url: "http://fundraisingrants.com/",
       },
+      {
+        name: "Joel Christiansen",
+        url: "https://joelc.io",
+      },
+      {
+        name: "Ryan Williams",
+        url: "https://www.influencereconomy.com/",
+      },
+      {
+        name: "Tom White",
+        url: "https://www.tomwhitenoise.com/",
+      },
+      {
+        name: "Drew Stegmaier",
+        url: "https://stegdrew.com/",
+      },
+      {
+        name: "Diana Klatt",
+        url: "https://medium.com/@dianaklatt",
+      },
     ],
     consulting: [
       {

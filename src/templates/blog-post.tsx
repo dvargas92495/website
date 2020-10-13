@@ -73,7 +73,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
               <i>
                 A special thanks to my friends for help with this article:
                 {acks.map((name, i) => (
-                  <>
+                  <React.Fragment key={i}>
                     {i > 0 && acks.length > 2 && ","}
                     {i > 0 && i === acks.length - 1 && " and"}
                     {" "}
@@ -84,7 +84,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
                     >
                       {name}
                     </MaterialLink>
-                  </>
+                  </React.Fragment>
                 ))}
               </i>
             </p>
