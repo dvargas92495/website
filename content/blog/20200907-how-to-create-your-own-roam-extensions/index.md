@@ -5,7 +5,7 @@ description: "Learn how to use the powerful [[roam/js]] block to build your own 
 tags: Engineering, Javascript, Note Taking, Productivity, Open Source
 ---
 
-I've spent the last few weeks in my young solopreneur career developing and sharing Roam JavaScript extensions. These tools are meant to extend the Roam core feature set to cover niche workflows that will be useful for the community but are too small of a problem for the company's developers themselves to tackle. You could find the ones I've built so far at https://roam.davidvargas.me.
+I've spent the last few weeks in my young solopreneur career developing and sharing Roam JavaScript extensions. These tools are meant to extend the Roam core feature set to cover niche workflows that will be useful for the community but are too small of a problem for the company's developers themselves to tackle. You could find the ones I've built so far at https://roamjs.com.
 
 Today, I'd like to share how you too could start developing your own Roam JavaScript extensions. Roam is evolving from being just a note-taking tool to becoming an operating system for knowledge management. This provides an abundance of opportunities for developers to come in and start building their own unique tools to share with the community. The potential for this form of open source sharing of tooling could match the successes of other common package ecosystems like [npm](https://www.npmjs.com/) and [pip](https://pip.pypa.io/en/stable/).
 
@@ -77,7 +77,7 @@ The following code block loads my emoji extension into your database:
 
 ```javascript
 var s = document.createElement("script");
-s.src = "https://roam.davidvargas.me/master/emojis.js";
+s.src = "https://roamjs.com/emojis.js";
 s.id = "emojis";
 s.async = false;
 s.type = "text/javascript";
@@ -96,7 +96,7 @@ const addScript = (name) => {
   }
 
   var s = document.createElement("script");
-  s.src = `https://roam.davidvargas.me/master/${name}.js`;
+  s.src = `https://roamjs.com/${name}.js`;
   s.id = name;
   s.async = false;
   s.type = "text/javascript";

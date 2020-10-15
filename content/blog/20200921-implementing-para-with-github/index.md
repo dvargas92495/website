@@ -54,7 +54,7 @@ This brings us to the Archives section of PARA. Once GitHub issues are closed, t
 
 ![](./archive.png)
 
-The final element of PARA are resources. I facilitate resources most through README docs that get displayed right in the repository's main page. When I have extensive resources that I want non-technical people to view, I use [MkDocs](https://www.mkdocs.org/) in a [GitHub Action](https://github.com/features/actions) to deploy documentation to a static site. The most prominent example I have of this is https://roam.davidvargas.me.
+The final element of PARA are resources. I facilitate resources most through README docs that get displayed right in the repository's main page. When I have extensive resources that I want non-technical people to view, I use [MkDocs](https://www.mkdocs.org/) in a [GitHub Action](https://github.com/features/actions) to deploy documentation to a static site. The most prominent example I have of this is https://roamjs.com.
 
 ![](./docs.png)
 

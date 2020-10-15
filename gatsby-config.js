@@ -23,7 +23,7 @@ module.exports = {
       current: [
         {
           title: "Roam JS Extensions",
-          link: "https://roam.davidvargas.me",
+          link: "https://roamjs.com",
           description: `
             The introduction of native javascript blocks has blown the doors open to a whole new world of what Roam
             is now capable of. We could now think of Roam as a platform. We are still in the early days of development
