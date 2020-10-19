@@ -578,6 +578,11 @@ module.exports = {
         imgSrc: "mattbrockwell.jpg",
         url: "https://twitter.com/jeanvaljean689",
       },
+      {
+        title: "Conor White-Sullivan",
+        imgSrc: "conaws.jpg",
+        url: "https://twitter.com/Conaw",
+      },
     ],
   },
   plugins: [
