@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             : []),
         ]}
       />
-      <Container maxWidth={"md"}>
+      <Container maxWidth={"sm"}>
         <article>
           <header>
             <h1
