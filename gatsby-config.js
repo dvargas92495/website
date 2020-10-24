@@ -115,6 +115,14 @@ module.exports = {
         name: "Diana Klatt",
         url: "https://medium.com/@dianaklatt",
       },
+      {
+        name: "Kyla Scanlon",
+        url: "https://kylascanlon.com/",
+      },
+      {
+        name: "Gian Segato",
+        url: "https://giansegato.com/",
+      },
     ],
     consulting: [
       {
