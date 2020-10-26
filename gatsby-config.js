@@ -433,7 +433,7 @@ module.exports = {
         title: "Live Forever",
         description:
           "More realistically, live as long as I can. Currently shooting for 150 as a first step.",
-        status: "16",
+        status: "16.67",
         imgSrc: "forever.png",
       },
       {
@@ -462,10 +462,10 @@ module.exports = {
       },
       {
         year: "Life",
-        title: "End Poverty",
+        title: "Donate 1 Billion",
         description:
-          "It will end in our lifetime. Find work in education and housing to accelerate this process.",
-        status: "90",
+          "Poverty will end in our lifetime. Help fund those making it happen",
+        status: "0.000048",
         imgSrc: "poverty.png",
       },
       {
