@@ -123,6 +123,10 @@ module.exports = {
         name: "Gian Segato",
         url: "https://giansegato.com/",
       },
+      {
+        name: "Anthony Vargas",
+        url: "https://www.linkedin.com/in/anthony-vargas-37826a172/",
+      },
     ],
     consulting: [
       {
