@@ -91,6 +91,11 @@ resource "aws_iam_user_policy_attachment" "lambda_roam" {
   policy_arn = "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
 }
 
+resource "aws_iam_user_policy_attachment" "ses_roam" {
+  user       = aws_iam_user.roam_js_extensions.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSESFullAccess"
+}
+
 resource "aws_iam_user" "floss" {
   name = "floss"
 }
