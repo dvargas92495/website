@@ -595,6 +595,11 @@ module.exports = {
         imgSrc: "conaws.jpg",
         url: "https://twitter.com/Conaw",
       },
+      {
+        title: "David Mehlman",
+        imgSrc: "mehlman.jpg",
+        url: "https://twitter.com/DMehlo",
+      },
     ],
   },
   plugins: [
