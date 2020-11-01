@@ -600,6 +600,11 @@ module.exports = {
         imgSrc: "mehlman.jpg",
         url: "https://twitter.com/DMehlo",
       },
+      {
+        title: "Miladys Portela",
+        imgSrc: "tiamiladys.jpg",
+        url: "",
+      },
     ],
   },
   plugins: [
