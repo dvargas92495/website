@@ -605,6 +605,11 @@ module.exports = {
         imgSrc: "tiamiladys.jpg",
         url: "",
       },
+      {
+        title: "Shawn Murphy",
+        imgSrc: "murf.jpg",
+        url: "https://twitter.com/shawnpmurphy8",
+      },
     ],
   },
   plugins: [
