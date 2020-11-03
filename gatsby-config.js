@@ -610,6 +610,11 @@ module.exports = {
         imgSrc: "murf.jpg",
         url: "https://twitter.com/shawnpmurphy8",
       },
+      {
+        title: "Joe Ocampo",
+        imgSrc: "ocampo.jpg",
+        url: "https://twitter.com/joe_ocampo",
+      },
     ],
   },
   plugins: [
