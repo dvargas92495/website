@@ -615,6 +615,11 @@ module.exports = {
         imgSrc: "ocampo.jpg",
         url: "https://twitter.com/joe_ocampo",
       },
+      {
+        title: "Tom Kirkendall",
+        imgSrc: "kir.jpeg",
+        url: "https://www.kir.com/",
+      },
     ],
   },
   plugins: [
