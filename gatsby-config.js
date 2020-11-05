@@ -625,6 +625,11 @@ module.exports = {
         imgSrc: "default.jpg",
         url: "",
       },
+      {
+        title: "Keenan Payne",
+        imgSrc: "keenan.jpg",
+        url: "https://keenanpayne.com/",
+      }
     ],
   },
   plugins: [
