@@ -620,6 +620,11 @@ module.exports = {
         imgSrc: "kir.jpeg",
         url: "https://www.kir.com/",
       },
+      {
+        title: "Alexander Young",
+        imgSrc: "default.jpg",
+        url: "",
+      },
     ],
   },
   plugins: [
