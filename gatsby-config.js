@@ -629,6 +629,11 @@ module.exports = {
         title: "Keenan Payne",
         imgSrc: "keenan.jpg",
         url: "https://keenanpayne.com/",
+      },
+      {
+        title: "Dharam Kapila",
+        imgSrc: "dharam.jpg",
+        url: "https://twitter.com/DharamKapila",
       }
     ],
   },
