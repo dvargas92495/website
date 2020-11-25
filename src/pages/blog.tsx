@@ -155,9 +155,10 @@ const Blogs = ({ data }: Partial<PageProps<Data & ImageFileData>>) => {
                     >
                       <header>
                         <Typography
-                          variant="h5"
+                          variant="h6"
                           style={{
                             fontFamily: "'Merriweather','Georgia',serif",
+                            fontStyle: 'normal'
                           }}
                         >
                           <Link
