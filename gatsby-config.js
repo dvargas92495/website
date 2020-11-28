@@ -127,6 +127,14 @@ module.exports = {
         name: "Anthony Vargas",
         url: "https://www.linkedin.com/in/anthony-vargas-37826a172/",
       },
+      {
+        name: "Jen Vermet",
+        url: "https://www.jenvermet.com/",
+      },
+      {
+        name: "Tyler Wince",
+        url: "https://www.productsolving.com/",
+      },
     ],
     consulting: [
       {
@@ -639,7 +647,12 @@ module.exports = {
         title: "Tracy Winchell",
         imgSrc: "tracy.jpg",
         url: "https://twitter.com/tracyplaces",
-      }
+      },
+      {
+        title: "Tomáš Baránek",
+        imgSrc: "barys.jpg",
+        url: "https://barys.me",
+      },
     ],
   },
   plugins: [
