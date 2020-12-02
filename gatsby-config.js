@@ -653,6 +653,11 @@ module.exports = {
         imgSrc: "barys.jpg",
         url: "https://barys.me",
       },
+      {
+        title: "Zach Holmquist",
+        imgSrc: "holmquist.jpg",
+        url: "https://twitter.com/zholmquist",
+      },
     ],
   },
   plugins: [
