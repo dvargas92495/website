@@ -213,10 +213,10 @@ const Layout = ({ children }) => {
             Vargas Ventures
           </Typography>
           <Typography variant="subtitle2" style={{ marginBottom: 16 }}>
-            Subscribe to my newsletter below for updates on what I'm building,
-            what I'm writing, and where I'm travelling. I also share the
-            podcasts that I listened to that week each tagged with my personal
-            takeaway. New issues Sunday mornings!
+            Subscribe to my monthly newsletter below for updates on what I'm building,
+            what I'm writing, and where I'm travelling. I also share the best
+            podcasts that I listened to that month, each tagged with my personal
+            takeaway. New issues on the 5th of each month!
           </Typography>
           <script data-uid="cd67433313"></script>
         </Container>
