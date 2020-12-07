@@ -658,6 +658,16 @@ module.exports = {
         imgSrc: "holmquist.jpg",
         url: "https://twitter.com/zholmquist",
       },
+      {
+        title: "Salem Al-Mansoori",
+        imgSrc: "salem.png",
+        url: "https://twitter.com/uncomposition",
+      },
+      {
+        title: "David Rangel",
+        imgSrc: "rangel.png",
+        url: "https://davidrangel.com",
+      },
     ],
   },
   plugins: [
