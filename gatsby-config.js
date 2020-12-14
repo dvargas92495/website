@@ -668,6 +668,11 @@ module.exports = {
         imgSrc: "rangel.png",
         url: "https://davidrangel.com",
       },
+      {
+        title: "Andrey Kumanov",
+        imgSrc: "andrey.jpg",
+        url: "https://twitter.com/andreynocap",
+      },
     ],
   },
   plugins: [
