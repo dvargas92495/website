@@ -183,3 +183,32 @@ resource "aws_iam_user_policy_attachment" "rds_wings" {
   user       = aws_iam_user.wings.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
 }
+
+resource "aws_iam_user" "garden" {
+  name = "garden"
+}
+
+resource "aws_iam_user_policy_attachment" "s3_garden" {
+  user       = aws_iam_user.garden.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "acm_garden" {
+  user       = aws_iam_user.garden.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "cloudfront_garden" {
+  user       = aws_iam_user.garden.name
+  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "route53_garden" {
+  user       = aws_iam_user.garden.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
+}
+
+resource "aws_iam_user_policy_attachment" "iam_garden" {
+  user       = aws_iam_user.garden.name
+  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+}
