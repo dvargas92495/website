@@ -673,6 +673,11 @@ module.exports = {
         imgSrc: "andrey.jpg",
         url: "https://twitter.com/andreynocap",
       },
+      {
+        title: "Chris Pavese",
+        imgSrc: "pavese.jpg",
+        url: "https://twitter.com/ChrisPavese",
+      },
     ],
   },
   plugins: [
