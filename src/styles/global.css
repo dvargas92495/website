@@ -9,7 +9,7 @@ body,
   height: 100%;
 }
 
-ul {
+ul, ol {
   margin-left: 1.75em;
 }
 

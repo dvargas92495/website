@@ -135,6 +135,10 @@ module.exports = {
         name: "Tyler Wince",
         url: "https://www.productsolving.com/",
       },
+      {
+        name: "Richie Bonilla",
+        url: "https://twitter.com/richiebonilla",
+      },
     ],
     consulting: [
       {
