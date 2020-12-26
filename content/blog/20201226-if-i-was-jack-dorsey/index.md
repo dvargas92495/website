@@ -30,7 +30,7 @@ In their blog post [announcing the feature](https://blog.twitter.com/en_us/topic
 
 Early surveys are already starting to demonstrate this:
 
-![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdvargas92495%2FayABJOh4ho.png?alt=media&token=67da5200-9173-457d-a00e-be91d2a76be7)
+![](./survey.png)
 
 Caught up in the rat race of trying to beat Instagram, Snapchat, and the rest of the big social media platforms, Twitter inches one step closer towards a game they can't win with Fleets.
 
@@ -49,7 +49,7 @@ Twitter started by having a chronological sort on the feed. A flexible custom fe
 
 So if I were Jack Dorsey, I'd offer custom feeds as a premium feature to compensate for the revenue loss from advertising. We already know that the demand exists for this today given the wide range of existing Twitter clients:
 
-![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fdvargas92495%2FsHP5d7Ssrm.png?alt=media&token=a21e0143-e4ec-4341-b756-00804e7b683d)
+![](./clients.png)
 
 Custom feeds would steer incentives to better align with their actual users. Given the small advertising margins, any amount they do charge for it would seem to skyrocket past current revenue figures:
 
