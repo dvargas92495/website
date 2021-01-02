@@ -512,8 +512,8 @@ module.exports = {
         year: "2020",
         title: "Save Twice as much as 2019",
         description:
-          "I was pretty reckless with my spending in 2019, and I wanted to be more responsible with my cash.",
-        status: "77",
+          "I was pretty reckless with my spending in 2019, and I wanted to be more responsible with my cash. Then, I quit my job.",
+        status: "Fail",
         imgSrc: "savings.jpg",
       },
       {
@@ -536,9 +536,64 @@ module.exports = {
         year: "2020",
         title: "Reach 10% Body Fat",
         description:
-          "Started the year at around 22%, and am about halfway to 10%.",
-        status: "50",
+          "Started the year at around 22%, got as low as 15%, and then ended aroun 20%.",
+        status: "Fail",
         imgSrc: "scale.jpg",
+      },
+      {
+        year: "2021",
+        title: "Reach $10K Monthly Recurring Revenue",
+        description:
+          "This will replace my full time employment salary.",
+        status: "5",
+        imgSrc: "chart.jpg",
+      },
+      {
+        year: "2021",
+        title: "Release 3 Web Apps under Vargas Arts, LLC",
+        description: "Starting with RoamJS",
+        status: "0",
+        imgSrc: "app.png",
+      },
+      {
+        year: "2021",
+        title: "Grow Userbase to 10K",
+        description:
+          "I currently estimate this number to be a few hundred",
+        status: "8",
+        imgSrc: "users.png",
+      },
+      {
+        year: "2021",
+        title: "Maintain 15% Body Fat",
+        description:
+          "Lowering the target from last year to hopefully maintain for longer",
+        status: "0",
+        imgSrc: "scale.jpg",
+      },
+      {
+        year: "2021",
+        title: "Visit 15 New Cities",
+        description:
+          "This pace is faster than 1/month, which will hopefully encourage some week or weekend trips",
+        status: "0",
+        imgSrc: "map.png",
+      },
+      {
+        year: "2021",
+        title: "Publish 60 Articles",
+        description:
+          "Maintain a 5/month cadence to practice one of my newest favorite habits.",
+        status: "0",
+        imgSrc: "write.png",
+      },
+      {
+        year: "2021",
+        title: "Take More Initiative With Friends & Family",
+        description:
+          "I don't like how I'm treating them right now. Setting it as a year goal will force me to reflect on it every month and hopefully lead to intentional changes",
+        status: "0",
+        imgSrc: "fandf.jpg",
       },
     ],
     sponsors: [
