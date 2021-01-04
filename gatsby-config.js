@@ -737,6 +737,16 @@ module.exports = {
         imgSrc: "pavese.jpg",
         url: "https://twitter.com/ChrisPavese",
       },
+      {
+        title: "Erik Bjäreholt",
+        imgSrc: "bjareholt.jfif",
+        url: "https://erik.bjareholt.com/",
+      },
+      {
+        title: "Kurt Harriger",
+        imgSrc: "kurt.jpg",
+        url: "https://www.linkedin.com/in/kurtharriger/",
+      },
     ],
   },
   plugins: [
