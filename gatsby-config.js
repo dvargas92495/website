@@ -744,7 +744,7 @@ module.exports = {
       },
       {
         title: "Kurt Harriger",
-        imgSrc: "kurt.jpg",
+        imgSrc: "kurt.jfif",
         url: "https://www.linkedin.com/in/kurtharriger/",
       },
     ],
