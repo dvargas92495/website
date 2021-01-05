@@ -5,7 +5,7 @@ description: "Reflecting on my 2020 and looking ahead to 2021"
 tags: Career, Romance, Social, Hobbies, Outlook
 ---
 
-Over the last two years ,I've written an annual review as a journal that my friends had access to in earlier iterations of [Longwave](https://longwave.app). I enjoy looking back on my ones from previous years as a form of time travel. I get to compare "the state of Vargas" then to the one now, gaining a greater appreciation of any progress made. Sharing with friends also forced me to be more concrete with my thoughts, which benefits my future self.
+Over the last two years, I've written an annual review as a journal that my friends had access to in earlier iterations of [Longwave](https://longwave.app). I enjoy looking back on my ones from previous years as a form of time travel. I get to compare "the state of Vargas" then to the one now, gaining a greater appreciation of any progress made. Sharing with friends also forced me to be more concrete with my thoughts, which benefits my future self.
 
 2020 will be the first year where I publish my review publicly. I will be reusing the same format I did last year, where I give a "state of Vargas" for several categories.
 
@@ -25,7 +25,7 @@ I'm still grappling with several challenges. Most of them are related to time an
 But this also means I know I will grow out of it. I'm confident in my ability to create tools that are valuable for others. I know that if I keep at it, I will reach the metrics holding me accountable. I have to keep my spirits up and keep going forward.
 
 ## Romance
-2020 was the first year I spent single since I think 2012. It was a conscious decision, and one I want to make again for at least another two years.
+2020 was the first year I spent single since 2011. It was a conscious decision, and one I want to make again for at least another two years.
 
 In my annual review last year, I mentioned that I'd experienced many changes in my life since my last break up. 2020 was no different. Over the last year, I quit traditional employment, started traveling to a new city each month, and started writing online. 
 
