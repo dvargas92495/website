@@ -31,7 +31,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import twitchIcon from "@iconify/icons-mdi/twitch";
 import Helmet from "react-helmet";
 
@@ -148,18 +148,6 @@ const Layout = ({ children }) => {
               </Link>
               <Link
                 style={{ marginLeft: 8, color: colors.secondary }}
-                to="/consulting"
-              >
-                Consulting
-              </Link>
-              <Link
-                style={{ marginLeft: 8, color: colors.secondary }}
-                to="/interests"
-              >
-                Interests
-              </Link>
-              <Link
-                style={{ marginLeft: 8, color: colors.secondary }}
                 to="/goals"
               >
                 Goals
@@ -213,10 +201,10 @@ const Layout = ({ children }) => {
             Vargas Ventures
           </Typography>
           <Typography variant="subtitle2" style={{ marginBottom: 16 }}>
-            Subscribe to my monthly newsletter below for updates on what I'm building,
-            what I'm writing, and where I'm travelling. I also share the best
-            podcasts that I listened to that month, each tagged with my personal
-            takeaway. New issues on the 5th of each month!
+            Subscribe to my monthly newsletter below for updates on what I'm
+            building, what I'm writing, and where I'm travelling. I also share
+            the best podcasts that I listened to that month, each tagged with my
+            personal takeaway. New issues on the 5th of each month!
           </Typography>
           <script data-uid="cd67433313"></script>
         </Container>
@@ -279,7 +267,15 @@ const Layout = ({ children }) => {
           textAlign: "center",
         }}
       >
-        <span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+          }}
+        >
+          <span>© {new Date().getFullYear()} Vargas Arts LLC</span>
+          <span>
           <FooterIcon href="https://twitter.com/dvargas92495">
             <Twitter />
           </FooterIcon>
@@ -289,14 +285,14 @@ const Layout = ({ children }) => {
           <FooterIcon href="https://www.twitch.tv/dvargas92495">
             <Icon icon={twitchIcon} style={{ fontSize: "1.5rem" }} />
           </FooterIcon>
-          <FooterIcon href="https://www.youtube.com/channel/UC6UVFCK1BcIMnT0XY4iUS_g">
-            <Youtube />
-          </FooterIcon>
           <FooterIcon href="mailto:dvargas92495@gmail.com">
             <Email />
           </FooterIcon>
           {footerExpanded ? (
             <>
+              <FooterIcon href="https://www.youtube.com/channel/UC6UVFCK1BcIMnT0XY4iUS_g">
+                <Youtube />
+              </FooterIcon>
               <FooterIcon href="https://www.indiehackers.com/dvargas92495">
                 <SvgIcon>
                   <image
@@ -366,20 +362,7 @@ const Layout = ({ children }) => {
             </IconButton>
           )}
         </span>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
-          <span>© {new Date().getFullYear()} Vargas Arts LLC</span>
-          <span>
-            <Link to="/manifesto" style={{ color: colors.secondary, marginRight: 64 }}>
-              Manifesto
-            </Link>
-          </span>
-          <span>
+        <span>
             Built with
             {` `}
             <a
