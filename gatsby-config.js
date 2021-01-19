@@ -139,6 +139,10 @@ module.exports = {
         name: "Richie Bonilla",
         url: "https://twitter.com/richiebonilla",
       },
+      {
+        name: "Ian Vanagas",
+        url: "https://ianvanagas.com/",
+      },
     ],
     goals: [
       {
@@ -465,13 +469,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/consulting`,
-        name: `consulting`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
@@ -488,20 +485,6 @@ module.exports = {
       options: {
         name: `projects`,
         path: `${__dirname}/content/projects`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `podcasts`,
-        path: `${__dirname}/content/podcasts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `charities`,
-        path: `${__dirname}/content/charities`,
       },
     },
     {
