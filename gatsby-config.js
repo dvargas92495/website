@@ -456,6 +456,16 @@ module.exports = {
         imgSrc: "kurt.jfif",
         url: "https://www.linkedin.com/in/kurtharriger/",
       },
+      {
+        title: "Chris Hubbard",
+        imgSrc: "default.jpg",
+        url: "",
+      },
+      {
+        title: "SJ Klein",
+        imgSrc: "default.jpg",
+        url: "https://underlay.mit.edu/",
+      },
     ],
   },
   plugins: [
