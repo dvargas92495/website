@@ -18,6 +18,7 @@ const folder = `content/blog/${time.getFullYear()}${padNum(
   time.getMonth() + 1
 )}${padNum(time.getDate())}-${title
   .toLowerCase()
+  .replace(/- /g, "")
   .replace(/ /g, "-")
   .replace(/:/g, "")
   .replace(/,/g, "")
