@@ -38,6 +38,35 @@ resource "aws_route53_record" "www" {
   ttl     = 300
 }
 
+resource "aws_iam_group" "static_site_managers" {
+  name = "static-site-managers"
+}
+
+resource "aws_iam_group_policy_attachment" "s3" {
+  group      = aws_iam_group.static_site_managers.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
+
+resource "aws_iam_group_policy_attachment" "acm" {
+  group      = aws_iam_group.static_site_managers.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
+}
+
+resource "aws_iam_group_policy_attachment" "cloudfront" {
+  group      = aws_iam_group.static_site_managers.name
+  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
+}
+
+resource "aws_iam_group_policy_attachment" "route53" {
+  group      = aws_iam_group.static_site_managers.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
+}
+
+resource "aws_iam_group_policy_attachment" "iam" {
+  group      = aws_iam_group.static_site_managers.name
+  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+}
+
 resource "aws_iam_user" "davidvargas" {
   name = "davidvargas"
 }
@@ -56,29 +85,12 @@ resource "aws_iam_user" "roam_js_extensions" {
   name = "roam_js_extensions"
 }
 
-resource "aws_iam_user_policy_attachment" "s3_roam" {
-  user       = aws_iam_user.roam_js_extensions.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-}
+resource "aws_iam_user_group_membership" "static_roam" {
+  user = aws_iam_user.roam_js_extensions.name
 
-resource "aws_iam_user_policy_attachment" "acm_roam" {
-  user       = aws_iam_user.roam_js_extensions.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "cloudfront_roam" {
-  user       = aws_iam_user.roam_js_extensions.name
-  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "route53_roam" {
-  user       = aws_iam_user.roam_js_extensions.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "iam_roam" {
-  user       = aws_iam_user.roam_js_extensions.name
-  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+  groups = [
+    aws_iam_group.static_site_managers.name,
+  ]
 }
 
 resource "aws_iam_user_policy_attachment" "apigateway_roam" {
@@ -106,33 +118,21 @@ resource "aws_iam_user_policy_attachment" "cloudformation_roam" {
   policy_arn = "arn:aws:iam::aws:policy/arn:aws:iam::aws:policy/AWSCloudFormationFullAccess"
 }
 
+resource "aws_iam_user_policy_attachment" "sns_roam" {
+  user       = aws_iam_user.roam_js_extensions.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+}
+
 resource "aws_iam_user" "floss" {
   name = "floss"
 }
 
-resource "aws_iam_user_policy_attachment" "s3_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-}
+resource "aws_iam_user_group_membership" "static_floss" {
+  user = aws_iam_user.floss.name
 
-resource "aws_iam_user_policy_attachment" "acm_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "cloudfront_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "route53_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "iam_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+  groups = [
+    aws_iam_group.static_site_managers.name,
+  ]
 }
 
 resource "aws_iam_user_policy_attachment" "apigateway_floss" {
@@ -159,29 +159,12 @@ resource "aws_iam_user" "wings" {
   name = "wings"
 }
 
-resource "aws_iam_user_policy_attachment" "s3_wings" {
-  user       = aws_iam_user.wings.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-}
+resource "aws_iam_user_group_membership" "static_wings" {
+  user = aws_iam_user.wings.name
 
-resource "aws_iam_user_policy_attachment" "acm_wings" {
-  user       = aws_iam_user.wings.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "cloudfront_wings" {
-  user       = aws_iam_user.wings.name
-  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "route53_wings" {
-  user       = aws_iam_user.wings.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "iam_wings" {
-  user       = aws_iam_user.wings.name
-  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+  groups = [
+    aws_iam_group.static_site_managers.name,
+  ]
 }
 
 resource "aws_iam_user_policy_attachment" "ec2_wings" {
@@ -198,27 +181,10 @@ resource "aws_iam_user" "garden" {
   name = "garden"
 }
 
-resource "aws_iam_user_policy_attachment" "s3_garden" {
-  user       = aws_iam_user.garden.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-}
+resource "aws_iam_user_group_membership" "static_garden" {
+  user = aws_iam_user.garden.name
 
-resource "aws_iam_user_policy_attachment" "acm_garden" {
-  user       = aws_iam_user.garden.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "cloudfront_garden" {
-  user       = aws_iam_user.garden.name
-  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "route53_garden" {
-  user       = aws_iam_user.garden.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "iam_garden" {
-  user       = aws_iam_user.garden.name
-  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+  groups = [
+    aws_iam_group.static_site_managers.name,
+  ]
 }
