@@ -115,7 +115,7 @@ resource "aws_iam_user_policy_attachment" "dynamo_roam" {
 
 resource "aws_iam_user_policy_attachment" "cloudformation_roam" {
   user       = aws_iam_user.roam_js_extensions.name
-  policy_arn = "arn:aws:iam::aws:policy/arn:aws:iam::aws:policy/AWSCloudFormationFullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AWSCloudFormationFullAccess"
 }
 
 resource "aws_iam_user_policy_attachment" "sns_roam" {
