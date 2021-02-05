@@ -466,6 +466,11 @@ module.exports = {
         imgSrc: "default.jpg",
         url: "https://underlay.mit.edu/",
       },
+      {
+        title: "Rodrigo Franco",
+        imgSrc: "franco.png",
+        url: "https://www.rodrigofranco.com/",
+      },
     ],
   },
   plugins: [
