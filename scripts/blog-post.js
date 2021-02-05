@@ -7,8 +7,7 @@ time.setHours(time.getHours() - time.getTimezoneOffset() / 60);
 const format = `---
 title: "${title}"
 date: "${time.toISOString()}"
-description: "${description}"
-${acknowledgement ? `acknowledgement: ${acknowledgement}` : ""}
+description: "${description}"${acknowledgement !== 'David Vargas' ? `\nacknowledgement: ${acknowledgement}` : ""}
 tags: ${tags}
 ---
 `;
