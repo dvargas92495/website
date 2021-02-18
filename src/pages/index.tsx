@@ -9,7 +9,6 @@ import { colors } from "../utils/typography";
 import Box from "@material-ui/core/Box";
 import NoSsr from "@material-ui/core/NoSsr";
 import Link from "@material-ui/core/Link";
-import { Grid } from "@material-ui/core";
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -47,26 +46,28 @@ const Index = () => {
         >
           Nomad | Engineer | Writer
         </Typography>
-            <Typography style={{ color: colors.primary }}>
-              Traveling with a group of friends as part of <Link
-                target="_blank"
-                rel="noopener"
-                href="https://covilla.life"
-                style={{ color: colors.secondary }}
-              >
-                Covilla
-              </Link>
-            </Typography>
-            <Typography style={{ color: colors.primary }}>
-              Software Engineer working exclusively in <Link
-                target="_blank"
-                rel="noopener"
-                href="https://github.com/dvargas92495"
-                style={{ color: colors.secondary }}
-              >
-                Open Source
-              </Link>
-            </Typography>
+        <Typography style={{ color: colors.primary }}>
+          Traveling with a group of friends as part of{" "}
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://covilla.life"
+            style={{ color: colors.secondary }}
+          >
+            Covilla
+          </Link>
+        </Typography>
+        <Typography style={{ color: colors.primary }}>
+          Software Engineer working exclusively in{" "}
+          <Link
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/dvargas92495"
+            style={{ color: colors.secondary }}
+          >
+            Open Source
+          </Link>
+        </Typography>
         <Typography style={{ color: colors.primary }}>
           Writing about what I learn on this site
         </Typography>

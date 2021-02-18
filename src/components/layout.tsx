@@ -152,12 +152,6 @@ const Layout = ({ children }) => {
               >
                 Goals
               </Link>
-              <Link
-                style={{ marginLeft: 8, color: colors.secondary }}
-                to="/support"
-              >
-                Support
-              </Link>
             </Toolbar>
           </BrowserView>
           <MobileView>

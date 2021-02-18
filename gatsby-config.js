@@ -3,51 +3,16 @@ module.exports = {
     title: `David Vargas`,
     description: `Public Citizen of the World`,
     siteUrl: `https://davidvargas.me/`,
-    projects: {
-      previous: [
-        {
-          title: "Mark43",
-          link: "https://mark43.com",
-          description: `
-              My last internship while in college and my first full time job while out. 
-              The company aims to empower communities and governments to improve public safety.
-              I get to work with a bunch of incredible people; some of my earliest mentors I've met
-              through working here. It was also the first time where I learned I care about more
-              than just coding. The company's growth and mission statement to improve an industry in
-              desperate need of innovation are now two things I deeply value when deciding what to work
-              on next.
+    projects: [
+      {
+        title: "RoamJS",
+        link: "https://roamjs.com",
+        description: `
+            RoamJS is the most expansive library of Roam Research plugins available. Users could connect their Roam graphs with third-party applications, overlay new UI components, and automate common workflows. There's something available for everybody!
           `,
-          imgSrc: "mark43.jpg",
-        },
-      ],
-      current: [
-        {
-          title: "Roam JS Extensions",
-          link: "https://roamjs.com",
-          description: `
-            The introduction of native javascript blocks has blown the doors open to a whole new world of what Roam
-            is now capable of. We could now think of Roam as a platform. We are still in the early days of development
-            and seeing what the community is capable of building on top of it. These are the extensions that I'm building.
-            They are ones that help me in my personal day-to-day workflows and hope that they empower the rest of the #roamcult
-            as well.
-          `,
-          imgSrc: "roam.png",
-        },
-        {
-          title: "Longwave",
-          link: "https://longwave.app",
-          description: `
-              A journal sharing app, in collaboration with Tuesday Labs.
-              What started as a school project that I worked on and never touched after, Tuesday Labs took over and is 
-              making tremendous progress. It has inspired me to help out again, but under its vision. The premise 
-              is that you form a group with friends and up to once a day, journal about whatever's on your mind. The 
-              next morning, you will get an email with everyone who journaled the previous day. We view it as a new
-              take on social media - a more thoughtful way to keep in touch with friends or family.
-          `,
-          imgSrc: "longwave.png",
-        },
-      ],
-    },
+        imgSrc: "roamjs.jpg",
+      },
+    ],
     editors: [
       {
         name: "Kenny Friedman",
@@ -252,8 +217,7 @@ module.exports = {
       {
         year: "2021",
         title: "Reach $10K Monthly Recurring Revenue",
-        description:
-          "This will replace my full time employment salary.",
+        description: "This will replace my full time employment salary.",
         status: "5",
         imgSrc: "chart.jpg",
       },
@@ -267,8 +231,7 @@ module.exports = {
       {
         year: "2021",
         title: "Grow Userbase to 10K",
-        description:
-          "I currently estimate this number to be a few hundred",
+        description: "I currently estimate this number to be a few hundred",
         status: "8",
         imgSrc: "users.png",
       },
@@ -342,134 +305,14 @@ module.exports = {
         url: "",
       },
       {
-        title: "Scott Block",
-        imgSrc: "scottblock.jpg",
-        url: "https://twitter.com/insidetheblock",
-      },
-      {
         title: "Parth Shah",
         imgSrc: "parthshah.jpg",
         url: "http://www.parthhemalshah.com",
       },
       {
-        title: "David Eaton",
-        imgSrc: "davideaton.jpg",
-        url: "https://twitter.com/gottalead",
-      },
-      {
-        title: "Abhay Prasanna",
-        imgSrc: "abhayprasanna.jpg",
-        url: "https://twitter.com/AbhayPrasanna",
-      },
-      {
-        title: "Matt Brockwell",
-        imgSrc: "mattbrockwell.jpg",
-        url: "https://twitter.com/jeanvaljean689",
-      },
-      {
-        title: "Conor White-Sullivan",
-        imgSrc: "conaws.jpg",
-        url: "https://twitter.com/Conaw",
-      },
-      {
-        title: "David Mehlman",
-        imgSrc: "mehlman.jpg",
-        url: "https://twitter.com/DMehlo",
-      },
-      {
         title: "Miladys Portela",
         imgSrc: "tiamiladys.jpg",
         url: "",
-      },
-      {
-        title: "Shawn Murphy",
-        imgSrc: "murf.jpg",
-        url: "https://twitter.com/shawnpmurphy8",
-      },
-      {
-        title: "Joe Ocampo",
-        imgSrc: "ocampo.jpg",
-        url: "https://twitter.com/joe_ocampo",
-      },
-      {
-        title: "Tom Kirkendall",
-        imgSrc: "kir.jpeg",
-        url: "https://www.kir.com/",
-      },
-      {
-        title: "Alexander Young",
-        imgSrc: "default.jpg",
-        url: "",
-      },
-      {
-        title: "Keenan Payne",
-        imgSrc: "keenan.jpg",
-        url: "https://keenanpayne.com/",
-      },
-      {
-        title: "Dharam Kapila",
-        imgSrc: "dharam.jpg",
-        url: "https://twitter.com/DharamKapila",
-      },
-      {
-        title: "Tracy Winchell",
-        imgSrc: "tracy.jpg",
-        url: "https://twitter.com/tracyplaces",
-      },
-      {
-        title: "Tomáš Baránek",
-        imgSrc: "barys.jpg",
-        url: "https://barys.me",
-      },
-      {
-        title: "Zach Holmquist",
-        imgSrc: "holmquist.jpg",
-        url: "https://twitter.com/zholmquist",
-      },
-      {
-        title: "Salem Al-Mansoori",
-        imgSrc: "salem.png",
-        url: "https://twitter.com/uncomposition",
-      },
-      {
-        title: "David Rangel",
-        imgSrc: "rangel.png",
-        url: "https://davidrangel.com",
-      },
-      {
-        title: "Andrey Kumanov",
-        imgSrc: "andrey.jpg",
-        url: "https://twitter.com/andreynocap",
-      },
-      {
-        title: "Chris Pavese",
-        imgSrc: "pavese.jpg",
-        url: "https://twitter.com/ChrisPavese",
-      },
-      {
-        title: "Erik Bjäreholt",
-        imgSrc: "bjareholt.jfif",
-        url: "https://erik.bjareholt.com/",
-      },
-      {
-        title: "Kurt Harriger",
-        imgSrc: "kurt.jfif",
-        url: "https://www.linkedin.com/in/kurtharriger/",
-      },
-      {
-        title: "Chris Hubbard",
-        imgSrc: "default.jpg",
-        url: "",
-      },
-      {
-        title: "SJ Klein",
-        imgSrc: "default.jpg",
-        url: "https://underlay.mit.edu/",
-      },
-      {
-        title: "Rodrigo Franco",
-        imgSrc: "franco.png",
-        url: "https://www.rodrigofranco.com/",
       },
     ],
   },

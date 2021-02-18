@@ -15,6 +15,47 @@ import SEO from "../components/seo";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
 import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
+import Card from "@material-ui/core/Card";
+
+const Sponsor = ({
+  title,
+  url,
+  imgSrc,
+}: {
+  imgSrc: string;
+  title: string;
+  url: string;
+}) => (
+  <Grid item xs={isBrowser ? 3 : 4}>
+    <Card
+      style={{
+        backgroundColor: colors.tertiary,
+        textAlign: "center",
+        minHeight: 250,
+      }}
+    >
+      <NoSsr>
+        <Image src={imgSrc} aspectRatio={1} />
+      </NoSsr>
+      <Typography
+        variant="h6"
+        style={{
+          margin: "16px 0",
+          padding: "0 4px",
+          fontFamily: "'Merriweather','Georgia',serif",
+        }}
+      >
+        {url ? (
+          <Link href={url} target="_blank" rel="noopener">
+            {title}
+          </Link>
+        ) : (
+          title
+        )}
+      </Typography>
+    </Card>
+  </Grid>
+);
 
 const Project = ({
   title,
@@ -118,62 +159,48 @@ const Projects = ({ data }) => (
       >
         Projects
       </Typography>
+      {data.site.siteMetadata.projects.map(
+        ({ title, link, description, imgSrc }, i) => (
+          <Project
+            key={i}
+            title={title}
+            link={link}
+            description={description}
+            imgSrc={
+              data.projects.edges.find(l => l.node.publicURL.endsWith(imgSrc))
+                ?.node.publicURL
+            }
+            ltr={i % 2 === 0}
+          />
+        )
+      )}
+      <Typography
+        variant="h3"
+        style={{
+          margin: "16px 0",
+          fontFamily: "'Merriweather','Georgia',serif",
+        }}
+      >
+        Thank You!
+      </Typography>
       <Typography variant="body1" style={{ margin: "16px 0" }}>
-        This page lists all the projects that I am currently working on, I have
-        worked on, and types of projects I am interested in working on. I
-        consider places of employment both past and present as projects as well.
+        In August 2020, I left my job to start pursuing open source projects
+        independently. I'm forever grateful for the friends and family who
+        supported me early on.
       </Typography>
-    </Container>
-    <Container maxWidth={"md"} style={{ marginBottom: 16 }}>
-      <Typography
-        variant="h4"
-        style={{
-          margin: "16px 0",
-          fontFamily: "'Merriweather','Georgia',serif",
-        }}
-      >
-        Current Projects
-      </Typography>
-      {data.site.siteMetadata.projects.current.map(
-        ({ title, link, description, imgSrc }, i) => (
-          <Project
-            key={i}
+      <Grid container style={{ margin: "16px 0" }} spacing={1}>
+        {data.site.siteMetadata.sponsors.map(({ title, imgSrc, url }, i) => (
+          <Sponsor
             title={title}
-            link={link}
-            description={description}
             imgSrc={
-              data.allFile.edges.find(l => l.node.publicURL.endsWith(imgSrc))
-                ?.node.publicURL
+              data.sponsors.edges.find(l => l.node.publicURL.endsWith(imgSrc))
+                ?.node?.publicURL
             }
-            ltr={i % 2 === 0}
-          />
-        )
-      )}
-
-      <Typography
-        variant="h4"
-        style={{
-          margin: "16px 0",
-          fontFamily: "'Merriweather','Georgia',serif",
-        }}
-      >
-        Previous Projects
-      </Typography>
-      {data.site.siteMetadata.projects.previous.map(
-        ({ title, link, description, imgSrc }, i) => (
-          <Project
+            url={url}
             key={i}
-            title={title}
-            link={link}
-            description={description}
-            imgSrc={
-              data.allFile.edges.find(l => l.node.publicURL.endsWith(imgSrc))
-                ?.node.publicURL
-            }
-            ltr={i % 2 === 0}
           />
-        )
-      )}
+        ))}
+      </Grid>
     </Container>
   </Layout>
 );
@@ -185,22 +212,26 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         projects {
-          current {
-            title
-            description
-            link
-            imgSrc
-          }
-          previous {
-            title
-            description
-            link
-            imgSrc
-          }
+          title
+          description
+          link
+          imgSrc
+        }
+        sponsors {
+          title
+          url
+          imgSrc
         }
       }
     }
-    allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
+    projects: allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
+      edges {
+        node {
+          publicURL
+        }
+      }
+    }
+    sponsors: allFile(filter: { sourceInstanceName: { eq: "sponsors" } }) {
       edges {
         node {
           publicURL
