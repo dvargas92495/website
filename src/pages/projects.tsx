@@ -92,6 +92,7 @@ const Project = ({
             variant="h5"
             style={{
               fontFamily: "'Merriweather','Georgia',serif",
+              margin: 16,
             }}
           >
             {title}
@@ -153,37 +154,39 @@ const Projects = ({ data }) => (
       <Typography
         variant="h3"
         style={{
-          margin: "16px 0",
+          margin: "64px 0",
           fontFamily: "'Merriweather','Georgia',serif",
         }}
       >
         Projects
       </Typography>
-      {data.site.siteMetadata.projects.map(
-        ({ title, link, description, imgSrc }, i) => (
-          <Project
-            key={i}
-            title={title}
-            link={link}
-            description={description}
-            imgSrc={
-              data.projects.edges.find(l => l.node.publicURL.endsWith(imgSrc))
-                ?.node.publicURL
-            }
-            ltr={i % 2 === 0}
-          />
-        )
-      )}
+      <div style={{ paddingBottom: 64 }}>
+        {data.site.siteMetadata.projects.map(
+          ({ title, link, description, imgSrc }, i) => (
+            <Project
+              key={i}
+              title={title}
+              link={link}
+              description={description}
+              imgSrc={
+                data.projects.edges.find(l => l.node.publicURL.endsWith(imgSrc))
+                  ?.node.publicURL
+              }
+              ltr={i % 2 === 0}
+            />
+          )
+        )}
+      </div>
       <Typography
         variant="h3"
         style={{
-          margin: "16px 0",
+          margin: "64px 0",
           fontFamily: "'Merriweather','Georgia',serif",
         }}
       >
         Thank You!
       </Typography>
-      <Typography variant="body1" style={{ margin: "16px 0" }}>
+      <Typography variant="body1" style={{ margin: "32px 0" }}>
         In August 2020, I left my job to start pursuing open source projects
         independently. I'm forever grateful for the friends and family who
         supported me early on.
