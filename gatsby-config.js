@@ -108,6 +108,8 @@ module.exports = {
         name: "Ian Vanagas",
         url: "https://ianvanagas.com/",
       },
+      { name: "Lyle McKeany", url: "https://lyle.substack.com" },
+      { name: "Anushri Kumar", url: "https://medium.com/@anushri.kumar" },
     ],
     goals: [
       {
