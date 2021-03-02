@@ -22,6 +22,7 @@ const folder = `content/blog/${time.getFullYear()}${padNum(
   .replace(/:/g, "")
   .replace(/,/g, "")
   .replace(/'/g, "")
+  .replace(/&/g, "and")
   .replace(/\./g, "")}`;
 
 fs.mkdirSync(folder);
