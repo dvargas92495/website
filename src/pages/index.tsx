@@ -46,8 +46,8 @@ const Index = () => {
         >
           Nomad | Engineer | Writer
         </Typography>
-        <Typography style={{ color: colors.primary }}>
-          Traveling with a group of friends as part of{" "}
+        <Typography style={{ color: colors.primary, margin: 16 }}>
+          Traveling the world with a group of friends as part of{" "}
           <Link
             target="_blank"
             rel="noopener"
@@ -57,7 +57,7 @@ const Index = () => {
             Covilla
           </Link>
         </Typography>
-        <Typography style={{ color: colors.primary }}>
+        <Typography style={{ color: colors.primary, margin: 16 }}>
           Software Engineer working exclusively in{" "}
           <Link
             target="_blank"
@@ -68,8 +68,11 @@ const Index = () => {
             Open Source
           </Link>
         </Typography>
-        <Typography style={{ color: colors.primary }}>
-          Writing about what I learn on this site
+        <Typography style={{ color: colors.primary, margin: 16 }}>
+          Writing about my experiences and lessons on{" "}
+          <Link href="/blog" style={{ color: colors.secondary }}>
+            my blog
+          </Link>
         </Typography>
       </Container>
     </Layout>

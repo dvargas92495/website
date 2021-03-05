@@ -87,23 +87,6 @@ const Layout = ({ children }) => {
   ]);
   const { title } = data.site.siteMetadata;
 
-  useEffect(() => {
-    const script = document.createElement("script");
-
-    script.src = "https://prodigious-trader-7332.ck.page/cd67433313/index.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-      const otherScript = Array.from(
-        document.getElementsByTagName("script")
-      ).find(c => c.src.indexOf("convertkit") > -1);
-      document.body.removeChild(otherScript);
-    };
-  }, []);
-
   return (
     <div
       style={{
@@ -177,31 +160,6 @@ const Layout = ({ children }) => {
         }}
       >
         {children}
-        <Container
-          maxWidth="sm"
-          style={{
-            marginTop: 32,
-            textAlign: "center",
-            border: `dashed 1px ${colors.primary}`,
-            borderRadius: 32,
-          }}
-        >
-          <Typography
-            variant="h6"
-            style={{
-              fontFamily: "'Merriweather','Georgia',serif",
-            }}
-          >
-            Vargas Ventures
-          </Typography>
-          <Typography variant="subtitle2" style={{ marginBottom: 16 }}>
-            Subscribe to my monthly newsletter below for updates on what I'm
-            building, what I'm writing, and where I'm travelling. I also share
-            the best podcasts that I listened to that month, each tagged with my
-            personal takeaway. New issues on the 5th of each month!
-          </Typography>
-          <script data-uid="cd67433313"></script>
-        </Container>
       </main>
       <Drawer
         variant="persistent"
@@ -270,66 +228,80 @@ const Layout = ({ children }) => {
         >
           <span>© {new Date().getFullYear()} Vargas Arts LLC</span>
           <span>
-          <FooterIcon href="https://twitter.com/dvargas92495">
-            <Twitter />
-          </FooterIcon>
-          <FooterIcon href="https://github.com/dvargas92495">
-            <GitHub />
-          </FooterIcon>
-          <FooterIcon href="https://www.twitch.tv/dvargas92495">
-            <Icon icon={twitchIcon} style={{ fontSize: "1.5rem" }} />
-          </FooterIcon>
-          <FooterIcon href="mailto:dvargas92495@gmail.com">
-            <Email />
-          </FooterIcon>
-          {footerExpanded ? (
-            <>
-              <FooterIcon href="https://www.youtube.com/channel/UC6UVFCK1BcIMnT0XY4iUS_g">
-                <Youtube />
-              </FooterIcon>
-              <FooterIcon href="https://www.indiehackers.com/dvargas92495">
-                <SvgIcon>
-                  <image
-                    href={data.indieHacker.publicURL}
-                    style={{ height: "100%" }}
-                  />
-                </SvgIcon>
-              </FooterIcon>
-              <FooterIcon href="https://dev.to/dvargas92495">
-                <SvgIcon>
-                  <image
-                    href={data.devto.publicURL}
-                    style={{ height: "100%" }}
-                  />
-                </SvgIcon>
-              </FooterIcon>
-              <FooterIcon href="https://www.strava.com/athletes/dvargas92495">
-                <SvgIcon>
-                  <image
-                    href={data.logo.publicURL}
-                    style={{ height: "100%" }}
-                  />
-                </SvgIcon>
-              </FooterIcon>
-              <FooterIcon href="https://www.reddit.com/user/dvargas92495">
-                <Reddit />
-              </FooterIcon>
-              <FooterIcon href="https://medium.com/@dvargas92495">
-                <SvgIcon>
-                  <image
-                    href={data.medium.publicURL}
-                    style={{ height: "100%" }}
-                  />
-                </SvgIcon>
-              </FooterIcon>
-              <FooterIcon href="https://instagram.com/dvargas92495">
-                <Instagram />
-              </FooterIcon>
-              <FooterIcon href="https://linkedin.com/in/dvargas92495">
-                <LinkedIn />
-              </FooterIcon>
+            <FooterIcon href="https://twitter.com/dvargas92495">
+              <Twitter />
+            </FooterIcon>
+            <FooterIcon href="https://github.com/dvargas92495">
+              <GitHub />
+            </FooterIcon>
+            <FooterIcon href="https://www.twitch.tv/dvargas92495">
+              <Icon icon={twitchIcon} style={{ fontSize: "1.5rem" }} />
+            </FooterIcon>
+            <FooterIcon href="mailto:dvargas92495@gmail.com">
+              <Email />
+            </FooterIcon>
+            {footerExpanded ? (
+              <>
+                <FooterIcon href="https://www.youtube.com/channel/UC6UVFCK1BcIMnT0XY4iUS_g">
+                  <Youtube />
+                </FooterIcon>
+                <FooterIcon href="https://www.indiehackers.com/dvargas92495">
+                  <SvgIcon>
+                    <image
+                      href={data.indieHacker.publicURL}
+                      style={{ height: "100%" }}
+                    />
+                  </SvgIcon>
+                </FooterIcon>
+                <FooterIcon href="https://dev.to/dvargas92495">
+                  <SvgIcon>
+                    <image
+                      href={data.devto.publicURL}
+                      style={{ height: "100%" }}
+                    />
+                  </SvgIcon>
+                </FooterIcon>
+                <FooterIcon href="https://www.strava.com/athletes/dvargas92495">
+                  <SvgIcon>
+                    <image
+                      href={data.logo.publicURL}
+                      style={{ height: "100%" }}
+                    />
+                  </SvgIcon>
+                </FooterIcon>
+                <FooterIcon href="https://www.reddit.com/user/dvargas92495">
+                  <Reddit />
+                </FooterIcon>
+                <FooterIcon href="https://medium.com/@dvargas92495">
+                  <SvgIcon>
+                    <image
+                      href={data.medium.publicURL}
+                      style={{ height: "100%" }}
+                    />
+                  </SvgIcon>
+                </FooterIcon>
+                <FooterIcon href="https://instagram.com/dvargas92495">
+                  <Instagram />
+                </FooterIcon>
+                <FooterIcon href="https://linkedin.com/in/dvargas92495">
+                  <LinkedIn />
+                </FooterIcon>
+                <IconButton
+                  onClick={collapseFooter}
+                  style={{
+                    color: colors.secondary,
+                    margin: "0 8px",
+                    padding: 0,
+                    boxShadow: "none",
+                    top: -8,
+                  }}
+                >
+                  <ChevronLeft />
+                </IconButton>
+              </>
+            ) : (
               <IconButton
-                onClick={collapseFooter}
+                onClick={expandFooter}
                 style={{
                   color: colors.secondary,
                   margin: "0 8px",
@@ -338,25 +310,11 @@ const Layout = ({ children }) => {
                   top: -8,
                 }}
               >
-                <ChevronLeft />
+                <ChevronRight />
               </IconButton>
-            </>
-          ) : (
-            <IconButton
-              onClick={expandFooter}
-              style={{
-                color: colors.secondary,
-                margin: "0 8px",
-                padding: 0,
-                boxShadow: "none",
-                top: -8,
-              }}
-            >
-              <ChevronRight />
-            </IconButton>
-          )}
-        </span>
-        <span>
+            )}
+          </span>
+          <span>
             Built with
             {` `}
             <a
