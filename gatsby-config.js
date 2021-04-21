@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `David Vargas`,
-    description: `Public Citizen of the World`,
+    description: `Nomad, Engineer, Writer`,
     siteUrl: `https://davidvargas.me/`,
     projects: [
       {
