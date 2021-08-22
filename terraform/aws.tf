@@ -100,7 +100,7 @@ resource "aws_iam_user_policy_attachment" "apigateway_roam" {
 
 resource "aws_iam_user_policy_attachment" "lambda_roam" {
   user       = aws_iam_user.roam_js_extensions.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AWSLambda_FullAccess"
 }
 
 resource "aws_iam_user_policy_attachment" "ses_roam" {
