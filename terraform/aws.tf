@@ -123,7 +123,7 @@ resource "aws_iam_user_policy_attachment" "sns_roam" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
 }
 
-resource "aws_iam_user_policy_attachment" "sns_roam" {
+resource "aws_iam_user_policy_attachment" "cwe_roam" {
   user       = aws_iam_user.roam_js_extensions.name
   policy_arn = "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess"
 }
