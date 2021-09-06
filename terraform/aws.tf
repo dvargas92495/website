@@ -214,7 +214,6 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot          = true
   storage_encrypted            = true
   deletion_protection          = true
-  performance_insights_enabled = true
   tags                         = {
     Application = "Root"
   }
