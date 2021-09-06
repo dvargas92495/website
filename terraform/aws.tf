@@ -12,6 +12,10 @@ provider "aws" {
     region = "us-east-1"
 }
 
+variable "rds_password" {
+
+}
+
 locals {
     domain    = "davidvargas.me"
 }
@@ -192,4 +196,26 @@ resource "aws_iam_user_group_membership" "static_garden" {
   groups = [
     aws_iam_group.static_site_managers.name,
   ]
+}
+
+resource "aws_db_instance" "default" {
+  allocated_storage            = 20
+  max_allocated_storage        = 1000
+  storage_type                 = "gp2"
+  engine                       = "mysql"
+  engine_version               = "5.7"
+  identifier                   = "vargas-arts"
+  instance_class               = "db.t3.micro"
+  username                     = "dvargas92495"
+  password                     = var.rds_password
+  parameter_group_name         = "default.mysql5.7"
+  port                         = 5432
+  publicly_accessible          = true
+  skip_final_snapshot          = true
+  storage_encrypted            = true
+  deletion_protection          = true
+  performance_insights_enabled = true
+  tags                         = {
+    Application = "Root"
+  }
 }
