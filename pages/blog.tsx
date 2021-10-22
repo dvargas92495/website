@@ -29,7 +29,7 @@ const BlogPage = () => {
       window.blogs
         .map(({ name, image, ...rest }, i) => ({
           ...rest,
-          image: /^!\[\]\((.*)\)$/.exec(image)?.[1] || "",
+          image: /^!\[\]\((.*)\)$/.exec(image)?.[1] || image,
           name: name.replace(/^Blog\//, ""),
           dateValue: rest.date
             ? datefnsParse(rest.date, "MMMM do, yyyy", new Date())
