@@ -8,6 +8,7 @@ const build = () => {
     entryPoints,
     bundle: true,
     outdir: "dist",
+    minify: true,
     plugins: [
       {
         name: "browser",

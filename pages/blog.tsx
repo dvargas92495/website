@@ -103,7 +103,12 @@ const BlogPage = () => {
             >
               <Grid item xs={isBrowser ? 4 : 12}>
                 <Card style={{ height: 400, borderRadius: 8 }}>
-                  <div style={{ height: isBrowser ? 200 : 225 }}>
+                  <div
+                    style={{
+                      height: isBrowser ? 200 : 225,
+                      pointerEvents: "none",
+                    }}
+                  >
                     {image && (
                       <Image
                         src={image}
@@ -136,7 +141,7 @@ const BlogPage = () => {
                           href={`/blog/${name
                             .toLowerCase()
                             .replace(/ /g, "_")
-                            .replace(/[",?#:$;@&=+'.|]/g, "")}`}
+                            .replace(/[^\w-]/g, "")}`}
                         >
                           {name}
                         </a>
