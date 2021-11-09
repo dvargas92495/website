@@ -23,6 +23,32 @@ const PAGE_SIZE = 9;
 
 const { useMemo, useCallback, useState } = window.React;
 
+const Thumbnail = ({ src }: { src: string }) => {
+  const [aspectRatio, setAspectRatio] = useState(1);
+  window.React.useEffect(() => {
+    const dummyImage = new window.Image();
+    dummyImage.src = src;
+    dummyImage.style.visibility = "hidden";
+    dummyImage.onload = () => {
+      document.body.appendChild(dummyImage);
+      const { clientWidth, clientHeight } = dummyImage;
+      dummyImage.remove();
+      setAspectRatio(clientWidth / clientHeight);
+    };
+  }, [setAspectRatio, src]);
+  return (
+    <Image
+      src={src}
+      aspectRatio={aspectRatio}
+      style={{ backgroundColor: "transparent" }}
+      imageStyle={{
+        maxHeight: 225,
+        boxShadow: "none",
+      }}
+    />
+  );
+};
+
 const BlogPage = () => {
   const allBlogs = useMemo(
     () =>
@@ -87,7 +113,7 @@ const BlogPage = () => {
         page={currentPage}
         size="large"
       />
-      <Grid container spacing={2}>
+      <Grid container spacing={2} style={{ padding: "16px 0" }}>
         {blogs.map(({ name, image, date, description }, i) => {
           const delay = (Math.floor(i / 3) + 1) * 500;
           return (
@@ -102,38 +128,44 @@ const BlogPage = () => {
               key={name}
             >
               <Grid item xs={isBrowser ? 4 : 12}>
-                <Card style={{ height: 400, borderRadius: 8 }}>
+                <Card style={{ height: 450, borderRadius: 8 }}>
                   <div
                     style={{
-                      height: isBrowser ? 200 : 225,
+                      height: 225,
                       pointerEvents: "none",
+                      borderBottom: "1px solid #33333340",
+                      borderRadius: 4,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      backgroundColor: "#33333320",
                     }}
                   >
-                    {image && (
-                      <Image
-                        src={image}
-                        aspectRatio={1}
-                        style={{ backgroundColor: "transparent" }}
-                        imageStyle={{
-                          maxHeight: isBrowser ? 200 : 225,
-                          boxShadow: "none",
-                        }}
-                      />
-                    )}
+                    {image && <Thumbnail src={image} />}
                   </div>
                   <Container
                     style={{
                       color: "#3ba4dc",
-                      height: isBrowser ? 200 : 175,
+                      height: 225,
                       paddingTop: 16,
                     }}
                   >
-                    <header>
+                    <header
+                      style={{
+                        minHeight: 120,
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
                       <Typography
                         variant="h6"
                         style={{
-                          fontFamily: "'Merriweather','Georgia',serif",
                           fontStyle: "normal",
+                          fontSize: "1.125rem",
+                          flexGrow: 1,
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
                         }}
                       >
                         <a
@@ -148,13 +180,16 @@ const BlogPage = () => {
                       </Typography>
                       <Typography
                         variant="subtitle2"
-                        style={{ color: "#333333" }}
+                        style={{ color: "#333333", fontSize: "0.625rem" }}
                       >
                         {date}
                       </Typography>
                     </header>
                     <section>
-                      <Typography variant="body2" style={{ color: "#333333" }}>
+                      <Typography
+                        variant="body2"
+                        style={{ color: "#333333", fontSize: "0.875rem" }}
+                      >
                         {description}
                       </Typography>
                     </section>
