@@ -26,22 +26,6 @@ resource "aws_route53_zone" "zone" {
     force_destroy = false
 }
 
-resource "aws_route53_record" "website" {
-  zone_id = aws_route53_zone.zone.zone_id
-  name    = local.domain
-  type    = "A"
-  records = ["104.198.14.52"]
-  ttl     = 300
-}
-
-resource "aws_route53_record" "www" {
-  name    = "www.${local.domain}"
-  type    = "CNAME"
-  zone_id = aws_route53_zone.zone.id
-  records = ["davidvargas.netlify.app."]
-  ttl     = 300
-}
-
 resource "aws_iam_group" "static_site_managers" {
   name = "static-site-managers"
 }
