@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 variable "rds_password" {
-
+  type = string
 }
 
 locals {
@@ -201,4 +201,14 @@ resource "aws_db_instance" "default" {
   tags                         = {
     Application = "Root"
   }
+}
+
+module "aws_email" {
+  source  = "dvargas92495/email/aws"
+  version = "2.0.0"
+
+  domain = local.domain
+  zone_id = aws_route53_zone.zone.zone_id
+  forward_to = "dvargas92495@gmail.com"
+  email_identity = "hello"
 }
