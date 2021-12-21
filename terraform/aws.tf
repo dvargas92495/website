@@ -187,8 +187,9 @@ resource "aws_db_parameter_group" "default" {
   family = "mysql5.7"
 
   parameter {
-    name  = "lower_case_table_names"
-    value = "1"
+    name         = "lower_case_table_names"
+    value        = "1"
+    apply_method = "pending-reboot"
   }
 }
 
