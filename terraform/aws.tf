@@ -182,6 +182,16 @@ resource "aws_iam_user_group_membership" "static_garden" {
   ]
 }
 
+resource "aws_db_parameter_group" "default" {
+  name   = "vargas-arts"
+  family = "mysql5.7"
+
+  parameter {
+    name  = "lower_case_table_names "
+    value = "1"
+  }
+}
+
 resource "aws_db_instance" "default" {
   allocated_storage            = 20
   max_allocated_storage        = 1000
@@ -192,7 +202,7 @@ resource "aws_db_instance" "default" {
   instance_class               = "db.t3.micro"
   username                     = "dvargas92495"
   password                     = var.rds_password
-  parameter_group_name         = "default.mysql5.7"
+  parameter_group_name         = aws_db_parameter_group.default.id
   port                         = 5432
   publicly_accessible          = true
   skip_final_snapshot          = true
