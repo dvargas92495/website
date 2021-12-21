@@ -187,7 +187,7 @@ resource "aws_db_parameter_group" "default" {
   family = "mysql5.7"
 
   parameter {
-    name  = "lower_case_table_names "
+    name  = "lower_case_table_names"
     value = "1"
   }
 }
