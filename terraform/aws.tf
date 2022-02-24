@@ -79,6 +79,11 @@ resource "aws_iam_user_policy_attachment" "iam" {
   policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
 }
 
+resource "aws_iam_user_policy_attachment" "dynamo" {
+  user       = aws_iam_user.davidvargas.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+}
+
 resource "aws_iam_user" "roam_js_extensions" {
   name = "roam_js_extensions"
 }
