@@ -231,7 +231,7 @@ resource "aws_db_instance" "default" {
 
 module "aws_email" {
   source  = "dvargas92495/email/aws"
-  version = "2.0.10"
+  version = "2.0.13"
 
   domain = local.domain
   zone_id = aws_route53_zone.zone.zone_id
