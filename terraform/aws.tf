@@ -238,3 +238,22 @@ module "aws_email" {
   forward_to = "dvargas92495@gmail.com"
   email_identity = "hello"
 }
+
+resource "aws_cloudfront_cache_policy" "cache_policy" {
+  name        = "remix-cache-policy"
+  comment     = "Caching based on query parameters"
+  default_ttl = 60
+  max_ttl     = 31536000
+  min_ttl     = 1
+  parameters_in_cache_key_and_forwarded_to_origin {
+    cookies_config {
+      cookie_behavior = "none"
+    }
+    headers_config {
+      header_behavior = "none"
+    }
+    query_strings_config {
+      query_string_behavior = "all"
+    }
+  }
+}
