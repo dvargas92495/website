@@ -1,26 +1,12 @@
-import type React from "react";
+import React from "react";
 import type ReactDOM from "react-dom";
-import { isBrowser, BrowserView, MobileView } from "react-device-detect";
-import Image from "material-ui-image";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Slide from "@material-ui/core/Slide";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
-import IconButton from "@material-ui/core/IconButton";
-import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
-import ArrowDropUp from "@material-ui/icons/ArrowDropUp";
-import Card from "@material-ui/core/Card";
 
 type Projects = {
   name: string;
   url: string;
   description?: string;
-  image?: string;
+  image: string;
 }[];
-
-const PROJECT_KINDS = ["apps", "npm", "tf", "sponsors"] as const;
 
 declare global {
   interface Window {
@@ -39,80 +25,48 @@ const Sponsor = ({
   title: string;
   url: string;
 }) => (
-  <Grid item xs={4}>
-    <Card
+  <div
+    style={{
+      margin: "0px 4px",
+      boxSizing: "border-box",
+      flexGrow: 0,
+      maxWidth: "10%",
+      flexBasis: "10%",
+      padding: 4,
+      borderRadius: 8,
+      boxShadow:
+        "0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%)",
+      width: "10%",
+      display: "flex",
+      flexWrap: "wrap",
+    }}
+  >
+    <img
+      src={imgSrc}
+      width={"100%"}
+      style={{ borderRadius: 8, boxShadow: "none", height: "unset" }}
+    />
+    <h6
       style={{
-        textAlign: "center",
-        minHeight: 250,
+        margin: "16px 0",
+        padding: "0 4px",
+        fontSize: "8px",
       }}
     >
-      <Image
-        src={imgSrc}
-        aspectRatio={1}
-        style={{ borderRadius: 8 }}
-        imageStyle={{ boxShadow: "unset" }}
-      />
-      <Typography
-        variant="h6"
-        style={{
-          margin: "16px 0",
-          padding: "0 4px",
-        }}
-      >
-        {url ? (
-          <Link href={url} target="_blank" rel="noopener">
-            {title}
-          </Link>
-        ) : (
-          title
-        )}
-      </Typography>
-    </Card>
-  </Grid>
-);
-
-const Package = ({
-  title,
-  url,
-  description,
-}: {
-  description: string;
-  title: string;
-  url: string;
-}) => (
-  <Grid item xs={isBrowser ? 3 : 4}>
-    <Card
-      style={{
-        textAlign: "center",
-        minHeight: 250,
-        padding: 8,
-      }}
-    >
-      <Typography
-        variant="h6"
-        style={{
-          margin: "16px 0",
-          padding: "0 4px",
-          minHeight: 64,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          wordBreak: "break-all",
-        }}
-      >
-        {url ? (
-          <Link href={url} target="_blank" rel="noopener">
-            {title}
-          </Link>
-        ) : (
-          title
-        )}
-      </Typography>
-      <Typography variant="subtitle1" style={{ fontSize: 12 }}>
-        {description}
-      </Typography>
-    </Card>
-  </Grid>
+      {url ? (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener"
+          style={{ textDecoration: "none" }}
+        >
+          {title}
+        </a>
+      ) : (
+        title
+      )}
+    </h6>
+  </div>
 );
 
 const Project = ({
@@ -128,88 +82,98 @@ const Project = ({
   imgSrc: string;
   ltr: boolean;
 }) => {
-  const [showDescription, setShowDescription] = window.React.useState(false);
-  const openDescription = window.React.useCallback(
-    () => setShowDescription(true),
-    [setShowDescription]
-  );
-  const closeDescription = window.React.useCallback(
-    () => setShowDescription(false),
-    [setShowDescription]
-  );
   const imageGrid = (
-    <Grid item xs={isBrowser ? 4 : 2}>
-      <Image src={imgSrc} aspectRatio={1} style={{ borderRadius: 8 }} />
-    </Grid>
+    <div style={{ flexGrow: 0, flexBasis: "25%", maxWidth: "25%", margin: 0 }}>
+      <img
+        src={imgSrc}
+        height={"100%"}
+        width={"100%"}
+        style={{ borderRadius: 8, boxShadow: "none" }}
+      />
+    </div>
   );
   const contentGrid = (
-    <Grid item xs={isBrowser ? 8 : 10}>
-      <Container style={{ textAlign: "center" }}>
-        <Link href={link} target="_blank" rel="noopener">
-          <Typography
-            variant="h5"
-            style={{
-              margin: 16,
-            }}
-          >
-            {title}
-          </Typography>
-        </Link>
-      </Container>
-      <Container style={{ textAlign: "justify" }}>
-        <BrowserView>
-          <Typography variant="body1" style={{ marginTop: 8 }}>
-            {description}
-          </Typography>
-        </BrowserView>
-        <MobileView>
-          {showDescription ? (
-            <>
-              <Typography variant="body1" style={{ marginTop: 8 }}>
-                {description}
-              </Typography>
-              <IconButton
-                onClick={closeDescription}
-                style={{ padding: 0, width: "100%", textAlign: "center" }}
-              >
-                <ArrowDropUp fontSize={"large"} />
-              </IconButton>
-            </>
-          ) : (
-            <IconButton
-              onClick={openDescription}
-              style={{ padding: 0, width: "100%", textAlign: "center" }}
-            >
-              <ArrowDropDown fontSize={"large"} />
-            </IconButton>
-          )}
-        </MobileView>
-      </Container>
-    </Grid>
+    <div
+      style={{
+        maxWidth: "75%",
+        flexBasis: "75%",
+        flexGrow: 0,
+        margin: 0,
+        paddingLeft: 24,
+        paddingRight: 24,
+        boxSizing: "border-box",
+      }}
+    >
+      <div
+        style={{
+          textAlign: "center",
+          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener"
+          style={{
+            textDecoration: "none",
+            color: "#3ba4dc",
+            margin: 16,
+            fontSize: "1.5rem",
+            fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+            fontWeight: 400,
+          }}
+        >
+          {title}
+        </a>
+      </div>
+      <div
+        style={{
+          textAlign: "justify",
+          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        <p style={{ marginTop: 8 }}>{description}</p>
+      </div>
+    </div>
   );
   return (
-    <Grid item xs={12}>
-      <Slide
-        direction={ltr ? "left" : "right"}
-        in={true}
-        mountOnEnter
-        unmountOnExit
-      >
-        <Paper elevation={3} style={{ marginTop: 16, borderRadius: 8 }}>
-          <Grid container>
-            {ltr ? imageGrid : contentGrid}
-            {ltr ? contentGrid : imageGrid}
-          </Grid>
-        </Paper>
-      </Slide>
-    </Grid>
+    <div
+      style={{
+        margin: "8px 0",
+        boxSizing: "border-box",
+        flexGrow: 0,
+        maxWidth: "100%",
+        flexBasis: "100%",
+        borderRadius: 8,
+        boxShadow:
+          "0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%)",
+        width: "100%",
+        display: "flex",
+        flexWrap: "wrap",
+      }}
+    >
+      {ltr ? imageGrid : contentGrid}
+      {ltr ? contentGrid : imageGrid}
+    </div>
   );
 };
 
 const ProjectsPage = ({ projects }: { projects: Projects }) => (
-  <Grid container style={{ margin: "16px 0" }} spacing={1}>
+  <div
+    style={{
+      margin: "16px 0",
+      width: "100%",
+      display: "flex",
+      flexWrap: "wrap",
+      boxSizing: "border-box",
+    }}
+  >
     {projects.map(({ name, url, description, image }, i) =>
-      image && description ? (
+      description ? (
         <Project
           key={i}
           title={name}
@@ -218,18 +182,14 @@ const ProjectsPage = ({ projects }: { projects: Projects }) => (
           imgSrc={image}
           ltr={i % 2 === 0}
         />
-      ) : description ? (
-        <Package key={i} title={name} url={url} description={description} />
-      ) : image ? (
-        <Sponsor title={name} imgSrc={image} url={url} key={i} />
       ) : (
-        <div>{name} is Invalid</div>
+        <Sponsor title={name} imgSrc={image} url={url} key={i} />
       )
     )}
-  </Grid>
+  </div>
 );
 
-Array.from(document.getElementsByClassName("page-root")).forEach(d => {
+Array.from(document.getElementsByClassName("page-root")).forEach((d) => {
   (d as HTMLDivElement).style.paddingTop = "0";
   window.ReactDOM.render(
     <ProjectsPage projects={window[d.id] as Projects} />,
