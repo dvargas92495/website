@@ -136,38 +136,6 @@ resource "aws_iam_user_policy_attachment" "cwe_roam" {
   policy_arn = "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess"
 }
 
-resource "aws_iam_user" "floss" {
-  name = "floss"
-}
-
-resource "aws_iam_user_group_membership" "static_floss" {
-  user = aws_iam_user.floss.name
-
-  groups = [
-    aws_iam_group.static_site_managers.name,
-  ]
-}
-
-resource "aws_iam_user_policy_attachment" "apigateway_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator"
-}
-
-resource "aws_iam_user_policy_attachment" "lambda_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AWSLambdaFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "dynamo_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
-}
-
-resource "aws_iam_user_policy_attachment" "ses_floss" {
-  user       = aws_iam_user.floss.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonSESFullAccess"
-}
-
 resource "aws_iam_user" "wings" {
   name = "wings"
 }
