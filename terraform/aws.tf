@@ -215,7 +215,7 @@ module "aws_email" {
 resource "aws_cloudfront_cache_policy" "cache_policy" {
   name        = "remix-cache-policy"
   comment     = "Caching based on query parameters"
-  default_ttl = 60
+  default_ttl = 1
   max_ttl     = 31536000
   min_ttl     = 1
   parameters_in_cache_key_and_forwarded_to_origin {
