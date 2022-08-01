@@ -34,7 +34,6 @@
   },
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "test": "jest --watch",
     "build": "node scripts/build.js"
   }
 }
