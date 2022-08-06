@@ -263,13 +263,13 @@ resource "github_actions_organization_secret" "terraform_cloud_token_secret" {
 }
 
 resource "github_actions_organization_secret" "stripe_public_secret" {
-  secret_name = "STRIPE_PUBLIC"
+  secret_name = "STRIPE_PUBLIC_KEY"
   visibility  = "all"
   plaintext_value = var.stripe_public  
 }
 
 resource "github_actions_organization_secret" "stripe_secret_secret" {
-  secret_name = "stripe_secret"
+  secret_name = "STRIPE_SECRET_KEY"
   visibility  = "all"
   plaintext_value = var.stripe_secret   
 }
