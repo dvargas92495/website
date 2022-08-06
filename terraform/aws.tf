@@ -18,12 +18,37 @@ terraform {
   }
 }
 
-provider "aws" {
-    region = "us-east-1"
+variable "github_token" {
+  type = string
 }
 
 variable "rds_password" {
   type = string
+}
+
+variable "terraform_cloud_token" {
+  type = string
+}
+
+variable "stripe_public" {
+  type = string
+}
+
+variable "stripe_secret" {
+  type = string
+}
+
+variable "stripe_webhook_secret" {
+  type = string
+}
+
+provider "aws" {
+    region = "us-east-1"
+}
+
+provider "github" {
+  organization = "vargasarts"
+  token = var.github_token
 }
 
 locals {
@@ -229,4 +254,28 @@ resource "aws_cloudfront_cache_policy" "cache_policy" {
       query_string_behavior = "all"
     }
   }
+}
+
+resource "github_actions_organization_secret" "terraform_cloud_token_secret" {
+  secret_name = "TERRAFORM_CLOUD_TOKEN"
+  visibility  = "all"
+  plaintext_value = var.terraform_cloud_token 
+}
+
+resource "github_actions_organization_secret" "stripe_public_secret" {
+  secret_name = "STRIPE_PUBLIC"
+  visibility  = "all"
+  plaintext_value = var.stripe_public  
+}
+
+resource "github_actions_organization_secret" "stripe_secret_secret" {
+  secret_name = "stripe_secret"
+  visibility  = "all"
+  plaintext_value = var.stripe_secret   
+}
+
+resource "github_actions_organization_secret" "stripe_webhook_secret_secret" {
+  secret_name = "STRIPE_WEBHOOK_SECRET"
+  visibility  = "all"
+  plaintext_value = var.stripe_webhook_secret  
 }
