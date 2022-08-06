@@ -279,3 +279,9 @@ resource "github_actions_organization_secret" "stripe_webhook_secret_secret" {
   visibility  = "all"
   plaintext_value = var.stripe_webhook_secret  
 }
+
+resource "github_actions_organization_secret" "github_token_secret" {
+  secret_name = "TERRAFORM_GITHUB_TOKEN"
+  visibility  = "all"
+  plaintext_value = var.github_token  
+}
