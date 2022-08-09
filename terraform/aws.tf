@@ -42,6 +42,10 @@ variable "stripe_webhook_secret" {
   type = string
 }
 
+variable "npm_token" {
+  type = string
+}
+
 provider "aws" {
     region = "us-east-1"
 }
@@ -284,4 +288,10 @@ resource "github_actions_organization_secret" "github_token_secret" {
   secret_name = "TERRAFORM_GITHUB_TOKEN"
   visibility  = "all"
   plaintext_value = var.github_token  
+}
+
+resource "github_actions_organization_secret" "npm_token_secret" {
+  secret_name = "NPM_TOKEN"
+  visibility  = "all"
+  plaintext_value = var.npm_token  
 }
