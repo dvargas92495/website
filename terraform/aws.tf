@@ -208,6 +208,18 @@ resource "aws_db_parameter_group" "default" {
     value        = "1"
     apply_method = "pending-reboot"
   }
+
+  parameter {
+    name         = "gtid_mode"
+    value        = "ON"
+    apply_method = "immediate"
+  }
+
+  parameter {
+    name         = "expire_logs_days"
+    value        = "3"
+    apply_method = "immediate"
+  }
 }
 
 resource "aws_db_instance" "default" {
