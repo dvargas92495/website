@@ -214,12 +214,6 @@ resource "aws_db_parameter_group" "default" {
     value        = "ON"
     apply_method = "immediate"
   }
-
-  parameter {
-    name         = "expire_logs_days"
-    value        = "3"
-    apply_method = "immediate"
-  }
 }
 
 resource "aws_db_instance" "default" {
