@@ -214,6 +214,12 @@ resource "aws_db_parameter_group" "default" {
     value        = "ON"
     apply_method = "pending-reboot"
   }
+
+  parameter {
+    name         = "enforce_gtid_consistency"
+    value        = "ON"
+    apply_method = "pending-reboot"
+  }
 }
 
 resource "aws_db_instance" "default" {
