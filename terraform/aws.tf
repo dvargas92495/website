@@ -212,7 +212,7 @@ resource "aws_db_parameter_group" "default" {
   parameter {
     name         = "gtid-mode"
     value        = "ON"
-    apply_method = "immediate"
+    apply_method = "pending-reboot"
   }
 }
 
