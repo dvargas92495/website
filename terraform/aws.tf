@@ -220,6 +220,12 @@ resource "aws_db_parameter_group" "default" {
     value        = "ON"
     apply_method = "pending-reboot"
   }
+
+  parameter {
+    name         = "binlog_format"
+    value        = "ROW"
+    apply_method = "pending-reboot"
+  }
 }
 
 resource "aws_db_instance" "default" {
