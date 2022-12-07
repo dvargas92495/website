@@ -165,57 +165,6 @@ resource "aws_iam_user_policy_attachment" "cwe_roam" {
   policy_arn = "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess"
 }
 
-resource "aws_db_parameter_group" "default" {
-  name   = "vargas-arts"
-  family = "mysql5.7"
-
-  parameter {
-    name         = "lower_case_table_names"
-    value        = "1"
-    apply_method = "pending-reboot"
-  }
-
-  parameter {
-    name         = "gtid-mode"
-    value        = "ON"
-    apply_method = "pending-reboot"
-  }
-
-  parameter {
-    name         = "enforce_gtid_consistency"
-    value        = "ON"
-    apply_method = "pending-reboot"
-  }
-
-  parameter {
-    name         = "binlog_format"
-    value        = "ROW"
-    apply_method = "pending-reboot"
-  }
-}
-
-resource "aws_db_instance" "default" {
-  allocated_storage            = 20
-  max_allocated_storage        = 1000
-  storage_type                 = "gp2"
-  engine                       = "mysql"
-  engine_version               = "5.7"
-  identifier                   = "vargas-arts"
-  instance_class               = "db.t3.micro"
-  username                     = "dvargas92495"
-  password                     = var.rds_password
-  parameter_group_name         = aws_db_parameter_group.default.id
-  port                         = 5432
-  publicly_accessible          = true
-  skip_final_snapshot          = true
-  storage_encrypted            = true
-  deletion_protection          = false
-  backup_retention_period      = 1
-  tags                         = {
-    Application = "Root"
-  }
-}
-
 module "aws_email" {
   source  = "dvargas92495/email/aws"
   version = "2.0.15"
