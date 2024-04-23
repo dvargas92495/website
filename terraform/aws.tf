@@ -22,30 +22,6 @@ variable "github_token" {
   type = string
 }
 
-variable "rds_password" {
-  type = string
-}
-
-variable "terraform_cloud_token" {
-  type = string
-}
-
-variable "stripe_public" {
-  type = string
-}
-
-variable "stripe_secret" {
-  type = string
-}
-
-variable "stripe_webhook_secret" {
-  type = string
-}
-
-variable "npm_token" {
-  type = string
-}
-
 provider "aws" {
     region = "us-east-1"
 }
@@ -53,16 +29,6 @@ provider "aws" {
 provider "github" {
   organization = "vargasarts"
   token = var.github_token
-}
-
-locals {
-    domain    = "davidvargas.me"
-}
-
-resource "aws_route53_zone" "zone" {
-    name          = local.domain
-    comment       = "Hosted Zone for my personal website"
-    force_destroy = false
 }
 
 resource "aws_iam_group" "static_site_managers" {
@@ -165,16 +131,6 @@ resource "aws_iam_user_policy_attachment" "cwe_roam" {
   policy_arn = "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess"
 }
 
-module "aws_email" {
-  source  = "dvargas92495/email/aws"
-  version = "2.0.15"
-
-  domain = local.domain
-  zone_id = aws_route53_zone.zone.zone_id
-  forward_to = "dvargas92495@gmail.com"
-  email_identity = "hello"
-}
-
 resource "aws_cloudfront_cache_policy" "cache_policy" {
   name        = "remix-cache-policy"
   comment     = "Caching based on query parameters"
@@ -194,38 +150,3 @@ resource "aws_cloudfront_cache_policy" "cache_policy" {
   }
 }
 
-resource "github_actions_organization_secret" "terraform_cloud_token_secret" {
-  secret_name = "TERRAFORM_CLOUD_TOKEN"
-  visibility  = "all"
-  plaintext_value = var.terraform_cloud_token 
-}
-
-resource "github_actions_organization_secret" "stripe_public_secret" {
-  secret_name = "STRIPE_PUBLIC_KEY"
-  visibility  = "all"
-  plaintext_value = var.stripe_public  
-}
-
-resource "github_actions_organization_secret" "stripe_secret_secret" {
-  secret_name = "STRIPE_SECRET_KEY"
-  visibility  = "all"
-  plaintext_value = var.stripe_secret   
-}
-
-resource "github_actions_organization_secret" "stripe_webhook_secret_secret" {
-  secret_name = "STRIPE_WEBHOOK_SECRET"
-  visibility  = "all"
-  plaintext_value = var.stripe_webhook_secret  
-}
-
-resource "github_actions_organization_secret" "github_token_secret" {
-  secret_name = "TERRAFORM_GITHUB_TOKEN"
-  visibility  = "all"
-  plaintext_value = var.github_token  
-}
-
-resource "github_actions_organization_secret" "npm_token_secret" {
-  secret_name = "NPM_TOKEN"
-  visibility  = "all"
-  plaintext_value = var.npm_token  
-}
