@@ -7,10 +7,6 @@ terraform {
     }
   }
   required_providers {
-    github = {
-      source = "integrations/github"
-      version = "4.2.0"
-    }
     aws = {
       source = "hashicorp/aws"
       version = "3.74.2"
@@ -18,17 +14,8 @@ terraform {
   }
 }
 
-variable "github_token" {
-  type = string
-}
-
 provider "aws" {
     region = "us-east-1"
-}
-
-provider "github" {
-  organization = "vargasarts"
-  token = var.github_token
 }
 
 resource "aws_iam_group" "static_site_managers" {
